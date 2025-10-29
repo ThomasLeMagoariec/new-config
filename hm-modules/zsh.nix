@@ -6,8 +6,16 @@
         syntaxHighlighting.enable = true;
 
         shellAliases = {
-            test = "echo bite";
-            bite = "echo heyy";
+            ga = "git add -A";
+            gc = "git commit -m";
+            gac = "git add -A && git commit -m";
+            gaca = "git add -A && git commit -m auto";
+            gacp = "git add -A && git commit -m auto && git push";
+            gp = "git push";
+            gP = "git pull";
+            gs = "git status";
+
+            e = "exit";
         };
         zplug = {
             enable = true;
