@@ -17,6 +17,6 @@
             ];
         };
 
-        initContent = ''POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=True'';
+        initContent = ''source ~/.p10k.zsh'';
     };
 }
