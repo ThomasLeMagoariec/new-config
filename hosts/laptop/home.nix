@@ -14,6 +14,7 @@
     pkgs.meslo-lgs-nf
     pkgs.wofi
     pkgs.chromium
+    pkgs.brave
   ];
 
   home.stateVersion = "25.05";
