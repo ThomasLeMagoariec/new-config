@@ -13,6 +13,7 @@
     pkgs.firefox
     pkgs.meslo-lgs-nf
     pkgs.wofi
+    pkgs.chromium
   ];
 
   home.stateVersion = "25.05";
