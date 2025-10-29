@@ -4,6 +4,10 @@
   home.username = "thomas";
   home.homeDirectory = "/home/thomas";
 
+  imports = [
+	../../hm-modules
+  ];
+
   home.packages = [
 	pkgs.cbonsai
   ];
