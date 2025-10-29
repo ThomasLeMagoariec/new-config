@@ -43,6 +43,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.sddm.enable = true;
+  programs.hyprland.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
   # Configure keymap in X11
