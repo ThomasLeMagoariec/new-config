@@ -74,6 +74,7 @@
   # };
 
   users.users.thomas = {
+    shell = pkgs.zsh;
 	isNormalUser = true;
 	extraGroups = [ "wheel" "sudo" ];
   };
