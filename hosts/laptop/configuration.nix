@@ -73,7 +73,8 @@
   #   ];
   # };
 
-  users.users.thomas = {
+ users.users.thomas = {
+    ignoreShellProgramCheck = true;
     shell = pkgs.zsh;
 	isNormalUser = true;
 	extraGroups = [ "wheel" "sudo" ];
