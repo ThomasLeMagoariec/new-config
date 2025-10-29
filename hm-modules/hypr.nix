@@ -8,17 +8,17 @@
             "$mod, F, exec, kitty"
             "$mod, R, exec, wofi --show run"
             ", Print, exec, grimblast copy area"
-          ]
-          ++ (
-                builtins.concatLists (builtins.genList (i:
-                let ws = i + 1;
-                in [
-                    "$mod, code:1${toString i}, workspace, ${toString ws}"
-                    "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-                    ]
-                )
-                9)
-            );
+            "$mod, ampersand, workspace, 1"
+            "$mod, eacute, workspace, 2"
+            "$mod, quotedbl, workspace, 3"
+            "$mod, apostrophe, workspace, 4"
+            "$mod, parenleft, workspace, 5"
+            "$mod, minus, workspace, 6"
+            "$mod, egrave, workspace, 7"
+            "$mod, underscore, workspace, 8"
+            "$mod, ccedilla, workspace, 9"
+            "$mod, agrave, workspace, 10"
+          ];
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
