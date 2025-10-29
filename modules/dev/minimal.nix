@@ -16,7 +16,6 @@
 	fastfetch
     ];
 
-    programs.zsh.enable = true;
 
 }
 
