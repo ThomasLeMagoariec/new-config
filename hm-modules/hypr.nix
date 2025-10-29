@@ -6,6 +6,7 @@
       bind =
           [
             "$mod, F, exec, kitty"
+            "$mod, R, exec, 'wofi --show run'"
             ", Print, exec, grimblast copy area"
           ]
           ++ (
