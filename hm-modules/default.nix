@@ -5,6 +5,7 @@
 		./nixvim
         ./zsh.nix
         ./dotfiles.nix
+        ./hypr.nix
 	];
 }
 

@@ -10,6 +10,7 @@
 
   home.packages = [
 	pkgs.cbonsai
+    pkgs.firefox
   ];
 
   home.stateVersion = "25.05";
