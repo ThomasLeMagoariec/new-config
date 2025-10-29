@@ -12,6 +12,7 @@
 	pkgs.cbonsai
     pkgs.firefox
     pkgs.meslo-lgs-nf
+    pkgs.wofi
   ];
 
   home.stateVersion = "25.05";
