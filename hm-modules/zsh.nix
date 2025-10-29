@@ -16,5 +16,7 @@
                 { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } 
             ];
         };
+
+        extraConfig = ''POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=True'';
     };
 }
