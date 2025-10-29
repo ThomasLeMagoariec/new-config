@@ -8,10 +8,11 @@
 			url = "github:nix-community/home-manager/release-25.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		nixvim.url = "github:nix-community/nixvim";
 	};
 
 
-	outputs = { self, nixpkgs, home-manager, ... }:
+	outputs = { self, nixpkgs, home-manager, nixvim, ... }:
 	let
 		lib = nixpkgs.lib;
 	in {
@@ -23,7 +24,10 @@
 		};
 		homeConfigurations.thomas = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.x86_64-linux;
-			modules = [ ./hosts/laptop/home.nix ];
+			modules = [
+				nixvim.homeManagerModules.nixvim
+				./hosts/laptop/home.nix
+			];
 		};
 	};
 }
