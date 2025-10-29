@@ -22,7 +22,7 @@
 			};
 		};
 		homeConfigurations.thomas = home-manager.lib.homeManagerConfiguration {
-			pkgs = nix.legacyPackages.x86_64-linux;
+			pkgs = nixpkgs.legacyPackages.x86_64-linux;
 			modules = [ ./hosts/laptop/home.nix ];
 		};
 	};
