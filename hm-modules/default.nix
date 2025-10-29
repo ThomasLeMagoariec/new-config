@@ -3,6 +3,7 @@
 {
 	imports = [
 		./nixvim
+        ./zsh.nix
 	];
 }
 
