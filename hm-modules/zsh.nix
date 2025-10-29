@@ -7,6 +7,7 @@
 
         shellAliases = {
             test = "echo bite";
+            bite = "echo heyy";
         };
     };
 }
