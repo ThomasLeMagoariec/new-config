@@ -5,7 +5,7 @@
         config = {
             globals.mapleader = " ";
         
-            colorscheme = catppuccin;
+            colorscheme = "catppuccin";
         
             opts = {
                 number = true;
