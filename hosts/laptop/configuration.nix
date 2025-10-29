@@ -41,11 +41,10 @@
   services.xserver.enable = true;
 
 
-  # Enable the GNOME Desktop Environment.
   services.displayManager.sddm.enable = true;
   programs.hyprland.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
