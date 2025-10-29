@@ -17,6 +17,6 @@
             ];
         };
 
-        extraConfig = ''POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=True'';
+        shellInit = ''POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=True'';
     };
 }
