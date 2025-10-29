@@ -11,6 +11,7 @@
   home.packages = [
 	pkgs.cbonsai
     pkgs.firefox
+    pkgs.meslo-lgs-nf
   ];
 
   home.stateVersion = "25.05";
