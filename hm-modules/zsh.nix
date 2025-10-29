@@ -9,5 +9,10 @@
             test = "echo bite";
             bite = "echo heyy";
         };
+
+        oh-my-zsh = {
+            enable = true;
+            theme = "powerlevel10k";
+        };
     };
 }
