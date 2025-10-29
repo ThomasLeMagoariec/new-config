@@ -9,10 +9,12 @@
             test = "echo bite";
             bite = "echo heyy";
         };
-
-        oh-my-zsh = {
+        zplug = {
             enable = true;
-            theme = "powerlevel10k";
+            plugins = [
+                { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
+                { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } 
+            ];
         };
     };
 }
