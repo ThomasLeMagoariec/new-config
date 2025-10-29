@@ -25,7 +25,7 @@
 		homeConfigurations.thomas = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.x86_64-linux;
 			modules = [
-				nixvim.homeManagerModules.nixvim
+				nixvim.homeModules.nixvim
 				./hosts/laptop/home.nix
 			];
 		};
