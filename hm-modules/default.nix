@@ -4,6 +4,7 @@
 	imports = [
 		./nixvim
         ./zsh.nix
+        ./dotfiles.nix
 	];
 }
 
