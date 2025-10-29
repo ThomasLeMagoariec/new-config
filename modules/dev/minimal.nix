@@ -13,6 +13,7 @@
 
         pyright                 # python LSP
         nix-ld
+	fastfetch
     ];
 
     programs.zsh.enable = true;
