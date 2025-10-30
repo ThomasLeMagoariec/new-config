@@ -19,6 +19,7 @@
 		nixosConfigurations = {
 			laptop = lib.nixosSystem {
 				system = "x86_64-linux";
+                pkgs = import nixpkgs {config.allowUnfree = true;};
 				modules = [ ./hosts/laptop/configuration.nix ];
 			};
 		};
