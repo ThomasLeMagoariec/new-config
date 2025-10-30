@@ -49,7 +49,6 @@
 
   services.displayManager.sddm = {
     wayland.enable = true;
-    theme = "catppuccin-sddm-corners";
   };
 
   # Configure keymap in X11
@@ -95,7 +94,6 @@
      git
      wget
      home-manager
-     catppuccin-sddm-corners
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
