@@ -23,7 +23,6 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -50,8 +49,7 @@
 
   services.displayManager.sddm = {
     wayland.enable = true;
-    theme = "catppuccin-mocha-mauve";
-    package = pkgs.kdePackages.sddm;
+    theme = "catppuccin-sddm-corners";
   };
 
   # Configure keymap in X11
@@ -97,6 +95,7 @@
      git
      wget
      home-manager
+     catppuccin-sddm-corners
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
