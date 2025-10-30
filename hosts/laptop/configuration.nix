@@ -50,9 +50,8 @@
 
   services.displayManager.sddm = {
     wayland.enable = true;
-    theme = "astronaut";
-    extraPackages = with pkgs; [ sddm-astronaut ];
-
+    theme = "catppuccin-mocha-mauve";
+    package = pkgs.kdePackages.sddm;
   };
 
   # Configure keymap in X11
