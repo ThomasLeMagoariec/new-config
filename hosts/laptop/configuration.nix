@@ -46,7 +46,15 @@
   services.displayManager.sddm.enable = true;
   programs.hyprland.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+
+
+  services.displayManager.sddm = {
+    wayland.enable = true;
+    theme = "astronaut";
+    extraPackages = with pkgs [ sddm-astronaut ];
+
+  };
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
