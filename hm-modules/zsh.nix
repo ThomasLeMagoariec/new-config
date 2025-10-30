@@ -15,6 +15,7 @@
             gP = "git pull";
             gs = "git status";
 
+            code = "cd ~/code";
             e = "exit";
         };
         zplug = {
