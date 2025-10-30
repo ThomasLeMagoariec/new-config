@@ -15,6 +15,7 @@
     pkgs.wofi
     pkgs.chromium
     pkgs.brave
+    pkgs.discord
   ];
 
   home.stateVersion = "25.05";

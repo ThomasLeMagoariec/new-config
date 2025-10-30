@@ -8,6 +8,7 @@
       bind =
           [
             "$mod, F, exec, kitty"
+            "$mod, L, exec, hyprlock"
             "$mod, R, exec, wofi --show run"
             ", Print, exec, grimblast copy area"
             "$mod, ampersand, workspace, 1"
