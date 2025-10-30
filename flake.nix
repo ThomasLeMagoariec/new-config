@@ -23,7 +23,7 @@
 			};
 		};
 		homeConfigurations.thomas = home-manager.lib.homeManagerConfiguration {
-			pkgs = nixpkgs.legacyPackages.x86_64-linux;
+            pkgs = import nixpkgs { inherit system; config.allowUnfree = true;};
 			modules = [
 				nixvim.homeModules.nixvim
 				./hosts/laptop/home.nix
