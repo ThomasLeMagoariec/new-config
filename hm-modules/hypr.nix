@@ -59,5 +59,6 @@
 
   home.packages = with pkgs; [
     hyprlock
+    waybar
   ];
 }
