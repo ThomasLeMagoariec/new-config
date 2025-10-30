@@ -40,7 +40,7 @@
               }
       }
 
-      monitor=eDP-1,,1.0
+      monitor=eDP-1,1920x1080,0x0,1.0
   '';
   # Optional, hint Electron apps to use Wayland:
   # home.sessionVariables.NIXOS_OZONE_WL = "1";
