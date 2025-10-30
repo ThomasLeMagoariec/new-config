@@ -1,0 +1,36 @@
+name: Nix Build Check
+
+on:
+  push:
+    branches:
+      - dev  # This triggers the workflow only when you push to the 'dev' branch
+  pull_request:
+    branches:
+      - dev  # This will also trigger the workflow for PRs targeting the 'dev' branch
+
+jobs:
+  nix-build:
+    runs-on: ubuntu-latest  # Use an Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Nix
+        uses: cachix/install-nix-action@v15
+        with:
+          nix_version: 2.7.1  # You can specify a different version if needed
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl
+          curl -L https://nixos.org/nix/install | sh
+
+      - name: Ensure Nix is installed
+        run: nix --version
+
+      - name: Build Nix configuration
+        run: nix build .#your-package-name  # Adjust this to the correct package or flake to build
+
+
