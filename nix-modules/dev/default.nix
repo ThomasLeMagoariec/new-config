@@ -3,6 +3,7 @@
 {
 	imports = [
 		./minimal.nix
+        ./vpn.nix
 	];
 }
 

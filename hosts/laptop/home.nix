@@ -18,6 +18,7 @@
     pkgs.chromium
     pkgs.brave
     pkgs.discord
+    pkgs.tree
   ];
 
   home.stateVersion = "25.05";
