@@ -1,10 +1,12 @@
 { pkgs, ... }: {
   services.hyprpaper.enable = true;
+  services.hypridle.enable = true;
 
   programs.kitty.enable = true; # required for the default Hyprland config
 
   wayland.windowManager.hyprland.enable = true; # enable Hyprland
   wayland.windowManager.hyprland.settings = {
+      "exec-once" = "waybar & hyprpaper &";
       "$mod" = "SUPER";
       bind =
           [
