@@ -6,7 +6,7 @@
 
   wayland.windowManager.hyprland.enable = true; # enable Hyprland
   wayland.windowManager.hyprland.settings = {
-      "exec-once" = "waybar & hyprpaper &";
+      "exec-once" = "waybar & hyprpaper & hypridle &";
       "$mod" = "SUPER";
       bind =
           [
@@ -65,5 +65,6 @@
     hyprlock
     waybar
     hypridle
+    brightnessctl # used by hypridle
   ];
 }
