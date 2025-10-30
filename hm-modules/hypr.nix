@@ -54,6 +54,11 @@
               }
       }
 
+      decoration {
+            active_opacity = 0.8
+            inactive_opacity = 0.8
+      }
+
       monitor=eDP-1,1920x1080,0x0,1.2
   '';
 
