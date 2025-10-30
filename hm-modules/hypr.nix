@@ -24,21 +24,23 @@
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
-        input {
-    kb_layout = fr
-    kb_variant =
-    kb_model =
-    kb_options =
-    kb_rules =
+      input {
+          kb_layout = fr
+              kb_variant =
+              kb_model =
+              kb_options =
+              kb_rules =
 
-    follow_mouse = 1
+              follow_mouse = 1
 
-    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+              sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
-    touchpad {
-        natural_scroll = true
-    }
-}
+              touchpad {
+                  natural_scroll = true
+              }
+      }
+
+      monitor=eDP-1,,1.0
   '';
   # Optional, hint Electron apps to use Wayland:
   # home.sessionVariables.NIXOS_OZONE_WL = "1";
