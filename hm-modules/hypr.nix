@@ -2,6 +2,7 @@
   services.hyprpaper.enable = true;
 
   programs.kitty.enable = true; # required for the default Hyprland config
+
   wayland.windowManager.hyprland.enable = true; # enable Hyprland
   wayland.windowManager.hyprland.settings = {
       "$mod" = "SUPER";
@@ -57,8 +58,10 @@
   # Optional, hint Electron apps to use Wayland:
   # home.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # extra hypr packages
   home.packages = with pkgs; [
     hyprlock
     waybar
+    hypridle
   ];
 }
