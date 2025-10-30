@@ -8,6 +8,8 @@
 	../../hm-modules
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = [
 	pkgs.cbonsai
     pkgs.firefox
