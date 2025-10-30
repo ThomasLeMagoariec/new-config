@@ -19,12 +19,11 @@
 		nixosConfigurations = {
 			laptop = lib.nixosSystem {
 				system = "x86_64-linux";
-                pkgs = import nixpkgs {config.allowUnfree = true;};
 				modules = [ ./hosts/laptop/configuration.nix ];
 			};
 		};
 		homeConfigurations.thomas = home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs {config.allowUnfree = true;};
+            pkgs = nixpkgs.legacyPackages.x86_64-linux;
 			modules = [
 				nixvim.homeModules.nixvim
 				./hosts/laptop/home.nix
