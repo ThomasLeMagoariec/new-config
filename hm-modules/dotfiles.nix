@@ -11,7 +11,5 @@
         ".config/waybar/style.css".source = ../dotfiles/waybar/style.css;
 
         ".config/hypr/wallpaper.jpg".source = ../dotfiles/static/wallpaper.jpg;
-
-        ".config/quickshell/shell.qml".source = ../dotfiles/quickshell.qml;
     };
 }
