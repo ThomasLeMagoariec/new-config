@@ -10,11 +10,11 @@
 
   programs.hypridle = {
     enable = true;
-    idleTimeout = "30";
-    keyboardTimeout = "30";
-    lockTimeout = "60";
-    screenTimeout = "180";
-    suspendTimeout = "1800";
+    idleTimeout = 30;
+    keyboardTimeout = 30;
+    lockTimeout = 60;
+    screenTimeout = 180;
+    suspendTimeout = 1800;
   };
 
   programs.hyprpaper = {
@@ -34,8 +34,9 @@
             "$mod, L, exec, hyprlock"
             "$mod, R, exec, wofi --show run"
             "$mod, C, killactive"
+            "$mod, V, togglefloating"
             "$mod, M, exit"
-            ", Print, exec, grimblast copy area"
+            ", Print, exec, hyprshot -m output --clipboard-only"
             "$mod, ampersand, workspace, 1"
             "$mod, eacute, workspace, 2"
             "$mod, quotedbl, workspace, 3"
@@ -111,6 +112,7 @@
     hyprlock
     waybar
     hypridle
+    hyprshot
     brightnessctl # used by hypridle
   ];
 }
