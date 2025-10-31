@@ -9,8 +9,8 @@
         ".config/waybar/network_menu.xml".source = ../dotfiles/waybar/network_menu.xml;
         ".config/waybar/config.jsonc".source = ../dotfiles/waybar/config.jsonc;
         ".config/waybar/style.css".source = ../dotfiles/waybar/style.css;
-        ".config/hypr/hypridle.conf".source = ../dotfiles/hypr/hypridle.conf;
-        ".config/hypr/hyprpaper.conf".source = ../dotfiles/hypr/hyprpaper.conf;
+
+        #".config/hypr/hyprpaper.conf".source = ../dotfiles/hypr/hyprpaper.conf;
         ".config/hypr/wallpaper.jpg".source = ../dotfiles/static/wallpaper.jpg;
     };
 }

@@ -4,6 +4,7 @@
 	imports = [
 		./minimal.nix
         ./vpn.nix
+        ./utilities.nix
 	];
 }
 

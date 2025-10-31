@@ -1,6 +1,26 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
+
+  imports = [
+    ./pkgs/opt-hypridle.nix
+    ./pkgs/opt-hyprpaper.nix
+  ];
+
   services.hyprpaper.enable = true;
   services.hypridle.enable = true;
+
+  programs.hypridle = {
+    enable = true;
+    idleTimeout = "30";
+    keyboardTimeout = "30";
+    lockTimeout = "60";
+    screenTimeout = "180";
+    suspendTimeout = "1800";
+  };
+
+  programs.hyprpaper = {
+    enable = true;
+    wallpaper = ../dotfiles/static/wallpaper.jpg;
+  };
 
   programs.kitty.enable = true; # required for the default Hyprland config
 
