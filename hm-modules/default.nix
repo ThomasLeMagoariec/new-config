@@ -6,7 +6,6 @@
         ./zsh.nix
         ./dotfiles.nix
         ./hypr.nix
-        ./git.nix
 	];
 }
 

@@ -9,11 +9,11 @@
 
   programs.hypridle = {
     enable = true;
-    idleTimeout = 30;
-    keyboardTimeout = 30;
-    lockTimeout = 60;
-    screenTimeout = 180;
-    suspendTimeout = 1800;
+    idleTimeout = "30";
+    keyboardTimeout = "30";
+    lockTimeout = "60";
+    screenTimeout = "180";
+    suspendTimeout = "1800";
   };
 
   programs.kitty.enable = true; # required for the default Hyprland config

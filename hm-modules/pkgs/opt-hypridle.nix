@@ -11,32 +11,32 @@ let
         };
 
         idleTimeout = mkOption {
-            type = types.int;
-            default = 300;
+            type = types.str;
+            default = "300";
             description = "The time in seconds before going idle (default: 300s)";
         };
 
         keyboardTimeout = mkOption {
-            type = types.int;
-            default = 300;
+            type = types.str;
+            default = "300";
             description = "The time in seconds before turning off the keyboard backlight";
         };
 
         lockTimeout = mkOption {
-            type = types.int;
-            default = 300;
+            type = types.str;
+            default = "300";
             description = "The time in seconds before locking the screen";
         };
    
         screenTimeout = mkOption {
-            type = type.int;
-            default = 300;
+            type = types.str;
+            default = "300";
             description = "The time in seconds before the screen turns off";
         };
 
         suspendTimeout = mkOption {
-            type = types.int;
-            default = 300;
+            type = types.str;
+            default = "300";
             description = "The time in seconds before suspending PC";
         };
 
@@ -45,7 +45,7 @@ let
 in
 
 {
-    home.packages = [ pkgs.hypridle ];
+    config.home.packages = [ pkgs.hypridle ];
 
     options = {
         programs.hypridle = {
@@ -56,7 +56,6 @@ in
             };
             
             idleTimeout = hypridleOptions.idleTimeout;
-            poweroffOnIdle = hypridleOptions.poweroffOnIdle;
             keyboardTimeout = hypridleOptions.keyboardTimeout;
             lockTimeout = hypridleOptions.lockTimeout;
             screenTimeout = hypridleOptions.screenTimeout;
