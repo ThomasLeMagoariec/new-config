@@ -11,32 +11,32 @@ let
         };
 
         idleTimeout = mkOption {
-            type = types.str;
-            default = "300";
+            type = types.int;
+            default = 300;
             description = "The time in seconds before going idle (default: 300s)";
         };
 
         keyboardTimeout = mkOption {
-            type = types.str;
-            default = "300";
+            type = types.int;
+            default = 300;
             description = "The time in seconds before turning off the keyboard backlight";
         };
 
         lockTimeout = mkOption {
-            type = types.str;
-            default = "300";
+            type = types.int;
+            default = 300;
             description = "The time in seconds before locking the screen";
         };
    
         screenTimeout = mkOption {
-            type = types.str;
-            default = "300";
+            type = types.int;
+            default = 300;
             description = "The time in seconds before the screen turns off";
         };
 
         suspendTimeout = mkOption {
-            type = types.str;
-            default = "300";
+            type = types.int;
+            default = 300;
             description = "The time in seconds before suspending PC";
         };
 
@@ -73,30 +73,30 @@ general {
 }
 
 listener {
-    timeout = ${config.programs.hypridle.idleTimeout}
+    timeout = ${toString config.programs.hypridle.idleTimeout}
     on-timeout = brightnessctl -s set 10
     on-resume = brightnessctl -r
 }
 
 listener { 
-    timeout = ${config.programs.hypridle.keyboardTimeout}
+    timeout = ${toString config.programs.hypridle.keyboardTimeout}
     on-timeout = brightnessctl -sd rgb:kbd_backlight set 0
     on-resume = brightnessctl -rd rgb:kbd_backlight
 }
 
 listener {
-    timeout = ${config.programs.hypridle.lockTimeout}
+    timeout = ${toString config.programs.hypridle.lockTimeout}
     on-timeout = loginctl lock-session
 }
 
 listener {
-    timeout = ${config.programs.hypridle.screenTimeout}
+    timeout = ${toString config.programs.hypridle.screenTimeout}
     on-timeout = hyprctl dispatch dpms off
     on-resume = hyprctl dispatch dpms on && brightnessctl -r
 }
 
 listener {
-    timeout = ${config.programs.hypridle.suspendTimeout}
+    timeout = ${toString config.programs.hypridle.suspendTimeout}
     on-timeout = systemctl suspend
 }
         '';
