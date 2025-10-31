@@ -21,4 +21,4 @@ jobs:
           nix_path: nixpkgs=channel:nixos-25.05
 
       - name: Check that configuration builds
-        run: nix build .#nixosConfigurations.thomas.config.system.build.toplevel
+        run: nix build .#nixosConfigurations.laptop.config.system.build.toplevel
