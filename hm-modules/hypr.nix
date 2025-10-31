@@ -35,7 +35,7 @@
             "$mod, R, exec, wofi --show run"
             "$mod, C, killactive"
             "$mod, M, exit"
-            ", Print, exec, grimblast copy area"
+            ", Print, exec, hyprshot -m output --clipboard-only"
             "$mod, ampersand, workspace, 1"
             "$mod, eacute, workspace, 2"
             "$mod, quotedbl, workspace, 3"
@@ -111,6 +111,7 @@
     hyprlock
     waybar
     hypridle
+    hyprshot
     brightnessctl # used by hypridle
   ];
 }
