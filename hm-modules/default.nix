@@ -6,6 +6,13 @@
         ./zsh.nix
         ./dotfiles.nix
         ./hypr.nix
+        ./mako.nix
 	];
+
+    home.packages = with pkgs; [
+        eww
+        libnotify
+        mako
+    ];
 }
 
