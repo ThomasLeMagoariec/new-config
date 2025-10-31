@@ -20,3 +20,5 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-25.05
 
+      - name: Check that configuration builds
+        run: nix build .#nixosConfigurations.thomas.config.system.build.toplevel
