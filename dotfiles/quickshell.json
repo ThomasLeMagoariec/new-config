@@ -1,0 +1,75 @@
+{
+  "panels": [
+    {
+      "position": "top",
+      "height": 28,
+      "background": "#F5F5F7CC",
+      "blur": 20,
+      "widgets": [
+        {
+          "type": "box",
+          "orientation": "horizontal",
+          "spacing": 10,
+          "margin": [10, 0, 0, 0],
+          "widgets": [
+            {
+              "type": "text",
+              "text": "",
+              "font": "SF Pro Display Bold 14",
+              "color": "#000000DD"
+            },
+            {
+              "type": "menu",
+              "items": [
+                { "text": "About This Mac", "command": "gnome-control-center info-overview" },
+                { "text": "System Settings", "command": "gnome-control-center" },
+                { "text": "Sleep", "command": "systemctl suspend" },
+                { "text": "Restart", "command": "systemctl reboot" },
+                { "text": "Shut Down", "command": "systemctl poweroff" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "spacer"
+        },
+        {
+          "type": "text",
+          "text": "%a %b %d  %I:%M %p",
+          "interval": 30,
+          "command": "date '+%a %b %d  %I:%M %p'",
+          "font": "SF Pro Display 13",
+          "color": "#000000DD",
+          "alignment": "center"
+        },
+        {
+          "type": "spacer"
+        },
+        {
+          "type": "box",
+          "orientation": "horizontal",
+          "spacing": 10,
+          "margin": [0, 0, 10, 0],
+          "widgets": [
+            {
+              "type": "text",
+              "text": "🔊",
+              "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+            },
+            {
+              "type": "text",
+              "text": "📶",
+              "tooltip": "Network status"
+            },
+            {
+              "type": "text",
+              "text": "🔋",
+              "command": "gnome-power-statistics"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
