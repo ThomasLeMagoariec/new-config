@@ -12,6 +12,6 @@
 
         ".config/hypr/wallpaper.jpg".source = ../dotfiles/static/wallpaper.jpg;
 
-        ".config/quickshell/config.json".source = ../dotfiles/quickshell.json;
+        ".config/quickshell/shell.qml".source = ../dotfiles/quickshell.qml;
     };
 }
