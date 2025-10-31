@@ -39,7 +39,7 @@ in
 preload = ~/.config/hypr/wallpaper.jpg
 wallpaper = , ~/.config/hypr/wallpaper.jpg
         '';
-        ".config/hypr/wallpaper.jpg".source = config.programs.hyprpaper.wallpaper;
+        home.file.".config/hypr/wallpaper.jpg".source = config.programs.hyprpaper.wallpaper;
     };
     
 }
