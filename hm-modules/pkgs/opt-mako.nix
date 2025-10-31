@@ -37,7 +37,7 @@ let
 
         borderRadius = mkOption {
             type = types.int;
-            default = 10
+            default = 10;
             description = "Border radius";
         };
     };
@@ -55,7 +55,6 @@ in
                 description = "enable or disable mako";
             };
             
-            wallpaper = makoOptions.wallpaper;
             defaultTimeout = makoOptions.defaultTimeout;
             font = makoOptions.font;
             backgroundColor = makoOptions.backgroundColor;
@@ -67,11 +66,11 @@ in
     config = {
         programs.mako.enable = config.programs.mako.enable;
         home.file.".config/mako/config".text = ''
-default-timeout=${config.programs.mako.defaultTimeout}
+default-timeout=${toString config.programs.mako.defaultTimeout}
 font=${config.programs.mako.font}
 background-color=${config.programs.mako.backgroundColor}
 border-color=${config.programs.mako.borderColor}
-border-radius=${config.programs.mako.borderRadius}
+border-radius=${toString config.programs.mako.borderRadius}
         '';
     };
     
