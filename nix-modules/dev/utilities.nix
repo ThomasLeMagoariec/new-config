@@ -1,6 +1,8 @@
 { pkgs, pkgs-unstable, ...}: {
     environment.systemPackages = with pkgs-unstable; [
         playerctl
+        mako
     ];
+
 
 }
