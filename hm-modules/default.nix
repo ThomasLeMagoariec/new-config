@@ -7,5 +7,9 @@
         ./dotfiles.nix
         ./hypr.nix
 	];
+
+    home.packages = with pkgs; [
+        eww
+    ];
 }
 
