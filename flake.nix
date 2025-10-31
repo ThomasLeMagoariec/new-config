@@ -27,7 +27,6 @@
 		};
 		homeConfigurations.thomas = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
 			modules = [
 				nixvim.homeModules.nixvim
 				./hosts/laptop/home.nix
