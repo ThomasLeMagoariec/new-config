@@ -34,6 +34,7 @@
             "$mod, L, exec, hyprlock"
             "$mod, R, exec, wofi --show run"
             "$mod, C, killactive"
+            "$mod, V, togglefloating"
             "$mod, M, exit"
             ", Print, exec, hyprshot -m output --clipboard-only"
             "$mod, ampersand, workspace, 1"
