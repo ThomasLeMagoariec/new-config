@@ -5,10 +5,14 @@
   home.homeDirectory = "/home/thomas";
 
   imports = [
+    ./preferences.nix
 	../../hm-modules
   ];
 
   nixpkgs.config.allowUnfree = true;
+
+  userPrefs.wm = "i3";
+  userPrefs.theme = "nord";
 
   home.packages = [
 	pkgs.cbonsai
