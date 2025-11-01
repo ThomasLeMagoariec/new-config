@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "thomas";
@@ -11,7 +11,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  userPrefs.wm = "i3";
+  userPrefs.wm = "i4";
   userPrefs.theme = "nord";
 
   home.packages = [
@@ -23,7 +23,7 @@
     pkgs.brave
     pkgs.discord
     pkgs.tree
-  ];
+  ] ++ lib.optionals (config.userPrefs.wm == "i3") [ pkgs.lolcat ];
 
   home.stateVersion = "25.05";
 
