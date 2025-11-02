@@ -14,6 +14,11 @@
         libnotify
         mako
         pavucontrol
+        waylandpp
+        wayland
+        pkg-config
+        meson
+        ninja
     ];
 }
 
