@@ -101,6 +101,10 @@ button:hover {
     color: #ffffff;
 }
 
+#custom-apple {
+    font-family: 'SF Pro', 'Helvetica Neue', 'Lucida Grande'
+}
+
 #window,
 #workspaces {
     margin: 0 4px;
