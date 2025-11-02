@@ -13,6 +13,7 @@
         eww
         libnotify
         mako
+        pavucontrol
     ];
 }
 
