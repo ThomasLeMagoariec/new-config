@@ -19,6 +19,7 @@
         pkg-config
         meson
         ninja
+        prismlauncher
     ];
 }
 
