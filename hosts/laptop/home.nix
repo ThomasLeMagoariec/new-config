@@ -11,7 +11,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  userPrefs.wm = "i4";
+  userPrefs.wm = "i3";
   userPrefs.theme = "nord";
 
   home.packages = [

@@ -7,6 +7,7 @@
         ./dotfiles.nix
         ./hypr.nix
         ./mako.nix
+        ./dev.nix
 	];
 
     home.packages = with pkgs; [
@@ -19,6 +20,7 @@
         pkg-config
         meson
         ninja
+        prismlauncher
     ];
 }
 
