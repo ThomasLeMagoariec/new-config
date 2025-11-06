@@ -1,6 +1,6 @@
 { pkgs, config, ... }: {
 
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     quarkus
     docker
     maven
