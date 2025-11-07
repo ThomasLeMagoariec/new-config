@@ -79,6 +79,10 @@ cmp.setup({
                 kotlin_language_server.enable = true;
             };
         };
+        
+        emmet = {
+            enable = true;
+        };
 
         telescope = {
             enable = true;
