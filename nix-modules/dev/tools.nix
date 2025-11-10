@@ -5,6 +5,7 @@
     docker
     maven
     jdk21
+    gnumake
   ];
 
   virtualisation.docker = {
