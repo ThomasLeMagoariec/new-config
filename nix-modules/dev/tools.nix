@@ -13,6 +13,6 @@
       enable = true;
   };
 
-  users.users.julien.extraGroups = [ "docker" ];
+  users.users.nekochira.extraGroups = [ "docker" ];
 
 }

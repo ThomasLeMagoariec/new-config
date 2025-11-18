@@ -25,9 +25,9 @@
 				modules = [ ./hosts/laptop/configuration.nix ];
                 specialArgs = { inherit pkgs-unstable; };
 			};
-			julien = lib.nixosSystem {
+			nekochira= lib.nixosSystem {
 				system = "x86_64-linux";
-				modules = [ ./hosts/julien/configuration.nix ];
+				modules = [ ./hosts/nekochira/configuration.nix ];
                 specialArgs = { inherit pkgs-unstable; };
 			};
 		};
@@ -35,7 +35,7 @@
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
 			modules = [
 				nixvim.homeModules.nixvim
-				./hosts/julien/home.nix
+				./hosts/nekochira/home.nix
 			];
 		};
 	};
