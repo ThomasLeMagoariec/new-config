@@ -1,14 +1,7 @@
 { pkgs, config, ... }: {
-
+  # extra hypr packages
   home.packages = with pkgs; [
-    quarkus
-    docker
-    maven
-    jdk21
+    qbittorrent
+    ipmitool
   ];
-
-  virtualisation.docker = {
-      enable = true;
-  };
-
 }

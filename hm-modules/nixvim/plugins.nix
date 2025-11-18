@@ -76,7 +76,12 @@ cmp.setup({
                 ccls.enable = true;
                 pyright.enable = true;
                 html.enable = true;
+                kotlin_language_server.enable = true;
             };
+        };
+        
+        emmet = {
+            enable = true;
         };
 
         telescope = {

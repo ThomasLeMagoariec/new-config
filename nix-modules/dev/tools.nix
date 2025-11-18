@@ -5,10 +5,14 @@
     docker
     maven
     jdk21
+    gnumake
+    pnpm
   ];
 
   virtualisation.docker = {
       enable = true;
   };
+
+  users.users.thomas.extraGroups = [ "docker" ];
 
 }
