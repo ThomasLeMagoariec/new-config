@@ -25,6 +25,11 @@
 				modules = [ ./hosts/laptop/configuration.nix ];
                 specialArgs = { inherit pkgs-unstable; };
 			};
+			julien = lib.nixosSystem {
+				system = "x86_64-linux";
+				modules = [ ./hosts/laptop/configuration.nix ];
+                specialArgs = { inherit pkgs-unstable; };
+			};
 		};
 		homeConfigurations.nekochira= home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
