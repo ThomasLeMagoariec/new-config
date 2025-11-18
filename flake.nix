@@ -26,7 +26,7 @@
                 specialArgs = { inherit pkgs-unstable; };
 			};
 		};
-		homeConfigurations.thomas = home-manager.lib.homeManagerConfiguration {
+		homeConfigurations.nekochira= home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
 			modules = [
 				nixvim.homeModules.nixvim
