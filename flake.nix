@@ -27,7 +27,7 @@
 			};
 			julien = lib.nixosSystem {
 				system = "x86_64-linux";
-				modules = [ ./hosts/laptop/configuration.nix ];
+				modules = [ ./hosts/julien/configuration.nix ];
                 specialArgs = { inherit pkgs-unstable; };
 			};
 		};
@@ -35,7 +35,7 @@
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
 			modules = [
 				nixvim.homeModules.nixvim
-				./hosts/laptop/home.nix
+				./hosts/julien/home.nix
 			];
 		};
 	};
