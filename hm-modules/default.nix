@@ -21,6 +21,7 @@
         meson
         ninja
         prismlauncher
+        libreoffice
     ];
 }
 
