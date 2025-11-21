@@ -7,7 +7,10 @@
     jdk21
     gnumake
     pnpm
+    nix-ld
   ];
+
+  programs.nix-ld.enable = true;
 
   virtualisation.docker = {
       enable = true;
