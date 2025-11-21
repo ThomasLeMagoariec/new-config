@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../nix-modules/dev
+      ../../nix-modules
     ];
 
   # Use the systemd-boot EFI boot loader.

@@ -8,6 +8,7 @@
         ./hypr.nix
         ./mako.nix
         ./dev.nix
+        ./yazi.nix
 	];
 
     home.packages = with pkgs; [
@@ -21,6 +22,7 @@
         meson
         ninja
         prismlauncher
+        libreoffice
     ];
 }
 
