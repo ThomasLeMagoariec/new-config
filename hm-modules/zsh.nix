@@ -29,6 +29,7 @@
         initContent = ''
             source ~/.p10k.zsh
             eval "$(zoxide init zsh)"
+            export EDITOR=nvim
         '';
     };
 }
