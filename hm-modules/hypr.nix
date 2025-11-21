@@ -17,7 +17,7 @@
     suspendTimeout = 1800;
   };
 
-  programs.hyprpaper = {
+programs.hyprpaper = {
     enable = true;
     wallpaper = ../dotfiles/static/wallpaper.jpg;
   };
@@ -116,4 +116,10 @@
     brightnessctl # used by hypridle
     kitty
   ];
+  
+  home.file = {
+    ".config/hypr/hyprlock.conf".source = ../dotfiles/hypr/hyplock.conf;
+    ".config/hypr/mocha.conf".source = ../dotfiles/hypr/mocha.conf;
+
+  };
 }
