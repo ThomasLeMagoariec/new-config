@@ -22,7 +22,7 @@
     wallpaper = ../dotfiles/static/wallpaper.jpg;
   };
 
-  programs.kitty.enable = true; # required for the default Hyprland config
+  # programs.kitty.enable = true; # required for the default Hyprland config
 
   wayland.windowManager.hyprland.enable = true; # enable Hyprland
   wayland.windowManager.hyprland.settings = {
@@ -114,5 +114,6 @@
     hypridle
     hyprshot
     brightnessctl # used by hypridle
+    kitty
   ];
 }
