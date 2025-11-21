@@ -6,8 +6,8 @@
 
   services.udev.extraRules = ''
 # Vial/VIA keyboards
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="feed", MODE="0666"
-      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="feed", MODE="0666"
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="4653", MODE="0666"
+      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="4653", MODE="0666"
   '';
 
 
