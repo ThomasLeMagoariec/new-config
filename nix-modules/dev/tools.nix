@@ -1,14 +1,19 @@
-{ pkgs, config, ... }: {
+{ pkgs, pkgs-unstable, config, ... }: {
 
-  environment.systemPackages = with pkgs; [
-    quarkus
-    docker
-    maven
-    jdk21
-    gnumake
-    pnpm
-    nix-ld
-  ];
+    environment.systemPackages =
+        (with pkgs; [
+            quarkus
+            docker
+            maven
+            jdk21
+            gnumake
+            pnpm
+            nix-ld
+        ])
+        ++ (with pkgs-unstable; [
+            playerctl
+            gnumake
+        ]);
 
   programs.nix-ld.enable = true;
 
