@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/thomas";
 
   imports = [
-    ./preferences.nix
+    ../../global/preferences.nix
 	../../hm-modules
   ];
 
