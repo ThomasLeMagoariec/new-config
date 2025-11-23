@@ -14,10 +14,11 @@
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, name, ... }:
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
 	let
         preferences = {
             name = "Thomas";
+            theme = "catppuccin";
         }; 
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;

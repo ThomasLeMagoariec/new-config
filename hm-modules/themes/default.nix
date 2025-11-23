@@ -1,9 +1,8 @@
-{ config, lib, pkgs, host ... }:
+{ config, lib, pkgs, host, preferences, ... }:
 
 {
 	imports = [
-        ../../global/preferences.nix
-	] ++ lib.optionals (preferences == "catppuccin") [ ./catppuccin ];
+	] ++ lib.optionals (preferences.theme == "catppuccin") [ ./catppuccin ];
 
 }
 
