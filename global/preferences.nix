@@ -15,6 +15,12 @@ let
             default = "catppuccin";
             description = "which theme to use";
         };
+
+        shell = mkOption {
+            type = types.str;
+            default = "catppuccin";
+            description = "which shell to use";
+        };
     };
 
 in

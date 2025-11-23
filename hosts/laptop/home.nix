@@ -11,8 +11,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  userPrefs.wm = "i3";
-  userPrefs.theme = "nord";
+  userPrefs = {
+    wm = "i3"
+    theme = "catppuccin"
+    shell = "zsh"
+  };
 
   home.packages = [
 	pkgs.cbonsai
