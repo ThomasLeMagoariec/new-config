@@ -1,8 +1,8 @@
 { config, pkgs, lib, preferences, ... }:
 
 {
-  home.username = "thomas";
-  home.homeDirectory = "/home/thomas";
+  home.username = preferences.username;
+  home.homeDirectory = "/home/"+preferences.username;
 
 
   imports = [

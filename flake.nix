@@ -18,7 +18,9 @@
 	let
         preferences = {
             name = "Thomas";
+            username = "thomas";
             theme = "catppuccin";
+            shell = "zsh";
         }; 
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
