@@ -13,9 +13,8 @@
   imports = [
     ../../global/preferences.nix
 	../../hm-modules
-  ] ++ lib.optionals (preferences.theme == "catppuccin") [
-    ../../hm-modules/themes/catppuccin
-    ];
+  ];
+
 
   nixpkgs.config.allowUnfree = true;
 
