@@ -1,7 +1,7 @@
-{ pkgs, lib, config, name, ... }: {
+{ pkgs, lib, config, preferences, ... }: {
 
   home.packages = with pkgs; [
     pavucontrol
     pkg-config
-  ] ++ lib.optionals (name == "Thomas") [ cowsay ];
+  ] ++ lib.optionals (preferences.name == "Thomas") [ cowsay ];
 }

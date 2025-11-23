@@ -16,7 +16,9 @@
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, name, ... }:
 	let
-        name = "Thomas";
+        preferences = {
+            name = "Thomas";
+        }; 
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
 	in {
@@ -34,7 +36,7 @@
 				./hosts/laptop/home.nix
 			];
             extraSpecialArgs = {
-                inherit name;
+                inherit preferences;
             };
 		};
 	};
