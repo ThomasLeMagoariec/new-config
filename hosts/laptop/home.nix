@@ -4,18 +4,21 @@
   home.username = "thomas";
   home.homeDirectory = "/home/thomas";
 
+  preferences = {
+    wm = "i3";
+    theme = "catppuccin";
+    shell = "zsh";
+  };
+
   imports = [
     ../../global/preferences.nix
 	../../hm-modules
-  ];
+  ] ++ lib.optionals (preferences.theme == "catppuccin") [
+    ../../hm-modules/themes/catppuccin
+    ];
 
   nixpkgs.config.allowUnfree = true;
 
-  userPrefs = {
-    wm = "i3"
-    theme = "catppuccin"
-    shell = "zsh"
-  };
 
   home.packages = [
 	pkgs.cbonsai

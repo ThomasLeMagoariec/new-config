@@ -119,7 +119,5 @@ programs.hyprpaper = {
   
   home.file = {
     ".config/hypr/hyprlock.conf".source = ../dotfiles/hypr/hyplock.conf;
-    ".config/hypr/mocha.conf".source = ../dotfiles/hypr/mocha.conf;
-
   };
 }
