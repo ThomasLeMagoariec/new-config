@@ -30,6 +30,7 @@ in
         preferences = {
             wm = preferencesOptions.wm;
             theme = preferencesOptions.theme;
+            shell = preferencesOptions.shell;
         };
     };
 }
