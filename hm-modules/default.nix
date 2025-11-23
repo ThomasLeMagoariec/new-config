@@ -12,19 +12,10 @@
 	];
 
     home.packages = with pkgs; [
-        eww
-        libnotify
-        mako
         pavucontrol
-        waylandpp
-        wayland
         pkg-config
-        meson
-        ninja
         prismlauncher
         libreoffice
-        bottles
-        wine
     ];
 }
 
