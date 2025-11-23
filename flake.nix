@@ -14,8 +14,9 @@
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, name, ... }:
 	let
+        name = "Thomas";
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
 	in {
@@ -32,6 +33,9 @@
 				nixvim.homeModules.nixvim
 				./hosts/laptop/home.nix
 			];
+            extraSpecialArgs = {
+                inherit name;
+            };
 		};
 	};
 }
