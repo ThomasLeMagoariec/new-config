@@ -23,6 +23,8 @@
         ninja
         prismlauncher
         libreoffice
+        bottles
+        wine
     ];
 }
 
