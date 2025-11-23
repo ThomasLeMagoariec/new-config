@@ -3,7 +3,7 @@
 with lib;
 
 let
-    userPrefsOptions = {
+    preferencesOptions = {
         wm = mkOption {
             type = types.str;
             default = "hyprland";
@@ -27,9 +27,9 @@ in
 
 {
     options = {
-        userPrefs = {
-            wm = userPrefsOptions.wm;
-            theme = userPrefsOptions.theme;
+        preferences = {
+            wm = preferencesOptions.wm;
+            theme = preferencesOptions.theme;
         };
     };
 }
