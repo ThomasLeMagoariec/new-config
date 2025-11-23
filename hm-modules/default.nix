@@ -9,13 +9,9 @@
         ./mako.nix
         ./dev.nix
         ./yazi.nix
+        ./utils.nix
+        ./graphical.nix
 	];
 
-    home.packages = with pkgs; [
-        pavucontrol
-        pkg-config
-        prismlauncher
-        libreoffice
-    ];
 }
 
