@@ -3,6 +3,7 @@
 {
 	imports = [
         ./kb.nix
+        ./bluetooth.nix
 	];
 }
 
