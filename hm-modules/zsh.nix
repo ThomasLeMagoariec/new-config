@@ -1,3 +1,4 @@
+{config, preferences, ...}:
 {
     programs.zsh = {
         enable = true;
@@ -29,7 +30,7 @@
         initContent = ''
             source ~/.p10k.zsh
             eval "$(zoxide init zsh)"
-            export EDITOR=nvim
+            export EDITOR=${preferences.editor}
         '';
     };
 }

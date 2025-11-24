@@ -22,6 +22,7 @@
             theme = "catppuccin";
             shell = "zsh";
             wm = "hyprland";
+            editor = "nvim";
         }; 
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
