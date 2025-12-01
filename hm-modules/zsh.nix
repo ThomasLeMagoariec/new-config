@@ -17,6 +17,7 @@
             gs = "git status";
 
             code = "cd ~/code";
+            ls = "ls --color=auto";
             e = "exit";
         };
         zplug = {
