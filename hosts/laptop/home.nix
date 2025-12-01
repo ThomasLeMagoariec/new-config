@@ -22,6 +22,7 @@
     pkgs.brave
     pkgs.discord
     pkgs.tree
+    pkgs.betterdiscordctl
   ];
 
   home.stateVersion = "25.05";
