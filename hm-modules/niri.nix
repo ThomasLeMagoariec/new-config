@@ -6,4 +6,8 @@
     xwayland-satellite
   ];
 
+  home.file = {
+    ".config/niri/config.kdl".source = ../dotfiles/niri.kdl;
+  };
+
 }
