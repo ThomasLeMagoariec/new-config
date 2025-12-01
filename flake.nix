@@ -16,6 +16,14 @@
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
 	let
+        preferences = {
+            name = "Thomas";
+            username = "thomas";
+            theme = "catppuccin";
+            shell = "zsh";
+            wm = "hyprland";
+            editor = "nvim";
+        }; 
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
 	in {
@@ -32,6 +40,9 @@
 				nixvim.homeModules.nixvim
 				./hosts/laptop/home.nix
 			];
+            extraSpecialArgs = {
+                inherit preferences;
+            };
 		};
 	};
 }

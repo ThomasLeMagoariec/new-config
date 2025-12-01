@@ -1,3 +1,4 @@
+{config, preferences, ...}:
 {
     programs.zsh = {
         enable = true;
@@ -16,6 +17,7 @@
             gs = "git status";
 
             code = "cd ~/code";
+            ls = "ls --color=auto";
             e = "exit";
         };
         zplug = {
@@ -29,7 +31,7 @@
         initContent = ''
             source ~/.p10k.zsh
             eval "$(zoxide init zsh)"
-            export EDITOR=nvim
+            export EDITOR=${preferences.editor}
         '';
     };
 }

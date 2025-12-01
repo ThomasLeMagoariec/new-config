@@ -4,6 +4,10 @@
     ./pkgs/opt-mako.nix
   ];
 
+  home.packages = with pkgs; [
+    libnotify
+  ];
+
   services.mako.enable = true;
 
   home.activation.reloadMako = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

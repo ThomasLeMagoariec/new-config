@@ -1,18 +1,17 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, preferences, ... }:
 
 {
-  home.username = "thomas";
-  home.homeDirectory = "/home/thomas";
+  home.username = preferences.username;
+  home.homeDirectory = "/home/"+preferences.username;
+
 
   imports = [
-    ./preferences.nix
 	../../hm-modules
   ];
 
+
   nixpkgs.config.allowUnfree = true;
 
-  userPrefs.wm = "i3";
-  userPrefs.theme = "nord";
 
   home.packages = [
 	pkgs.cbonsai
@@ -23,7 +22,8 @@
     pkgs.brave
     pkgs.discord
     pkgs.tree
-  ] ++ lib.optionals (config.userPrefs.wm == "i3") [ pkgs.lolcat ];
+    pkgs.betterdiscordctl
+  ];
 
   home.stateVersion = "25.05";
 

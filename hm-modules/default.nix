@@ -1,28 +1,18 @@
-{ config, lib, pkgs, host, ... }:
+{ config, lib, pkgs, host, preferences, ... }:
 
 {
 	imports = [
+        ./themes
 		./nixvim
-        ./zsh.nix
         ./dotfiles.nix
-        ./hypr.nix
         ./mako.nix
         ./dev.nix
         ./yazi.nix
-	];
+        ./utils.nix
+        ./graphical.nix
+        ./niri.nix
+	] ++ lib.optionals (preferences.shell == "zsh") [ ./zsh.nix ]
+      ++ lib.optionals (preferences.wm == "hyprland") [ ./hypr.nix ];
 
-    home.packages = with pkgs; [
-        eww
-        libnotify
-        mako
-        pavucontrol
-        waylandpp
-        wayland
-        pkg-config
-        meson
-        ninja
-        prismlauncher
-        libreoffice
-    ];
 }
 
