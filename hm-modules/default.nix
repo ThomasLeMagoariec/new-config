@@ -11,6 +11,7 @@
         ./utils.nix
         ./graphical.nix
         ./niri.nix
+        ./smokeapi.nix
 	] ++ lib.optionals (preferences.shell == "zsh") [ ./zsh.nix ]
       ++ lib.optionals (preferences.wm == "hyprland") [ ./hypr.nix ];
 

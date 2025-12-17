@@ -8,6 +8,9 @@
     grub2
     qemu
     lutris
-    steam
+    gemini-cli
+    copilot-cli
+    ncurses
+    man-pages
   ];
 }
