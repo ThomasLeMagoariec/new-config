@@ -13,8 +13,11 @@
         pyright                 # python LSP
         nix-ld
         fastfetch
+        steam
+        steam-run
     ];
 
+    programs.steam.enable = true;
 
 }
 

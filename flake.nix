@@ -33,15 +33,33 @@
 				modules = [ ./hosts/laptop/configuration.nix ];
                 specialArgs = { inherit pkgs-unstable; };
 			};
+			chanek = lib.nixosSystem {
+				system = "x86_64-linux";
+				modules = [ ./hosts/chanek/configuration.nix ];
+                specialArgs = { inherit pkgs-unstable; };
+			};
 		};
-		homeConfigurations.thomas = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-			modules = [
-				nixvim.homeModules.nixvim
-				./hosts/laptop/home.nix
-			];
-            extraSpecialArgs = {
-                inherit preferences;
+		homeConfigurations = {
+            thomas = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.x86_64-linux;
+                modules = [
+                    nixvim.homeModules.nixvim
+                        ./hosts/laptop/home.nix
+                ];
+                extraSpecialArgs = {
+                    inherit preferences;
+                };
+            };
+
+            chanek = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.x86_64-linux;
+                modules = [
+                    nixvim.homeModules.nixvim
+                        ./hosts/chanek/home.nix
+                ];
+                extraSpecialArgs = {
+                    inherit preferences;
+                };
             };
 		};
 	};
