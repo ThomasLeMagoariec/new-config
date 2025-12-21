@@ -23,14 +23,16 @@
 
     services.displayManager.sddm.enable = true;
     programs.hyprland.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
+    # services.xserver.desktopManager.gnome.enable = true;
     services.desktopManager.plasma6.enable = true;
 
     services.displayManager.sddm = {
         wayland.enable = true;
     };
 
-
+    services.xserver = {
+        xkb.layout = "fr";
+    };
     users.users.thomas = {
         ignoreShellProgramCheck = true;
         shell = pkgs.zsh;
