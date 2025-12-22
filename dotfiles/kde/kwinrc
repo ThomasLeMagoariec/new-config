@@ -1,0 +1,17 @@
+[Desktops]
+Id_1=c8ccacb6-3f07-4758-b94f-8d4aede5ac3d
+Number=1
+Rows=1
+
+[Tiling]
+padding=4
+
+[Tiling][e3f4dca6-1740-59c7-a030-8b4784e36509]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Xwayland]
+Scale=1
+
+[org.kde.kdecoration2]
+library=org.kde.kwin.aurorae
+theme=__aurorae__svg__Win10OS-light

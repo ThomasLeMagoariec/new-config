@@ -1,0 +1,5 @@
+[Default Applications]
+x-scheme-handler/betterdiscord=discord.desktop
+
+[Added Associations]
+application/x-msdownload=wine.desktop;
