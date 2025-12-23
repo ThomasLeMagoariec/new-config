@@ -11,7 +11,8 @@ RUN mkdir -p /etc/nix && \
 # Runtime tools needed by ci.sh
 RUN nix profile install \
     nixpkgs#jq \
-    nixpkgs#cachix
+    nixpkgs#cachix \
+    nixpkgs#home-manager
 
 WORKDIR /work
 
