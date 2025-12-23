@@ -11,6 +11,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings.trusted-users = [ "root" "thomas" ];
 
     nixpkgs.config.allowUnfree = true;
 
@@ -23,7 +24,7 @@
 
     services.displayManager.sddm.enable = true;
     programs.hyprland.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
+    services.desktopManager.gnome.enable = true;
 
     services.displayManager.sddm = {
         wayland.enable = true;
