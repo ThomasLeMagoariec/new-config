@@ -1,9 +1,9 @@
 { pkgs, inputs, config, lib, ... }: {
     imports = [
-        inputs.sops-nix.nixosModules.sops;
+        inputs.sops-nix.nixosModules.sops
     ];
 
-    home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
         sops
     ];
 
@@ -11,5 +11,7 @@
     sops.defaultSopsFormat = "yaml";
 
     sops.age.keyFile = "/home/thomas/.config/sops/age/keys.txt";
+
+    sops.secrets.example-key = {};
 
 }
