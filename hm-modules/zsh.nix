@@ -1,4 +1,4 @@
-{config, preferences, ...}:
+{config, preferences, lib, ...}:
 {
     programs.zsh = {
         enable = true;
@@ -15,7 +15,6 @@
             gp = "git push";
             gP = "git pull";
             gs = "git status";
-
             code = "cd ~/code";
             ls = "ls --color=auto";
             e = "exit";
