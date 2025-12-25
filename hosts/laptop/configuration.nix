@@ -40,9 +40,9 @@
         extraGroups = [ "wheel" "sudo" ];
         hashedPasswordFile = config.sops.secrets."thomas/user/password".path;
 
-        #openssh.authorizedKeys.keys = [
-        #    (builtins.readFile ../../keys/id_ed25519.pub)
-        #];
+        openssh.authorizedKeys.keys = [
+            (builtins.readFile ../../keys/id_ed25519.pub)
+        ];
     };
 
     environment.systemPackages = with pkgs; [
