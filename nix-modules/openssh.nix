@@ -1,6 +1,6 @@
 { config, input, ...}:
 {
-    services.opensssh = {
+    services.openssh = {
         enable = true;
         ports = [ 22 ];
         
