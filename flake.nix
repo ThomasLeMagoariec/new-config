@@ -34,12 +34,20 @@
 			laptop = lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [ ./hosts/laptop/configuration.nix ];
-                specialArgs = { inherit pkgs-unstable; inherit inputs; };
+                specialArgs = {
+                    inherit preferences;
+                    inherit pkgs-unstable;
+                    inherit inputs;
+                };
 			};
 			chanek = lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [ ./hosts/chanek/configuration.nix ];
-                specialArgs = { inherit pkgs-unstable; inherit inputs; };
+                specialArgs = {
+                    inherit preferences;
+                    inherit pkgs-unstable;
+                    inherit inputs;
+                };
 			};
 		};
 		homeConfigurations = {
