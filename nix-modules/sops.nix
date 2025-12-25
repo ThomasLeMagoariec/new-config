@@ -7,15 +7,21 @@
         sops
     ];
 
-    sops.defaultSopsFile = ../secrets/secrets.yaml;
-    sops.defaultSopsFormat = "yaml";
+    sops = {
+        defaultSopsFile = ../secrets/secrets.yaml;
+        defaultSopsFormat = "yaml";
 
-    sops.age.keyFile = "/home/thomas/.config/sops/age/keys.txt";
+        age = {
+            sshKeyPaths = [ "/home/thomas/.ssh/id_ed25519" ];
+            keyFile = "/var/lib/sops-nix/key.txt";
+            generateKey = true;
+        };
 
-    #sops.secrets.example_key = {
-    #    owner = config.users.users.thomas.name;
-    #};
-
-    sops.secrets."private_keys/thomas/ssh" = { };
+        secrets = {
+            "thomas/private_keys/ssh" = {
+                owner = config.users.users.thomas.name;
+            };
+        };
+    };
 
 }
