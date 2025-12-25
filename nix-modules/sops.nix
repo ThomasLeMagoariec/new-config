@@ -12,8 +12,10 @@
 
     sops.age.keyFile = "/home/thomas/.config/sops/age/keys.txt";
 
-    sops.secrets.example_key = {
-        owner = config.users.users.thomas.name;
-    };
+    #sops.secrets.example_key = {
+    #    owner = config.users.users.thomas.name;
+    #};
+
+    sops.secrets."private_keys/thomas/ssh" = { };
 
 }
