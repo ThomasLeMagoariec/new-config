@@ -7,6 +7,9 @@
         ../../nix-modules
     ];
 
+    sops.secrets."thomas/user/password".neededForUsers = true;
+    users.mutableUsers = false;
+
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
@@ -30,12 +33,12 @@
         wayland.enable = true;
     };
 
-
     users.users.thomas = {
         ignoreShellProgramCheck = true;
         shell = pkgs.zsh;
         isNormalUser = true;
         extraGroups = [ "wheel" "sudo" ];
+        hashedPasswordFile = config.sops.secrets."thomas/user/password".path;
     };
 
     environment.systemPackages = with pkgs; [
