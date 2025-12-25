@@ -25,6 +25,7 @@
             shell = "zsh";
             wm = "hyprland";
             editor = "nvim";
+            openssh = true;
         }; 
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
