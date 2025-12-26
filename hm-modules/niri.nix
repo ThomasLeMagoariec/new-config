@@ -7,6 +7,19 @@
     programs.niri = {
         enable = true;
         idleTimeout = 300;
+        spawnAtStart = [ "testList1" "testList2" ];
+        preferNoCSD = true;
+
+        input = {
+            keyboard = {
+                xkb.layout = "fr,fr";
+                numlock = true;
+            };
+            touchpad = {
+                off = true;
+                accel-speed = 0.2;
+            };
+        };
     };
 
     home.packages = with pkgs; [
