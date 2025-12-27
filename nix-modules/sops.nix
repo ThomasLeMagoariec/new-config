@@ -21,6 +21,9 @@
             "thomas/private_keys/ssh" = {
                 owner = config.users.users.thomas.name;
             };
+            "thomas/private_keys/gmaps_api" = {
+                owner = config.users.users.thomas.name;
+            };
             "thomas/user/password" = {
                 owner = config.users.users.thomas.name;
             };
