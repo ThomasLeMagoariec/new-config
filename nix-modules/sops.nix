@@ -27,6 +27,9 @@
             "thomas/user/password" = {
                 owner = config.users.users.thomas.name;
             };
+            "banquise/private_keys/sm_banquise" = {
+                owner = config.users.users.thomas.name;
+            };
         };
     };
 
