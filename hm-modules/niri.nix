@@ -6,7 +6,6 @@
 
     programs.niri = {
         enable = true;
-        idleTimeout = 300;
         spawnAtStart = [ "testList1" "testList2" ];
         preferNoCSD = true;
 
