@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, preferences, ... }:
 
 {
     imports = [
@@ -6,6 +6,9 @@
         ../../nix-modules/dev
         ../../nix-modules
     ];
+
+    sops.secrets."thomas/user/password".neededForUsers = true;
+    users.mutableUsers = false;
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -30,12 +33,16 @@
         wayland.enable = true;
     };
 
-
     users.users.thomas = {
         ignoreShellProgramCheck = true;
         shell = pkgs.zsh;
         isNormalUser = true;
         extraGroups = [ "wheel" "sudo" ];
+        hashedPasswordFile = config.sops.secrets."thomas/user/password".path;
+
+        openssh.authorizedKeys.keys = [
+            (builtins.readFile ../../keys/id_ed25519.pub)
+        ];
     };
 
     environment.systemPackages = with pkgs; [

@@ -1,4 +1,4 @@
-{config, preferences, ...}:
+{config, preferences, lib, ...}:
 {
     programs.zsh = {
         enable = true;
@@ -17,6 +17,12 @@
             gs = "git status";
 
             code = "cd ~/code";
+            vpn-banquise = ''
+            sudo systemctl restart strongswan-swanctl.service
+            sudo swanctl -q
+            sudo swanctl -i --child banquise
+            '';
+
             ls = "ls --color=auto";
             e = "exit";
         };

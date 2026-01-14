@@ -102,7 +102,7 @@ cmp.setup({
         treesitter = {
             enable = true;
             settings = {
-                auto_install = true;
+                auto_install = false;
                 highlight.enable = true;
             };
         };

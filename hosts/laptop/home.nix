@@ -14,14 +14,11 @@
 
 
   home.packages = [
-	pkgs.cbonsai
     pkgs.firefox
-    pkgs.meslo-lgs-nf
     pkgs.wofi
     pkgs.chromium
     pkgs.brave
     pkgs.discord
-    pkgs.tree
     pkgs.betterdiscordctl
   ];
 

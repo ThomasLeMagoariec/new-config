@@ -10,11 +10,13 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+        sops-nix.url = "github:Mic92/sops-nix";
+
 		nixvim.url = "github:nix-community/nixvim/nixos-25.11";
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }:
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }@inputs:
 	let
         preferences = {
             name = "Thomas";
@@ -23,6 +25,8 @@
             shell = "zsh";
             wm = "hyprland";
             editor = "nvim";
+            openssh = false;
+            misc = true;
         }; 
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
@@ -31,12 +35,20 @@
 			laptop = lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [ ./hosts/laptop/configuration.nix ];
-                specialArgs = { inherit pkgs-unstable; };
+                specialArgs = {
+                    inherit preferences;
+                    inherit pkgs-unstable;
+                    inherit inputs;
+                };
 			};
 			chanek = lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [ ./hosts/chanek/configuration.nix ];
-                specialArgs = { inherit pkgs-unstable; };
+                specialArgs = {
+                    inherit preferences;
+                    inherit pkgs-unstable;
+                    inherit inputs;
+                };
 			};
 		};
 		homeConfigurations = {
@@ -48,6 +60,7 @@
                 ];
                 extraSpecialArgs = {
                     inherit preferences;
+                    inherit inputs;
                 };
             };
 
@@ -59,6 +72,7 @@
                 ];
                 extraSpecialArgs = {
                     inherit preferences;
+                    inherit inputs;
                 };
             };
 		};
