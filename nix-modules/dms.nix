@@ -1,6 +1,6 @@
-{ ... }:
+{ lib, pkgs, ... }:
 {
-    programs.dms-shell = {
+    programs.dms = {
         enable = true;
 
         systemd = {
