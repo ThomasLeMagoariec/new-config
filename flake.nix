@@ -43,7 +43,6 @@
                 specialArgs = {
                     inherit preferences;
                     inherit pkgs-unstable;
-                    inherit dms;
                     inherit inputs;
                 };
 			};
@@ -67,6 +66,8 @@
                 extraSpecialArgs = {
                     inherit preferences;
                     inherit inputs;
+                    inherit dms;
+                    inherit pkgs-unstable;
                 };
             };
 
