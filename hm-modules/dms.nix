@@ -1,7 +1,11 @@
-{ config, lib, dms, inputs, pkgs-unstable, ... }:
+{ config, lib, dms, inputs, pkgs, pkgs-unstable, ... }:
 {
     imports = [
         inputs.dms.homeModules.dank-material-shell
+    ];
+
+    home.packages = with pkgs; [
+        libsForQt5.qt5.qtwayland
     ];
 
     programs.dank-material-shell = {
@@ -19,6 +23,12 @@
         enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
         enableAudioWavelength = true;      # Audio visualizer (cava)
         enableCalendarEvents = true;
+    };
+
+    systemd.user.services.dms = {
+        Service = {
+            Environment = "PATH=${pkgs-unstable.quickshell}/bin:${config.home.profileDirectory}/bin:/run/current-system/sw/bin";
+        };
     };
 }
 
