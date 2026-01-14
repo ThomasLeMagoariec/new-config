@@ -9,6 +9,10 @@
 			url = "github:nix-community/home-manager/release-25.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+        dms = {
+            url = "github:AvengeMedia/DankMaterialShell/stable";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
         sops-nix.url = "github:Mic92/sops-nix";
 

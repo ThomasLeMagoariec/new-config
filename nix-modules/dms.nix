@@ -1,9 +1,5 @@
-{ lib, pkgs-unstable, ... }:
+{ lib, pkgs-unstable, dms, ... }:
 {
-    environment.systemPackages = with pkgs-unstable; [
-        quickshell
-        dms-shell
-    ];
 
     programs.dms-shell = {
         enable = true;
