@@ -5,8 +5,8 @@
         ./kb.nix
         ./bluetooth.nix
         ./sops.nix
-        ./dms.nix
-	] ++ lib.optionals (preferences.openssh == true) [ ./openssh.nix ] ;
+	] ++ lib.optionals (preferences.openssh == true) [ ./openssh.nix ]
+      ++ lib.optionals (preferences.dms == true) [ ./dms.nix ];
     
 
     nixpkgs.config.allowUnfree = true;

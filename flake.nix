@@ -24,6 +24,7 @@
             theme = "catppuccin";
             shell = "zsh";
             wm = "hyprland";
+            dms = true;
             editor = "nvim";
             openssh = false;
             misc = true;
