@@ -1,5 +1,9 @@
 { lib, pkgs, ... }:
 {
+    environment.systemPackages = with pkgs; [
+        dms
+    ];
+
     programs.dms = {
         enable = true;
 
