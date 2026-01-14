@@ -20,7 +20,7 @@
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, dms, home-manager, nixvim, ... }@inputs:
 	let
         preferences = {
             name = "Thomas";
@@ -43,6 +43,7 @@
                 specialArgs = {
                     inherit preferences;
                     inherit pkgs-unstable;
+                    inherit dms;
                     inherit inputs;
                 };
 			};
