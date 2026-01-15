@@ -27,6 +27,9 @@
             "thomas/private_keys/mistral_api" = {
                 owner = config.users.users.thomas.name;
             };
+            "thomas/private_keys/cachix_token" = {
+                owner = config.users.users.thomas.name;
+            };
             "thomas/user/password" = {
                 owner = config.users.users.thomas.name;
             };
