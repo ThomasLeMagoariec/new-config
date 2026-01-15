@@ -26,7 +26,6 @@
     services.xserver.enable = true;
 
     services.displayManager.sddm.enable = true;
-    programs.hyprland.enable = true;
     services.desktopManager.gnome.enable = true;
 
     services.displayManager.sddm = {
