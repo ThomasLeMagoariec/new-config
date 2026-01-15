@@ -5,6 +5,7 @@
         ./kb.nix
         ./bluetooth.nix
         ./sops.nix
+        ./dms.nix
 	] ++ lib.optionals (preferences.openssh == true) [ ./openssh.nix ];
     
 

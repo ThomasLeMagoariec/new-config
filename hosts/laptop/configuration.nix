@@ -25,12 +25,12 @@
 
     services.xserver.enable = true;
 
-    services.displayManager.sddm.enable = true;
+    #services.displayManager.sddm.enable = true;
     services.desktopManager.gnome.enable = true;
 
-    services.displayManager.sddm = {
-        wayland.enable = true;
-    };
+    #services.displayManager.sddm = {
+    #    wayland.enable = true;
+    #};
 
     users.users.thomas = {
         ignoreShellProgramCheck = true;
