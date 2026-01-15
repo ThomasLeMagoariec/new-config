@@ -1,9 +1,20 @@
 {
     stdenv,
+    lib,
     fetchFromGitHub,
+    makeDesktopItem,
     cmake,
     qt6,
 }:
+let
+desktopItem = makeDesktopItem {
+    name = "librepods";
+    desktopName = "librepods";
+    exec = "librepods";
+    categories = [ "Utility" ];
+};
+
+in
 stdenv.mkDerivation {
     pname = "librepods";
     version = "v0.1.0-rc.4";
@@ -37,6 +48,10 @@ stdenv.mkDerivation {
 
         mkdir -p $out/bin
         install -Dm755 applinux $out/bin/librepods
+
+        mkdir -p $out/share/applications
+        cp ${desktopItem}/share/applications/*.desktop \
+              $out/share/applications/
 
         runHook postInstall
     '';
