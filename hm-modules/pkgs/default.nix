@@ -1,6 +1,6 @@
-{ pkgs }:
+{ pkgs, ... }:
 {
     home.packages = [
-        pkgs.callPackage ./librepods {}
+        (pkgs.callPackage ./librepods/librepods.nix {})
     ];
 }
