@@ -1,4 +1,4 @@
-{ pkgs, lib, config, preferences, ... }: {
+{ pkgs, ... }: {
 
   home.packages = with pkgs; [
     pavucontrol

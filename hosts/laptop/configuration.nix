@@ -16,7 +16,7 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     nix.settings.trusted-users = [ "root" "thomas" ];
 
-    nixpkgs.config.allowUnfree = true;
+    #nixpkgs.config.allowUnfree = true;
 
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
@@ -26,7 +26,6 @@
     services.xserver.enable = true;
 
     services.displayManager.sddm.enable = true;
-    programs.hyprland.enable = true;
     services.desktopManager.gnome.enable = true;
 
     services.displayManager.sddm = {

@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, lib, ... }: {
 
   imports = [
     ./pkgs/opt-mako.nix

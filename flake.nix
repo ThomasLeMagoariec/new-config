@@ -10,13 +10,23 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+        my-pkgs = {
+            url = "github:ThomasLeMagoariec/my-pkgs";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        dms = {
+            url = "github:AvengeMedia/DankMaterialShell/stable";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         sops-nix.url = "github:Mic92/sops-nix";
 
 		nixvim.url = "github:nix-community/nixvim/nixos-25.11";
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, dms, home-manager, my-pkgs, nixvim, ... }@inputs:
 	let
         preferences = {
             name = "Thomas";
@@ -24,6 +34,7 @@
             theme = "catppuccin";
             shell = "zsh";
             wm = "hyprland";
+            dms = true;
             editor = "nvim";
             openssh = false;
             misc = true;
@@ -56,11 +67,14 @@
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
                 modules = [
                     nixvim.homeModules.nixvim
-                        ./hosts/laptop/home.nix
+                    ./hosts/laptop/home.nix
                 ];
                 extraSpecialArgs = {
                     inherit preferences;
                     inherit inputs;
+                    inherit dms;
+                    inherit my-pkgs;
+                    inherit pkgs-unstable;
                 };
             };
 

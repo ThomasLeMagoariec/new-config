@@ -1,4 +1,4 @@
-{ config, lib, pkgs, host, preferences, ... }:
+{ config, lib, pkgs, preferences, ... }:
 
 {
 	imports = [
@@ -13,7 +13,9 @@
         ./niri.nix
 #        ./sops.nix
 	] ++ lib.optionals (preferences.shell == "zsh") [ ./zsh.nix ]
-      ++ lib.optionals (preferences.wm == "hyprland") [ ./hypr.nix ]
+      ++ lib.optionals (preferences.wm == "hyprland" &&
+                        preferences.dms == false) [ ./hypr.nix ]
+      ++ lib.optionals (preferences.dms == true) [ ./dms.nix ]
       ++ lib.optionals (preferences.misc == true) [ ./misc.nix ];
 
 }

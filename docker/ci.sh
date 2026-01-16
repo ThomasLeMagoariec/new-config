@@ -15,8 +15,7 @@ for host in $(nix flake show --json | jq -r '.nixosConfigurations | keys[]'); do
 done
 
 echo "▶ Build Home Manager configurations"
-home-manager build --flake .
-home-manager build --flake .#chanek
+home-manager build --flake .#thomas
 
 echo "✅ All checks passed"
 
