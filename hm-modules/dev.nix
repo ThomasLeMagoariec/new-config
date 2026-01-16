@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, my-pkgs, ... }: {
+
+  nixpkgs.overlays = [
+    my-pkgs.overlays.default
+  ];
 
   home.packages = with pkgs; [
     qbittorrent
@@ -12,5 +16,10 @@
     copilot-cli
     ncurses
     man-pages
+
+    librepods
   ];
+
+
+
 }

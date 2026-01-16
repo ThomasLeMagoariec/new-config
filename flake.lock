@@ -110,6 +110,26 @@
         "type": "github"
       }
     },
+    "my-pkgs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768525861,
+        "narHash": "sha256-U37Efwe02r9dH2LbnrgZLfomm4aSrTVRn6aD1D1UJgM=",
+        "owner": "ThomasLeMagoariec",
+        "repo": "my-pkgs",
+        "rev": "c0030517cf6c9cac098230103953f553bd108cf8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThomasLeMagoariec",
+        "repo": "my-pkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1766736597,
@@ -243,6 +263,7 @@
       "inputs": {
         "dms": "dms",
         "home-manager": "home-manager",
+        "my-pkgs": "my-pkgs",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",

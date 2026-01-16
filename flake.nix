@@ -9,6 +9,12 @@
 			url = "github:nix-community/home-manager/release-25.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+        my-pkgs = {
+            url = "github:ThomasLeMagoariec/my-pkgs";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         dms = {
             url = "github:AvengeMedia/DankMaterialShell/stable";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +26,7 @@
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, dms, home-manager, nixvim, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, dms, home-manager, my-pkgs, nixvim, ... }@inputs:
 	let
         preferences = {
             name = "Thomas";
@@ -61,12 +67,13 @@
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
                 modules = [
                     nixvim.homeModules.nixvim
-                        ./hosts/laptop/home.nix
+                    ./hosts/laptop/home.nix
                 ];
                 extraSpecialArgs = {
                     inherit preferences;
                     inherit inputs;
                     inherit dms;
+                    inherit my-pkgs;
                     inherit pkgs-unstable;
                 };
             };
