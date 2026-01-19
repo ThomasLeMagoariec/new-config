@@ -8,7 +8,7 @@ prefer-no-csd
 input {
     keyboard {
         xkb {
-            layout "en"
+            layout "fr,fr"
         }
         numlock
     }
