@@ -23,13 +23,18 @@
 
     time.timeZone = "Europe/Paris";
 
+    services.displayManager.sessionPackages = [
+        pkgs.niri
+    ];
+
     services.xserver.enable = true;
 
-    services.displayManager.sddm.enable = true;
     services.desktopManager.gnome.enable = true;
 
     services.displayManager.sddm = {
+        enable = true;
         wayland.enable = true;
+        theme = "catppuccin-mocha-mauve";
     };
 
     users.users.thomas = {
@@ -49,6 +54,10 @@
         git
         wget
         home-manager
+        (pkgs.catppuccin-sddm.override {
+            flavor = "mocha";
+            accent = "mauve";
+        })
     ];
 
     system.stateVersion = "25.11"; # Did you read the comment?
