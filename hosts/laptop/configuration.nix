@@ -41,7 +41,7 @@
         ignoreShellProgramCheck = true;
         shell = pkgs.zsh;
         isNormalUser = true;
-        extraGroups = [ "wheel" "sudo" ];
+        extraGroups = [ "wheel" "sudo" "docker" ];
         hashedPasswordFile = config.sops.secrets."thomas/user/password".path;
 
         openssh.authorizedKeys.keys = [
