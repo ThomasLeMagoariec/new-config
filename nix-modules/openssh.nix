@@ -27,6 +27,14 @@
                     "~/code/nix/new-config/keys/id_ed25519.pub"
                 ];
             };
+            "epita" = {
+                host = "git.forge.epita.fr";
+                user = "thomas.le-magoariec";
+                identityFile = [
+                    "~/.ssh/id_jean"
+                    "~/code/nix/new-config/keys/id_ed25519.pub"
+                ];
+            };
         };
     };
     
