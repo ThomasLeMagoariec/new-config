@@ -31,8 +31,12 @@
                 owner = config.users.users.thomas.name;
             };
             "thomas/private_keys/yubi" = {
-                owner = config.users.user.thomas.name;
-                path = "/home/thomas/.ssh/id_jean"
+                owner = config.users.users.thomas.name;
+                path = "/home/thomas/.ssh/id_jean";
+            };
+            "thomas/private_keys/u2f" = {
+                owner = config.users.users.thomas.name;
+                path = "/home/thomas/.config/Yubico/u2f_keys";
             };
             "thomas/user/password" = {
                 owner = config.users.users.thomas.name;

@@ -17,6 +17,17 @@
         extraConfig = ''
             AddKeysToAgent yes
         '';
+
+        matchBlocks = {
+            "git" = {
+                host = "gitlab.com github.com";
+                user = "git";
+                identityFile = [
+                    "~/.ssh/id_jean"
+                    "~/code/nix/new-config/keys/id_ed25519.pub"
+                ];
+            };
+        };
     };
     
 }
