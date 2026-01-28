@@ -11,5 +11,7 @@
         ".config/waybar/style.css".source = ../dotfiles/waybar/style.css;
 
         ".config/kitty/kitty.conf".source = ../dotfiles/kitty.conf;
+
+        ".ssh/id_jean.pub".source = ../keys/id_jean.pub;
     };
 }

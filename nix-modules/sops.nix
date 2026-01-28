@@ -30,6 +30,10 @@
             "thomas/private_keys/cachix_token" = {
                 owner = config.users.users.thomas.name;
             };
+            "thomas/private_keys/yubi" = {
+                owner = config.users.user.thomas.name;
+                path = "/home/thomas/.ssh/id_jean"
+            };
             "thomas/user/password" = {
                 owner = config.users.users.thomas.name;
             };
