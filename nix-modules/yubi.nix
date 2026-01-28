@@ -16,7 +16,7 @@
         u2f = {
             enable = true;
             settings = {
-                cue = false;
+                cue = true;
                 authFile = "/home/thomas/.config/Yubico/u2f_keys";
             };
         };
