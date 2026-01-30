@@ -8,16 +8,15 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1768395615,
-        "narHash": "sha256-OUduJ6EcH91C8A5Jt2ZHgJiZg9k5ZKipKPbuHzbQGaI=",
+        "lastModified": 1769782750,
+        "narHash": "sha256-KC4t726CEL46h/He4Mt9/GFizUaJRQpqRm+jC/HCGdg=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "1b7dcf56a8040bddff348cb52a96c766b49ef98f",
+        "rev": "f6f7b1ed72886a050af9969c45e6d5c83040549b",
         "type": "github"
       },
       "original": {
         "owner": "AvengeMedia",
-        "ref": "stable",
         "repo": "DankMaterialShell",
         "type": "github"
       }
