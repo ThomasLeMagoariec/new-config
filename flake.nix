@@ -20,13 +20,18 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        danksearch = {
+            url = "github:AvengeMedia/danksearch";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         sops-nix.url = "github:Mic92/sops-nix";
 
 		nixvim.url = "github:nix-community/nixvim/nixos-25.11";
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, dms, home-manager, my-pkgs, nixvim, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, dms, danksearch, home-manager, my-pkgs, nixvim, ... }@inputs:
 	let
         preferences = {
             name = "Thomas";

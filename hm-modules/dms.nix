@@ -1,8 +1,11 @@
-{ config, lib, dms, inputs, pkgs, pkgs-unstable, ... }:
+{ config, lib, dms, danksearch, inputs, pkgs, pkgs-unstable, ... }:
 {
     imports = [
         inputs.dms.homeModules.dank-material-shell
+        inputs.danksearch.homeModules.dsearch
     ];
+
+    programs.dsearch.enable = true;
 
     home.packages = with pkgs; [
         libsForQt5.qt5.qtwayland
