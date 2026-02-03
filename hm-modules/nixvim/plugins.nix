@@ -1,7 +1,6 @@
 { pkgs, ... }: {
     programs.nixvim.plugins = {
 
-
         web-devicons.enable = true;
         lualine.enable = true;
         luasnip.enable = true;
@@ -48,6 +47,7 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
+    
 
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -70,10 +70,9 @@ cmp.setup({
         lsp = {
             enable = true;
             servers = {
+                nixd = true;
                 lua_ls.enable = true;
-                # omnisharp.enable = true;
                 clangd.enable = true;
-                ccls.enable = true;
                 pyright.enable = true;
                 html.enable = true;
                 kotlin_language_server.enable = true;
