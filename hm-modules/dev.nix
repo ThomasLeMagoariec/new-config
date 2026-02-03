@@ -16,6 +16,7 @@
     copilot-cli
     ncurses
     man-pages
+    just
 
     librepods
   ];

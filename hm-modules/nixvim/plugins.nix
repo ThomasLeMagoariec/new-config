@@ -70,12 +70,13 @@ cmp.setup({
         lsp = {
             enable = true;
             servers = {
-                nixd = true;
+                nixd.enable = true;
                 lua_ls.enable = true;
                 clangd.enable = true;
                 pyright.enable = true;
                 html.enable = true;
                 kotlin_language_server.enable = true;
+                just.enable = true;
             };
         };
         
@@ -117,6 +118,7 @@ cmp.setup({
         pkgs.vimPlugins.rose-pine
         pkgs.vimPlugins.nord-vim
         pkgs.vimPlugins.catppuccin-nvim
+        pkgs.vimPlugins.vim-just
         #(pkgs.vimUtils.buildVimPlugin {
         #    name = "golf";
         #    src = pkgs.fetchFromGitHub {
