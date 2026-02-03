@@ -27,7 +27,7 @@
             text_extensions = [
                 ".txt" ".md" ".go" ".py" ".js" ".ts"
                     ".jsx" ".tsx" ".json" ".yaml" ".yml"
-                    ".toml" ".html" ".css" ".rs"
+                    ".toml" ".html" ".css" ".rs" ".c"
             ];
 
 # Index paths configuration
