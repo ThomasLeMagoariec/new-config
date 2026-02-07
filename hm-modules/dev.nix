@@ -17,6 +17,7 @@
     ncurses
     man-pages
     just
+    go
 
     librepods
   ];
