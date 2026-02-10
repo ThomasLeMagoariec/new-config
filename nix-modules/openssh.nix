@@ -24,7 +24,7 @@
                 user = "git";
                 identityFile = [
                     "~/.ssh/id_jean"
-                    "~/code/nix/new-config/keys/id_ed25519.pub"
+                    "~/code/nix/new-config/keys/id_key.pub"
                 ];
             };
             "epita" = {
@@ -32,7 +32,7 @@
                 user = "thomas.le-magoariec";
                 identityFile = [
                     "~/.ssh/id_jean"
-                    "~/code/nix/new-config/keys/id_ed25519.pub"
+                    "~/code/nix/new-config/keys/id_key.pub"
                 ];
             };
         };
