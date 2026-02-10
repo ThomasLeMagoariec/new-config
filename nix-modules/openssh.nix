@@ -13,6 +13,7 @@
 
     programs.ssh = {
         enable = true;
+        startAgent = true;
 
         extraConfig = ''
             AddKeysToAgent yes
@@ -23,16 +24,16 @@
                 host = "gitlab.com github.com";
                 user = "git";
                 identityFile = [
-                    "~/.ssh/id_jean.pub"
-                    "~/code/nix/new-config/keys/id_key.pub"
+                    "/home/thomas/.ssh/id_jean"
+                    "/home/thomas/.ssh/id_key"
                 ];
             };
             "epita" = {
                 host = "git.forge.epita.fr";
                 user = "thomas.le-magoariec";
                 identityFile = [
-                    "~/.ssh/id_jean"
-                    "~/code/nix/new-config/keys/id_key.pub"
+                    "/home/thomas/.ssh/id_jean"
+                    "/home/thomas/.ssh/id_key"
                 ];
             };
         };
