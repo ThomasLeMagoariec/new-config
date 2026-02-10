@@ -29,7 +29,7 @@
 
     services.xserver.enable = true;
 
-    services.desktopManager.gnome.enable = true;
+    #services.desktopManager.gnome.enable = true;
 
     services.displayManager.sddm = {
         enable = true;
@@ -45,8 +45,8 @@
         hashedPasswordFile = config.sops.secrets."thomas/user/password".path;
 
         openssh.authorizedKeys.keys = [
-            (builtins.readFile ../../keys/id_key.pub)
             (builtins.readFile ../../keys/id_jean.pub)
+            (builtins.readFile ../../keys/id_key.pub)
         ];
     };
 

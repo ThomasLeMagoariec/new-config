@@ -41,7 +41,7 @@
             wm = "hyprland";
             dms = true;
             editor = "nvim";
-            openssh = false;
+            openssh = true;
             misc = true;
         }; 
 		lib = nixpkgs.lib;

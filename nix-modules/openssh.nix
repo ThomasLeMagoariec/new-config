@@ -12,31 +12,31 @@
     };
 
     programs.ssh = {
-        enable = true;
+        #enable = true;
         startAgent = true;
 
         extraConfig = ''
             AddKeysToAgent yes
         '';
 
-        matchBlocks = {
-            "git" = {
-                host = "gitlab.com github.com";
-                user = "git";
-                identityFile = [
-                    "/home/thomas/.ssh/id_jean"
-                    "/home/thomas/.ssh/id_key"
-                ];
-            };
-            "epita" = {
-                host = "git.forge.epita.fr";
-                user = "thomas.le-magoariec";
-                identityFile = [
-                    "/home/thomas/.ssh/id_jean"
-                    "/home/thomas/.ssh/id_key"
-                ];
-            };
-        };
+        #matchBlocks = {
+        #    "git" = {
+        #        host = "gitlab.com github.com";
+        #        user = "git";
+        #        identityFile = [
+        #            "/home/thomas/.ssh/id_jean"
+        #            "/home/thomas/.ssh/id_key"
+        #        ];
+        #    };
+        #    "epita" = {
+        #        host = "git.forge.epita.fr";
+        #        user = "thomas.le-magoariec";
+        #        identityFile = [
+        #            "/home/thomas/.ssh/id_jean"
+        #            "/home/thomas/.ssh/id_key"
+        #        ];
+        #    };
+        #};
     };
     
 }
