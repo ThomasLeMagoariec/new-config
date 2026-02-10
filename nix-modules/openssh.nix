@@ -23,7 +23,7 @@
                 host = "gitlab.com github.com";
                 user = "git";
                 identityFile = [
-                    "~/.ssh/id_jean"
+                    "~/.ssh/id_jean.pub"
                     "~/code/nix/new-config/keys/id_key.pub"
                 ];
             };
