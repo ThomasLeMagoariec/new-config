@@ -1,4 +1,4 @@
-{ danksearch, inputs, ... }:
+{ inputs, ... }:
 {
     imports = [
         inputs.danksearch.homeModules.dsearch
