@@ -1,3 +1,3 @@
 {
-    bite = "zeub"
+    bite = "zeub";
 }
