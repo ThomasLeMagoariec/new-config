@@ -6,6 +6,7 @@
         ./bluetooth.nix
         ./sops.nix
         ./yubi.nix
+        ./upower.nix
 	] ++ lib.optionals (preferences.openssh == true) [ ./openssh.nix ];
     
 
