@@ -26,6 +26,14 @@
                     "/home/thomas/.ssh/id_key"
                 ];
             };
+            "la-banquise" = {
+                host = "git.la-banquise.fr";
+                user = "git";
+                identityFile = [
+                    "/home/thomas/.ssh/id_jean"
+                    "/home/thomas/.ssh/id_key"
+                ];
+            };
         };
     };
 }

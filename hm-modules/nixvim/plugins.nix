@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: 
+let
+    enableLsps = lsps: lib.genAttrs lsps (_: { enable = true; });
+in
+{
     programs.nixvim.plugins = {
 
         web-devicons.enable = true;
@@ -69,15 +73,16 @@ cmp.setup({
         cmp-nvim-lsp.enable = true;
         lsp = {
             enable = true;
-            servers = {
-                nixd.enable = true;
-                lua_ls.enable = true;
-                clangd.enable = true;
-                pyright.enable = true;
-                html.enable = true;
-                kotlin_language_server.enable = true;
-                just.enable = true;
-            };
+            servers = enableLsps [
+                "nixd"
+                "lua_ls"
+                "clangd"
+                "pyright"
+                "html"
+                "kotlin_language_server"
+                "just"
+                "jdtls"
+            ];
         };
         
         emmet = {
