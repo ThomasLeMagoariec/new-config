@@ -23,24 +23,30 @@
 
     time.timeZone = "Europe/Paris";
 
+    services.displayManager.sessionPackages = [
+        pkgs.niri
+    ];
+
     services.xserver.enable = true;
 
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.gnome.enable = true;
+    #services.desktopManager.gnome.enable = true;
 
     services.displayManager.sddm = {
+        enable = true;
         wayland.enable = true;
+        theme = "catppuccin-mocha-mauve";
     };
 
     users.users.thomas = {
         ignoreShellProgramCheck = true;
         shell = pkgs.zsh;
         isNormalUser = true;
-        extraGroups = [ "wheel" "sudo" ];
+        extraGroups = [ "wheel" "sudo" "docker" ];
         hashedPasswordFile = config.sops.secrets."thomas/user/password".path;
 
         openssh.authorizedKeys.keys = [
-            (builtins.readFile ../../keys/id_ed25519.pub)
+            (builtins.readFile ../../keys/id_jean.pub)
+            (builtins.readFile ../../keys/id_key.pub)
         ];
     };
 
@@ -49,6 +55,10 @@
         git
         wget
         home-manager
+        (pkgs.catppuccin-sddm.override {
+            flavor = "mocha";
+            accent = "mauve";
+        })
     ];
 
     system.stateVersion = "25.11"; # Did you read the comment?

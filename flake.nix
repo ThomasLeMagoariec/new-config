@@ -16,7 +16,12 @@
         };
 
         dms = {
-            url = "github:AvengeMedia/DankMaterialShell/stable";
+            url = "github:AvengeMedia/DankMaterialShell";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        danksearch = {
+            url = "github:AvengeMedia/danksearch";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
@@ -26,7 +31,7 @@
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, dms, home-manager, my-pkgs, nixvim, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, dms, danksearch, home-manager, my-pkgs, nixvim, ... }@inputs:
 	let
         preferences = {
             name = "Thomas";
@@ -36,7 +41,7 @@
             wm = "hyprland";
             dms = true;
             editor = "nvim";
-            openssh = false;
+            openssh = true;
             misc = true;
         }; 
 		lib = nixpkgs.lib;

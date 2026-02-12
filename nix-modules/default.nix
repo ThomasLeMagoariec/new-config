@@ -1,11 +1,14 @@
-{ config, lib, preferences, ... }:
+{ lib, preferences, ... }:
 
 {
 	imports = [
         ./kb.nix
         ./bluetooth.nix
         ./sops.nix
-	] ++ lib.optionals (preferences.openssh == true) [ ./openssh.nix ];
+        ./yubi.nix
+        ./upower.nix
+	] ++ lib.optionals (preferences.openssh == true) [ ./openssh.nix ]
+      ++ lib.optionals (preferences.dms == true) [ ./upower.nix ];
     
 
     nixpkgs.config.allowUnfree = true;

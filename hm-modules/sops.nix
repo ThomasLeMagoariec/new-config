@@ -7,7 +7,6 @@
         age.keyFile = "/home/thomas/.config/sops/age/keys.txt";
 
         defaultSopsFile = ../secrets/secrets.yaml;
-        validateSopsFile = false;
 
         secrets = {
             "thomas/private_keys/ssh" = {
@@ -15,4 +14,6 @@
             };
         };
     };
+
+    home.file.".ssh/id_key.pub".source = ../keys/id_key.pub;
 }

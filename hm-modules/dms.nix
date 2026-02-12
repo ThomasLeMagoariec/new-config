@@ -1,4 +1,4 @@
-{ config, lib, dms, inputs, pkgs, pkgs-unstable, ... }:
+{ config, inputs, pkgs, pkgs-unstable, ... }:
 {
     imports = [
         inputs.dms.homeModules.dank-material-shell

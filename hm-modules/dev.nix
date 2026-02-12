@@ -16,6 +16,9 @@
     copilot-cli
     ncurses
     man-pages
+    just
+    go
+    jetbrains.idea
 
     librepods
   ];

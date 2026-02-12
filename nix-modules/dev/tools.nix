@@ -8,7 +8,7 @@
             jdk21
             gnumake
             pnpm
-            nix-ld
+            SDL2
         ])
         ++ (with pkgs-unstable; [
             playerctl
