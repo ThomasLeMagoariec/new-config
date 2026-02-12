@@ -18,6 +18,7 @@
     man-pages
     just
     go
+    jetbrains.idea
 
     librepods
   ];

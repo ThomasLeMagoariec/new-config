@@ -13,7 +13,6 @@
         ./niri.nix
         ./sops.nix
         ./ssh.nix
-        ./test.nix
 	] ++ lib.optionals (preferences.shell == "zsh") [ ./zsh.nix ]
       ++ lib.optionals (preferences.wm == "hyprland" &&
                         preferences.dms == false) [ ./hypr.nix ]
