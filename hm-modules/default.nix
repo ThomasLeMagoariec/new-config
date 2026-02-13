@@ -17,7 +17,6 @@ in
 	] ++ lib.optionals (prefs.shell == "zsh") [ ./zsh.nix ]
       ++ lib.optionals (prefs.dms == true) [ ./dms.nix ./dsearch.nix ]
       ++ lib.optionals (prefs.misc == true) [ ./misc.nix ]
-      ++ lib.optionals (prefs.bite) [ ./test.nix ]
       ++ lib.optionals (prefs.editor == "nvim") [ ./nixvim ]
       ++ lib.optionals (prefs.wm == "hyprland" &&
                         prefs.dms == false) [ ./hypr.nix ];
