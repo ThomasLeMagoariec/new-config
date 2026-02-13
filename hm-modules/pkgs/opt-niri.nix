@@ -168,7 +168,7 @@ in
                         };
                         default = {};
                         description = "trackpoint config";
-                    }
+                    };
                 };
             };
             default = {};
