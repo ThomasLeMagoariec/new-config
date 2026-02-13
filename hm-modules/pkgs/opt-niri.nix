@@ -114,7 +114,7 @@ in
                                 };
                                 accel-speed = mkOption {
                                     type = types.float;
-                                    default = 0;
+                                    default = 0.0;
                                 };
                                 accel-profile = mkOption {
                                     type = types.str;
@@ -142,7 +142,7 @@ in
                                 };
                                 accel-speed = mkOption {
                                     type = types.float;
-                                    default = 0;
+                                    default = 0.0;
                                 };
                                 accel-profile = mkOption {
                                     type = types.str;
