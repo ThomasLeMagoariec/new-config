@@ -1,0 +1,31 @@
+warning: Git tree '/home/thomas/code/nix/new-config' is dirty
+trace: warning: `programs.ssh` default values will be removed in the future.
+Consider setting `programs.ssh.enableDefaultConfig` to false,
+and manually set the default values you want to keep at
+`programs.ssh.matchBlocks."*"`.
+
+Starting Home Manager activation
+Activating checkFilesChanged
+Activating checkLinkTargets
+Activating writeBoundary
+Activating installPackages
+replacing old 'home-manager-path'
+installing 'home-manager-path'
+Activating linkGeneration
+Cleaning up orphan links from /home/thomas
+Creating home file links in /home/thomas
+Activating onFilesChange
+Activating reloadMako
+Activating reloadSystemd
+Starting units: sops-nix.service
+Activating sops-nix
+warning: Git tree '/home/thomas/code/nix/new-config' is dirty
+trace: warning: `programs.ssh` default values will be removed in the future.
+Consider setting `programs.ssh.enableDefaultConfig` to false,
+and manually set the default values you want to keep at
+`programs.ssh.matchBlocks."*"`.
+
+
+There are 325 unread and relevant news items.
+Read them by running the command "home-manager news".
+
