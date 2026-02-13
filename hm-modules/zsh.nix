@@ -1,4 +1,7 @@
-{ preferences, ... }:
+{ ... }:
+let
+    prefs = import ../prefs.nix;
+in
 {
     programs.zsh = {
         enable = true;
@@ -38,7 +41,7 @@
         initContent = ''
             source ~/.p10k.zsh
             eval "$(zoxide init zsh)"
-            export EDITOR=${preferences.editor}
+            export EDITOR=${prefs.editor}
         '';
     };
 }
