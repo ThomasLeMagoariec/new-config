@@ -2,7 +2,6 @@
 
 {
 	imports = [
-        ./themes
 		./nixvim
         ./dotfiles.nix
         ./mako.nix
