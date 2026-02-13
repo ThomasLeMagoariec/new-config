@@ -15,6 +15,7 @@
             gp = "git push";
             gP = "git pull";
             gs = "git status";
+            gd = "git diff";
 
             code = "cd ~/code";
             vpn-banquise = ''
