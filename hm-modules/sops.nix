@@ -1,16 +1,20 @@
-{ inputs, ...}: {
+{ inputs, ...}: 
+let
+    prefs = import ../prefs.nix;
+in
+{
     imports = [
         inputs.sops-nix.homeManagerModules.sops
     ];
 
     sops = {
-        age.keyFile = "/home/thomas/.config/sops/age/keys.txt";
+        age.keyFile = "/home/${prefs.username}/.config/sops/age/keys.txt";
 
         defaultSopsFile = ../secrets/secrets.yaml;
 
         secrets = {
-            "thomas/private_keys/ssh" = {
-                path = "/home/thomas/.ssh/id_key";
+            "${prefs.username}/private_keys/ssh" = {
+                path = "/home/${prefs.username}/.ssh/id_key";
             };
         };
     };

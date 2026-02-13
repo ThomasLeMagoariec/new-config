@@ -1,4 +1,8 @@
-{ pkgs, inputs, config, ... }: {
+{ pkgs, inputs, config, ... }:
+let
+    prefs = import ../prefs.nix;
+in
+{
     imports = [
         inputs.sops-nix.nixosModules.sops
     ];
@@ -12,23 +16,23 @@
         defaultSopsFormat = "yaml";
 
         age = {
-            keyFile = "/home/thomas/.config/sops/age/keys.txt";
+            keyFile = "/home/" + prefs.username + "/.config/sops/age/keys.txt";
         };
 
         secrets = {
-            "thomas/private_keys/ssh" = {
-                owner = config.users.users.thomas.name;
+            "${prefs.username}/private_keys/ssh" = {
+                owner = config.users.users.${prefs.username}.name;
             };
-            "thomas/user/password" = {
-                owner = config.users.users.thomas.name;
+            "${prefs.username}/user/password" = {
+                owner = config.users.users.${prefs.username}.name;
             };
-            "thomas/private_keys/yubi" = {
-                owner = config.users.users.thomas.name;
-                path = "/home/thomas/.ssh/id_jean";
+            "${prefs.username}/private_keys/yubi" = {
+                owner = config.users.users.${prefs.username}.name;
+                path = "/home/${prefs.username}/.ssh/id_jean";
             };
-            "thomas/private_keys/u2f" = {
-                owner = config.users.users.thomas.name;
-                path = "/home/thomas/.config/Yubico/u2f_keys";
+            "${prefs.username}/private_keys/u2f" = {
+                owner = config.users.users.${prefs.username}.name;
+                path = "/home/${prefs.username}/.config/Yubico/u2f_keys";
             };
         };
     };

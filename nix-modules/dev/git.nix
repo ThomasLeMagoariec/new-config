@@ -1,12 +1,14 @@
 { ... }:
-
+let
+    prefs = import ../../prefs.nix;
+in
 {
   programs.git = {
     enable = true;
     config = {
       push = { autoSetupRemote = true; };
       user = {
-          name = "Thomas";
+          name = "${prefs.username}";
           email = "thomas.lemagoariec@outlook.com";
       };
     };

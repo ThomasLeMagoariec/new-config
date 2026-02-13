@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+    prefs = import ../../prefs.nix;
+in
 {
   environment.systemPackages = [
     pkgs.strongswan
@@ -9,11 +12,11 @@
 
   services.strongswan-swanctl.swanctl = {
     authorities = {
-      banquise1.file = "/home/thomas/.secrets/strongswan/cacerts/BanquiseRootCA.cacert.pem";
-      banquise2.file = "/home/thomas/.secrets/strongswan/cacerts/BanquiseMachineIssuingCA.cacert.pem";
-      banquise3.file = "/home/thomas/.secrets/strongswan/cacerts/BanquiseMachineSubCA.cacert.pem";
-      banquise4.file = "/home/thomas/.secrets/strongswan/cacerts/BanquiseUserIssuingCA.cacert.pem";
-      banquise5.file = "/home/thomas/.secrets/strongswan/cacerts/BanquiseUserSubCA.cacert.pem";
+      banquise1.file = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseRootCA.cacert.pem";
+      banquise2.file = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseMachineIssuingCA.cacert.pem";
+      banquise3.file = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseMachineSubCA.cacert.pem";
+      banquise4.file = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseUserIssuingCA.cacert.pem";
+      banquise5.file = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseUserSubCA.cacert.pem";
     };
 
     connections = {
@@ -25,7 +28,7 @@
     };
     local = {
       banquise.auth = "pubkey";
-      banquise.certs = [ "/home/thomas/.secrets/strongswan/x509/thomas.le-magoariec.pem" ];
+      banquise.certs = [ "/home/${prefs.username}/.secrets/strongswan/x509/thomas.le-magoariec.pem" ];
     };
     remote = {
       banquise.auth = "pubkey";

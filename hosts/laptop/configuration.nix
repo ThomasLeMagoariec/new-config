@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+    prefs = import ../../prefs.nix;
+in
 {
     imports = [
         ./hardware-configuration.nix
@@ -7,14 +9,14 @@
         ../../nix-modules
     ];
 
-    sops.secrets."thomas/user/password".neededForUsers = true;
+    sops.secrets."${prefs.username}/user/password".neededForUsers = true;
     users.mutableUsers = false;
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    nix.settings.trusted-users = [ "root" "thomas" ];
+    nix.settings.trusted-users = [ "root" "${prefs.username}" ];
 
     #nixpkgs.config.allowUnfree = true;
 
@@ -37,12 +39,12 @@
         theme = "catppuccin-mocha-mauve";
     };
 
-    users.users.thomas = {
+    users.users.${prefs.username} = {
         ignoreShellProgramCheck = true;
         shell = pkgs.zsh;
         isNormalUser = true;
         extraGroups = [ "wheel" "sudo" "docker" ];
-        hashedPasswordFile = config.sops.secrets."thomas/user/password".path;
+        hashedPasswordFile = config.sops.secrets."${prefs.username}/user/password".path;
 
         openssh.authorizedKeys.keys = [
             (builtins.readFile ../../keys/id_jean.pub)

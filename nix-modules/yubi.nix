@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+    prefs = import ../prefs.nix;
+in
 {
     environment.systemPackages = with pkgs; [
         yubioath-flutter
@@ -17,7 +20,7 @@
             enable = true;
             settings = {
                 cue = true;
-                authFile = "/home/thomas/.config/Yubico/u2f_keys";
+                authFile = "/home/${prefs.username}/.config/Yubico/u2f_keys";
             };
         };
         

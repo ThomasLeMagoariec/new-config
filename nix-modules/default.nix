@@ -10,7 +10,7 @@ in
         ./yubi.nix
         ./upower.nix
 	] ++ lib.optionals (prefs.openssh == true) [ ./openssh.nix ]
-      ++ lib.optionals (prefs.dms == true) [ ./upower.nix ];
+      ++ lib.optionals (prefs.laptop == true) [ ./upower.nix ];
     
 
     nixpkgs.config.allowUnfree = true;

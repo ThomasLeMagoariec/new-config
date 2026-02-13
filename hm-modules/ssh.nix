@@ -1,4 +1,7 @@
 { ... }:
+let
+    prefs = import ../prefs.nix;
+in
 {
     services.ssh-agent.enable = true;
 
@@ -14,24 +17,24 @@
                 host = "gitlab.com github.com";
                 user = "git";
                 identityFile = [
-                    "/home/thomas/.ssh/id_jean"
-                    "/home/thomas/.ssh/id_key"
+                    "/home/${prefs.username}/.ssh/id_jean"
+                    "/home/${prefs.username}/.ssh/id_key"
                 ];
             };
             "epita" = {
                 host = "git.forge.epita.fr";
-                user = "thomas.le-magoariec";
+                user = "${prefs.username}.le-magoariec";
                 identityFile = [
-                    "/home/thomas/.ssh/id_jean"
-                    "/home/thomas/.ssh/id_key"
+                    "/home/${prefs.username}/.ssh/id_jean"
+                    "/home/${prefs.username}/.ssh/id_key"
                 ];
             };
             "la-banquise" = {
                 host = "git.la-banquise.fr";
                 user = "git";
                 identityFile = [
-                    "/home/thomas/.ssh/id_jean"
-                    "/home/thomas/.ssh/id_key"
+                    "/home/${prefs.username}/.ssh/id_jean"
+                    "/home/${prefs.username}/.ssh/id_key"
                 ];
             };
         };
