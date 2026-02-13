@@ -8,5 +8,5 @@ rebuild_home:
 
 rebuild_cool:
     home-manager switch --flake .#thomas &> log &
-    cbonsai -l
+    cbonsai -li
     
