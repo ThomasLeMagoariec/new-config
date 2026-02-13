@@ -1,5 +1,7 @@
 { lib, preferences, ... }:
-
+let
+    prefs = import ../prefs.nix;
+in
 {
 	imports = [
 		./nixvim
@@ -17,7 +19,8 @@
       ++ lib.optionals (preferences.wm == "hyprland" &&
                         preferences.dms == false) [ ./hypr.nix ]
       ++ lib.optionals (preferences.dms == true) [ ./dms.nix ./dsearch.nix ]
-      ++ lib.optionals (preferences.misc == true) [ ./misc.nix ];
+      ++ lib.optionals (preferences.misc == true) [ ./misc.nix ]
+      ++ lib.optionals (prefs.bite) [ ./test.nix ];
 
 }
 
