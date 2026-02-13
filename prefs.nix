@@ -6,4 +6,5 @@
     openssh = true;
     misc = true;
     editor = "nvim";
+    username = "thomas";
 }
