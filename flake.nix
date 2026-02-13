@@ -33,17 +33,6 @@
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, dms, danksearch, home-manager, my-pkgs, nixvim, nixmate, ... }@inputs:
 	let
-        preferences = {
-            name = "Thomas";
-            username = "thomas";
-            theme = "catppuccin";
-            shell = "zsh";
-            wm = "hyprland";
-            dms = true;
-            editor = "nvim";
-            openssh = true;
-            misc = true;
-        }; 
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
 	in {
@@ -52,7 +41,6 @@
 				system = "x86_64-linux";
 				modules = [ ./hosts/laptop/configuration.nix ];
                 specialArgs = {
-                    inherit preferences;
                     inherit pkgs-unstable;
                     inherit inputs;
                 };
@@ -61,7 +49,6 @@
 				system = "x86_64-linux";
 				modules = [ ./hosts/chanek/configuration.nix ];
                 specialArgs = {
-                    inherit preferences;
                     inherit pkgs-unstable;
                     inherit inputs;
                 };
@@ -75,7 +62,6 @@
                     ./hosts/laptop/home.nix
                 ];
                 extraSpecialArgs = {
-                    inherit preferences;
                     inherit inputs;
                     inherit dms;
                     inherit my-pkgs;
@@ -90,7 +76,6 @@
                         ./hosts/chanek/home.nix
                 ];
                 extraSpecialArgs = {
-                    inherit preferences;
                     inherit inputs;
                 };
             };

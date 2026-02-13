@@ -1,6 +1,6 @@
-{ lib, preferences, ... }:
+{ lib, ... }:
 let
-    prefs = import ./prefs.nix;
+    prefs = import ../prefs.nix;
 in 
 {
 	imports = [

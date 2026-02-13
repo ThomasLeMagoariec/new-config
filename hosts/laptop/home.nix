@@ -1,8 +1,10 @@
-{ config, dms, pkgs, lib, preferences, ... }:
-
+{ config, dms, pkgs, lib, ... }:
+let
+    prefs = import ../../prefs.nix;
+in
 {
-  home.username = preferences.username;
-  home.homeDirectory = "/home/"+preferences.username;
+  home.username = prefs.username;
+  home.homeDirectory = "/home/"+prefs.username;
 
 
   imports = [
