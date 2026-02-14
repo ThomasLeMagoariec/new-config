@@ -34,6 +34,10 @@ in
                 owner = config.users.users.${prefs.username}.name;
                 path = "/home/${prefs.username}/.config/Yubico/u2f_keys";
             };
+            banquise = {
+                sopsFile = ../secrets/banquise.yaml;
+                key = "example";
+            };
         };
     };
 
