@@ -11,5 +11,6 @@
 
 # services config
     openssh = true;
+    ssh = true;
     misc = true;
 }

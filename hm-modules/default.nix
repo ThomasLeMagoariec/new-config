@@ -9,7 +9,6 @@ in
         ./dev.nix
         ./yazi.nix
         ./utils.nix
-        ./graphical.nix
         ./niri.nix
         ./sops.nix
         ./ssh.nix
@@ -18,6 +17,8 @@ in
       ++ lib.optionals (prefs.dms == true) [ ./dms.nix ./dsearch.nix ]
       ++ lib.optionals (prefs.misc == true) [ ./misc.nix ]
       ++ lib.optionals (prefs.editor == "nvim") [ ./nixvim ]
+      ++ lib.optionals (prefs.office) [ ./graphical.nix ]
+      ++ lib.optionals (prefs.ssh) [ ./ssh.nix ]
       ++ lib.optionals (prefs.wm == "hyprland" &&
                         prefs.dms == false) [ ./hypr.nix ];
 
