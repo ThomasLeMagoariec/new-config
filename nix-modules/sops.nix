@@ -34,9 +34,35 @@ in
                 owner = config.users.users.${prefs.username}.name;
                 path = "/home/${prefs.username}/.config/Yubico/u2f_keys";
             };
-            banquise = {
+            "${prefs.username}/banquise/BanquiseMachineIssuingCA"= {
                 sopsFile = ../secrets/banquise.yaml;
-                key = "example";
+                key = "BanquiseMachineIssuingCA";
+                path = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseMachineIssuingCA.cacert.pem";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "${prefs.username}/banquise/BanquiseRootCA"= {
+                sopsFile = ../secrets/banquise.yaml;
+                key = "BanquiseRootCA";
+                path = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseRootCA.cacert.pem";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "${prefs.username}/banquise/BanquiseUserSubCA"= {
+                sopsFile = ../secrets/banquise.yaml;
+                key = "BanquiseUserSubCA";
+                path = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseUserSubCA.cacert.pem";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "${prefs.username}/banquise/BanquiseMachineSubCA"= {
+                sopsFile = ../secrets/banquise.yaml;
+                key = "BanquiseMachineSubCA";
+                path = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseMachineSubCA.cacert.pem";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "${prefs.username}/banquise/BanquiseUserIssuingCA"= {
+                sopsFile = ../secrets/banquise.yaml;
+                key = "BanquiseUserIssuingCA";
+                path = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseUserIssuingCA.cacert.pem";
+                owner = config.users.users.${prefs.username}.name;
             };
         };
     };
