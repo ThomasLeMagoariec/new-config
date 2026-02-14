@@ -4,6 +4,7 @@
     laptop = true;
     office = true;
     dev = true;
+    os = true;
 
 # ricing stuff
     shell = "zsh";   # zsh only one configured

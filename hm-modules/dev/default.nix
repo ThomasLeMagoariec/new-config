@@ -1,11 +1,11 @@
 { lib, ... }:
 let
-    prefs = import ../../prefs.nix
+    prefs = import ../../prefs.nix;
 in
 {
     imports = [
-        (lib.mkIf (prefs.os == true) [ ./os.nix ])
         ./languages.nix
         ./tools.nix
-    ];
+    ]
+    ++ lib.optionals (prefs.os) [ ./os.nix ];
 }

@@ -4,13 +4,6 @@ Consider setting `programs.ssh.enableDefaultConfig` to false,
 and manually set the default values you want to keep at
 `programs.ssh.matchBlocks."*"`.
 
-these 3 derivations will be built:
-  /nix/store/m0blq2mppaxn6p2vkmnq8dpc7lvsyzav-hm_homethomas.zshrc.drv
-  /nix/store/q3iy1s8hrk7yzaj8yhlfg04z88hlbyla-home-manager-files.drv
-  /nix/store/l3d6hzk15jx9sid3mz39gf3byzx48060-home-manager-generation.drv
-building '/nix/store/m0blq2mppaxn6p2vkmnq8dpc7lvsyzav-hm_homethomas.zshrc.drv'...
-building '/nix/store/q3iy1s8hrk7yzaj8yhlfg04z88hlbyla-home-manager-files.drv'...
-building '/nix/store/l3d6hzk15jx9sid3mz39gf3byzx48060-home-manager-generation.drv'...
 Starting Home Manager activation
 Activating checkFilesChanged
 Activating checkLinkTargets
