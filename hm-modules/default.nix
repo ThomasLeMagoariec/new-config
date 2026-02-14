@@ -9,7 +9,6 @@ in
         ./dev.nix
         ./yazi.nix
         ./utils.nix
-        ./niri.nix
         ./sops.nix
         ./ssh.nix
         ./nixmate.nix
@@ -19,6 +18,7 @@ in
       ++ lib.optionals (prefs.editor == "nvim") [ ./nixvim ]
       ++ lib.optionals (prefs.office) [ ./graphical.nix ]
       ++ lib.optionals (prefs.ssh) [ ./ssh.nix ]
+      ++ lib.optionals (prefs.wm == "niri") [ ./niri.nix ]
       ++ lib.optionals (prefs.wm == "hyprland" &&
                         prefs.dms == false) [ ./hypr.nix ];
 
