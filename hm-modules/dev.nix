@@ -19,6 +19,7 @@
     just
     go
     jetbrains.idea
+    cargo
 
     librepods
   ];
