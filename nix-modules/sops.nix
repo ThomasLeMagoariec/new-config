@@ -64,6 +64,11 @@ in
                 path = "/home/${prefs.username}/.secrets/strongswan/cacerts/BanquiseUserIssuingCA.cacert.pem";
                 owner = config.users.users.${prefs.username}.name;
             };
+            "${prefs.username}/banquise/thomas.le-magoariec"= {
+                sopsFile = ../secrets/banquise.yaml;
+                key = "thomas.le-magoariec";
+                path = "/home/${prefs.username}/.secrets/strongswan/x509/thomas.le-magoariec.pem";
+            };
         };
     };
 
