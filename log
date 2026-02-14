@@ -1,0 +1,506 @@
+Feb 14 20:20:48 nixos systemd[1]: Starting strongSwan IPsec IKEv1/IKEv2 daemon using swanctl...
+░░ Subject: A start job for unit strongswan-swanctl.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has begun execution.
+░░ 
+░░ The job identifier is 103.
+Feb 14 20:20:48 nixos charon-systemd[1319]: Starting charon-systemd IKE daemon (strongSwan 6.0.4, Linux 6.12.65, x86_64)
+Feb 14 20:20:48 nixos charon-systemd[1319]: providers loaded by OpenSSL: legacy default
+Feb 14 20:20:49 nixos charon-systemd[1319]: using '/nix/store/pjpbniw88gjczksa8majkrlv793yp8wi-openresolv-3.17.0/sbin/resolvconf' to install DNS servers
+Feb 14 20:20:49 nixos charon-systemd[1319]: dnscert plugin is disabled
+Feb 14 20:20:49 nixos charon-systemd[1319]: using forecast interface wlp1s0
+Feb 14 20:20:49 nixos charon-systemd[1319]: joining forecast multicast groups: 224.0.0.1,224.0.0.22,224.0.0.251,224.0.0.252,239.255.255.250
+Feb 14 20:20:49 nixos charon-systemd[1319]: loading ca certificates from '/etc/ipsec.d/cacerts'
+Feb 14 20:20:49 nixos charon-systemd[1319]: opening directory '/etc/ipsec.d/cacerts' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]:   reading directory failed
+Feb 14 20:20:49 nixos charon-systemd[1319]: loading aa certificates from '/etc/ipsec.d/aacerts'
+Feb 14 20:20:49 nixos charon-systemd[1319]: opening directory '/etc/ipsec.d/aacerts' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]:   reading directory failed
+Feb 14 20:20:49 nixos charon-systemd[1319]: loading ocsp signer certificates from '/etc/ipsec.d/ocspcerts'
+Feb 14 20:20:49 nixos charon-systemd[1319]: opening directory '/etc/ipsec.d/ocspcerts' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]:   reading directory failed
+Feb 14 20:20:49 nixos charon-systemd[1319]: loading attribute certificates from '/etc/ipsec.d/acerts'
+Feb 14 20:20:49 nixos charon-systemd[1319]: opening directory '/etc/ipsec.d/acerts' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]:   reading directory failed
+Feb 14 20:20:49 nixos charon-systemd[1319]: loading crls from '/etc/ipsec.d/crls'
+Feb 14 20:20:49 nixos charon-systemd[1319]: opening directory '/etc/ipsec.d/crls' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]:   reading directory failed
+Feb 14 20:20:49 nixos charon-systemd[1319]: loading secrets from '/etc/ipsec.secrets'
+Feb 14 20:20:49 nixos charon-systemd[1319]: expanding file expression '/etc/ipsec.d/ipsec.nm-l2tp.secrets' failed
+Feb 14 20:20:49 nixos charon-systemd[1319]: opening triplet file /etc/ipsec.d/triplets.dat failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]: loaded 0 RADIUS server configurations
+Feb 14 20:20:49 nixos charon-systemd[1319]: no script for ext-auth script defined, disabled
+Feb 14 20:20:49 nixos charon-systemd[1319]: loaded plugins: charon-systemd unbound pkcs11 aesni mgf1 rdrand random nonce x509 revocation constraints acert pubkey pkcs1 pkcs7 pgp dnskey sshkey dnscert pem openssl pkcs8 af-alg fips-prf gmp chapoly xcbc cmac kdf ml drbg curl attr kernel-netlink resolve socket-default socket-dynamic connmark forecast farp stroke vici updown eap-identity eap-sim eap-sim-pcsc eap-aka eap-aka-3gpp eap-aka-3gpp2 eap-simaka-pseudonym eap-simaka-reauth eap-md5 eap-gtc eap-mschapv2 eap-radius eap-tls eap-peap xauth-generic xauth-eap xauth-pam xauth-noauth dhcp counters
+Feb 14 20:20:49 nixos charon-systemd[1319]: spawning 16 worker threads
+Feb 14 20:20:49 nixos charon-systemd[1319]: loaded certificate 'CN=BanquiseRootCA, O=LaBanquise, C=FR'
+Feb 14 20:20:49 nixos charon-systemd[1319]: loaded certificate 'CN=BanquiseUserSubCA, O=LaBanquise, C=FR'
+Feb 14 20:20:49 nixos charon-systemd[1319]: loaded certificate 'CN=BanquiseMachineIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:20:49 nixos charon-systemd[1319]: loaded certificate 'CN=BanquiseMachineSubCA, O=LaBanquise, C=FR'
+Feb 14 20:20:49 nixos charon-systemd[1319]: loaded certificate 'CN=BanquiseUserIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:20:49 nixos charon-systemd[1319]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseRootCA.cacert.pem' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:20:49 nixos swanctl[1553]: loading authority 'banquise1' failed: CA certificate missing: banquise1
+Feb 14 20:20:49 nixos swanctl[1553]: loading authority 'banquise2' failed: CA certificate missing: banquise2
+Feb 14 20:20:49 nixos swanctl[1553]: loading authority 'banquise3' failed: CA certificate missing: banquise3
+Feb 14 20:20:49 nixos swanctl[1553]: loading authority 'banquise4' failed: CA certificate missing: banquise4
+Feb 14 20:20:49 nixos charon-systemd[1319]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseMachineIssuingCA.cacert.pem' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:20:49 nixos swanctl[1553]: loading authority 'banquise5' failed: CA certificate missing: banquise5
+Feb 14 20:20:49 nixos swanctl[1553]: loaded 0 of 5 authorities, 5 failed to load, 0 unloaded
+Feb 14 20:20:49 nixos charon-systemd[1319]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseMachineSubCA.cacert.pem' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:20:49 nixos charon-systemd[1319]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseUserIssuingCA.cacert.pem' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:20:49 nixos charon-systemd[1319]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseUserSubCA.cacert.pem' failed: No such file or directory
+Feb 14 20:20:49 nixos charon-systemd[1319]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:20:49 nixos swanctl[1553]: loaded certificate from '/etc/swanctl/x509ca/BanquiseRootCA.cacert.pem'
+Feb 14 20:20:49 nixos swanctl[1553]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserSubCA.cacert.pem'
+Feb 14 20:20:49 nixos swanctl[1553]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineIssuingCA.cacert.pem'
+Feb 14 20:20:49 nixos swanctl[1553]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineSubCA.cacert.pem'
+Feb 14 20:20:49 nixos swanctl[1553]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserIssuingCA.cacert.pem'
+Feb 14 20:20:49 nixos systemd[1]: strongswan-swanctl.service: Control process exited, code=exited, status=22/n/a
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStartPost= process belonging to unit strongswan-swanctl.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 22.
+Feb 14 20:20:49 nixos charon-systemd[1319]: SIGTERM received, shutting down
+Feb 14 20:20:49 nixos systemd[1]: strongswan-swanctl.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit strongswan-swanctl.service has entered the 'failed' state with result 'exit-code'.
+Feb 14 20:20:49 nixos systemd[1]: Failed to start strongSwan IPsec IKEv1/IKEv2 daemon using swanctl.
+░░ Subject: A start job for unit strongswan-swanctl.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has finished with a failure.
+░░ 
+░░ The job identifier is 103 and the job result is failed.
+Feb 14 20:20:49 nixos systemd[1]: strongswan-swanctl.service: Consumed 92ms CPU time, 14M memory peak, 5.7M read from disk, 192B incoming IP traffic.
+░░ Subject: Resources consumed by unit runtime
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit strongswan-swanctl.service completed and consumed the indicated resources.
+Feb 14 20:26:10 nixos systemd[1]: Starting strongSwan IPsec IKEv1/IKEv2 daemon using swanctl...
+░░ Subject: A start job for unit strongswan-swanctl.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has begun execution.
+░░ 
+░░ The job identifier is 2288.
+Feb 14 20:26:10 nixos charon-systemd[4455]: Starting charon-systemd IKE daemon (strongSwan 6.0.4, Linux 6.12.65, x86_64)
+Feb 14 20:26:10 nixos charon-systemd[4455]: providers loaded by OpenSSL: legacy default
+Feb 14 20:26:10 nixos charon-systemd[4455]: using '/nix/store/pjpbniw88gjczksa8majkrlv793yp8wi-openresolv-3.17.0/sbin/resolvconf' to install DNS servers
+Feb 14 20:26:10 nixos charon-systemd[4455]: dnscert plugin is disabled
+Feb 14 20:26:10 nixos charon-systemd[4455]: using forecast interface wlp1s0
+Feb 14 20:26:10 nixos charon-systemd[4455]: joining forecast multicast groups: 224.0.0.1,224.0.0.22,224.0.0.251,224.0.0.252,239.255.255.250
+Feb 14 20:26:10 nixos charon-systemd[4455]: loading ca certificates from '/etc/ipsec.d/cacerts'
+Feb 14 20:26:10 nixos charon-systemd[4455]: opening directory '/etc/ipsec.d/cacerts' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]:   reading directory failed
+Feb 14 20:26:10 nixos charon-systemd[4455]: loading aa certificates from '/etc/ipsec.d/aacerts'
+Feb 14 20:26:10 nixos charon-systemd[4455]: opening directory '/etc/ipsec.d/aacerts' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]:   reading directory failed
+Feb 14 20:26:10 nixos charon-systemd[4455]: loading ocsp signer certificates from '/etc/ipsec.d/ocspcerts'
+Feb 14 20:26:10 nixos charon-systemd[4455]: opening directory '/etc/ipsec.d/ocspcerts' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]:   reading directory failed
+Feb 14 20:26:10 nixos charon-systemd[4455]: loading attribute certificates from '/etc/ipsec.d/acerts'
+Feb 14 20:26:10 nixos charon-systemd[4455]: opening directory '/etc/ipsec.d/acerts' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]:   reading directory failed
+Feb 14 20:26:10 nixos charon-systemd[4455]: loading crls from '/etc/ipsec.d/crls'
+Feb 14 20:26:10 nixos charon-systemd[4455]: opening directory '/etc/ipsec.d/crls' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]:   reading directory failed
+Feb 14 20:26:10 nixos charon-systemd[4455]: loading secrets from '/etc/ipsec.secrets'
+Feb 14 20:26:10 nixos charon-systemd[4455]: expanding file expression '/etc/ipsec.d/ipsec.nm-l2tp.secrets' failed
+Feb 14 20:26:10 nixos charon-systemd[4455]: opening triplet file /etc/ipsec.d/triplets.dat failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]: loaded 0 RADIUS server configurations
+Feb 14 20:26:10 nixos charon-systemd[4455]: no script for ext-auth script defined, disabled
+Feb 14 20:26:10 nixos charon-systemd[4455]: loaded plugins: charon-systemd unbound pkcs11 aesni mgf1 rdrand random nonce x509 revocation constraints acert pubkey pkcs1 pkcs7 pgp dnskey sshkey dnscert pem openssl pkcs8 af-alg fips-prf gmp chapoly xcbc cmac kdf ml drbg curl attr kernel-netlink resolve socket-default socket-dynamic connmark forecast farp stroke vici updown eap-identity eap-sim eap-sim-pcsc eap-aka eap-aka-3gpp eap-aka-3gpp2 eap-simaka-pseudonym eap-simaka-reauth eap-md5 eap-gtc eap-mschapv2 eap-radius eap-tls eap-peap xauth-generic xauth-eap xauth-pam xauth-noauth dhcp counters
+Feb 14 20:26:10 nixos charon-systemd[4455]: spawning 16 worker threads
+Feb 14 20:26:10 nixos charon-systemd[4455]: loaded certificate 'CN=BanquiseRootCA, O=LaBanquise, C=FR'
+Feb 14 20:26:10 nixos charon-systemd[4455]: loaded certificate 'CN=BanquiseUserSubCA, O=LaBanquise, C=FR'
+Feb 14 20:26:10 nixos charon-systemd[4455]: loaded certificate 'CN=BanquiseMachineIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:26:10 nixos charon-systemd[4455]: loaded certificate 'CN=BanquiseMachineSubCA, O=LaBanquise, C=FR'
+Feb 14 20:26:10 nixos charon-systemd[4455]: loaded certificate 'CN=BanquiseUserIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:26:10 nixos charon-systemd[4455]: loaded ANY private key
+Feb 14 20:26:10 nixos charon-systemd[4455]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseRootCA.cacert.pem' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:26:10 nixos swanctl[4477]: loading authority 'banquise1' failed: CA certificate missing: banquise1
+Feb 14 20:26:10 nixos swanctl[4477]: loading authority 'banquise2' failed: CA certificate missing: banquise2
+Feb 14 20:26:10 nixos swanctl[4477]: loading authority 'banquise3' failed: CA certificate missing: banquise3
+Feb 14 20:26:10 nixos charon-systemd[4455]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseMachineIssuingCA.cacert.pem' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:26:10 nixos charon-systemd[4455]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseMachineSubCA.cacert.pem' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:26:10 nixos charon-systemd[4455]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseUserIssuingCA.cacert.pem' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:26:10 nixos swanctl[4477]: loading authority 'banquise4' failed: CA certificate missing: banquise4
+Feb 14 20:26:10 nixos charon-systemd[4455]:   opening '/home/thomas/.secrets/strongswan/cacerts/BanquiseUserSubCA.cacert.pem' failed: No such file or directory
+Feb 14 20:26:10 nixos charon-systemd[4455]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:26:10 nixos swanctl[4477]: loading authority 'banquise5' failed: CA certificate missing: banquise5
+Feb 14 20:26:10 nixos swanctl[4477]: loaded 0 of 5 authorities, 5 failed to load, 0 unloaded
+Feb 14 20:26:10 nixos swanctl[4477]: loaded certificate from '/etc/swanctl/x509ca/BanquiseRootCA.cacert.pem'
+Feb 14 20:26:10 nixos swanctl[4477]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserSubCA.cacert.pem'
+Feb 14 20:26:10 nixos swanctl[4477]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineIssuingCA.cacert.pem'
+Feb 14 20:26:10 nixos swanctl[4477]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineSubCA.cacert.pem'
+Feb 14 20:26:10 nixos swanctl[4477]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserIssuingCA.cacert.pem'
+Feb 14 20:26:10 nixos swanctl[4477]: loaded private key from '/etc/swanctl/private/thomas.le-magoariec.pem'
+Feb 14 20:26:10 nixos systemd[1]: strongswan-swanctl.service: Control process exited, code=exited, status=22/n/a
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStartPost= process belonging to unit strongswan-swanctl.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 22.
+Feb 14 20:26:10 nixos charon-systemd[4455]: SIGTERM received, shutting down
+Feb 14 20:26:10 nixos systemd[1]: strongswan-swanctl.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit strongswan-swanctl.service has entered the 'failed' state with result 'exit-code'.
+Feb 14 20:26:10 nixos systemd[1]: Failed to start strongSwan IPsec IKEv1/IKEv2 daemon using swanctl.
+░░ Subject: A start job for unit strongswan-swanctl.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has finished with a failure.
+░░ 
+░░ The job identifier is 2288 and the job result is failed.
+Feb 14 20:33:26 nixos systemd[1]: Starting strongSwan IPsec IKEv1/IKEv2 daemon using swanctl...
+░░ Subject: A start job for unit strongswan-swanctl.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has begun execution.
+░░ 
+░░ The job identifier is 3838.
+Feb 14 20:33:26 nixos charon-systemd[6780]: Starting charon-systemd IKE daemon (strongSwan 6.0.4, Linux 6.12.65, x86_64)
+Feb 14 20:33:26 nixos charon-systemd[6780]: providers loaded by OpenSSL: legacy default
+Feb 14 20:33:26 nixos charon-systemd[6780]: using '/nix/store/pjpbniw88gjczksa8majkrlv793yp8wi-openresolv-3.17.0/sbin/resolvconf' to install DNS servers
+Feb 14 20:33:26 nixos charon-systemd[6780]: dnscert plugin is disabled
+Feb 14 20:33:26 nixos charon-systemd[6780]: using forecast interface wlp1s0
+Feb 14 20:33:26 nixos charon-systemd[6780]: joining forecast multicast groups: 224.0.0.1,224.0.0.22,224.0.0.251,224.0.0.252,239.255.255.250
+Feb 14 20:33:26 nixos charon-systemd[6780]: loading ca certificates from '/etc/ipsec.d/cacerts'
+Feb 14 20:33:26 nixos charon-systemd[6780]: opening directory '/etc/ipsec.d/cacerts' failed: No such file or directory
+Feb 14 20:33:26 nixos charon-systemd[6780]:   reading directory failed
+Feb 14 20:33:26 nixos charon-systemd[6780]: loading aa certificates from '/etc/ipsec.d/aacerts'
+Feb 14 20:33:26 nixos charon-systemd[6780]: opening directory '/etc/ipsec.d/aacerts' failed: No such file or directory
+Feb 14 20:33:26 nixos charon-systemd[6780]:   reading directory failed
+Feb 14 20:33:26 nixos charon-systemd[6780]: loading ocsp signer certificates from '/etc/ipsec.d/ocspcerts'
+Feb 14 20:33:26 nixos charon-systemd[6780]: opening directory '/etc/ipsec.d/ocspcerts' failed: No such file or directory
+Feb 14 20:33:26 nixos charon-systemd[6780]:   reading directory failed
+Feb 14 20:33:26 nixos charon-systemd[6780]: loading attribute certificates from '/etc/ipsec.d/acerts'
+Feb 14 20:33:26 nixos charon-systemd[6780]: opening directory '/etc/ipsec.d/acerts' failed: No such file or directory
+Feb 14 20:33:26 nixos charon-systemd[6780]:   reading directory failed
+Feb 14 20:33:26 nixos charon-systemd[6780]: loading crls from '/etc/ipsec.d/crls'
+Feb 14 20:33:26 nixos charon-systemd[6780]: opening directory '/etc/ipsec.d/crls' failed: No such file or directory
+Feb 14 20:33:26 nixos charon-systemd[6780]:   reading directory failed
+Feb 14 20:33:26 nixos charon-systemd[6780]: loading secrets from '/etc/ipsec.secrets'
+Feb 14 20:33:26 nixos charon-systemd[6780]: expanding file expression '/etc/ipsec.d/ipsec.nm-l2tp.secrets' failed
+Feb 14 20:33:26 nixos charon-systemd[6780]: opening triplet file /etc/ipsec.d/triplets.dat failed: No such file or directory
+Feb 14 20:33:26 nixos charon-systemd[6780]: loaded 0 RADIUS server configurations
+Feb 14 20:33:26 nixos charon-systemd[6780]: no script for ext-auth script defined, disabled
+Feb 14 20:33:26 nixos charon-systemd[6780]: loaded plugins: charon-systemd unbound pkcs11 aesni mgf1 rdrand random nonce x509 revocation constraints acert pubkey pkcs1 pkcs7 pgp dnskey sshkey dnscert pem openssl pkcs8 af-alg fips-prf gmp chapoly xcbc cmac kdf ml drbg curl attr kernel-netlink resolve socket-default socket-dynamic connmark forecast farp stroke vici updown eap-identity eap-sim eap-sim-pcsc eap-aka eap-aka-3gpp eap-aka-3gpp2 eap-simaka-pseudonym eap-simaka-reauth eap-md5 eap-gtc eap-mschapv2 eap-radius eap-tls eap-peap xauth-generic xauth-eap xauth-pam xauth-noauth dhcp counters
+Feb 14 20:33:26 nixos charon-systemd[6780]: spawning 16 worker threads
+Feb 14 20:33:26 nixos charon-systemd[6780]: loaded certificate 'CN=BanquiseRootCA, O=LaBanquise, C=FR'
+Feb 14 20:33:26 nixos charon-systemd[6780]: loaded certificate 'CN=BanquiseUserSubCA, O=LaBanquise, C=FR'
+Feb 14 20:33:26 nixos charon-systemd[6780]: loaded certificate 'CN=BanquiseMachineIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:33:26 nixos charon-systemd[6780]: loaded certificate 'CN=BanquiseMachineSubCA, O=LaBanquise, C=FR'
+Feb 14 20:33:26 nixos charon-systemd[6780]: loaded certificate 'CN=BanquiseUserIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:33:26 nixos charon-systemd[6780]: loaded ANY private key
+Feb 14 20:33:26 nixos charon-systemd[6780]: OpenSSL X.509 parsing failed
+Feb 14 20:33:26 nixos charon-systemd[6780]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:33:26 nixos swanctl[6832]: loading connection 'banquise' failed: invalid value for: certs, config discarded
+Feb 14 20:33:26 nixos swanctl[6832]: loaded 0 of 1 connections, 1 failed to load, 0 unloaded
+Feb 14 20:33:26 nixos swanctl[6832]: loaded certificate from '/etc/swanctl/x509ca/BanquiseRootCA.cacert.pem'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserSubCA.cacert.pem'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineIssuingCA.cacert.pem'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineSubCA.cacert.pem'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserIssuingCA.cacert.pem'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded private key from '/etc/swanctl/private/thomas.le-magoariec.pem'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded authority 'banquise1'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded authority 'banquise2'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded authority 'banquise3'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded authority 'banquise4'
+Feb 14 20:33:26 nixos swanctl[6832]: loaded authority 'banquise5'
+Feb 14 20:33:26 nixos swanctl[6832]: successfully loaded 5 authorities, 0 unloaded
+Feb 14 20:33:26 nixos swanctl[6832]: no pools found, 0 unloaded
+Feb 14 20:33:26 nixos systemd[1]: strongswan-swanctl.service: Control process exited, code=exited, status=22/n/a
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStartPost= process belonging to unit strongswan-swanctl.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 22.
+Feb 14 20:33:26 nixos charon-systemd[6780]: SIGTERM received, shutting down
+Feb 14 20:33:26 nixos systemd[1]: strongswan-swanctl.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit strongswan-swanctl.service has entered the 'failed' state with result 'exit-code'.
+Feb 14 20:33:26 nixos systemd[1]: Failed to start strongSwan IPsec IKEv1/IKEv2 daemon using swanctl.
+░░ Subject: A start job for unit strongswan-swanctl.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has finished with a failure.
+░░ 
+░░ The job identifier is 3838 and the job result is failed.
+Feb 14 20:36:02 nixos systemd[1]: Starting strongSwan IPsec IKEv1/IKEv2 daemon using swanctl...
+░░ Subject: A start job for unit strongswan-swanctl.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has begun execution.
+░░ 
+░░ The job identifier is 4463.
+Feb 14 20:36:02 nixos charon-systemd[7172]: Starting charon-systemd IKE daemon (strongSwan 6.0.4, Linux 6.12.65, x86_64)
+Feb 14 20:36:02 nixos charon-systemd[7172]: providers loaded by OpenSSL: legacy default
+Feb 14 20:36:02 nixos charon-systemd[7172]: using '/nix/store/pjpbniw88gjczksa8majkrlv793yp8wi-openresolv-3.17.0/sbin/resolvconf' to install DNS servers
+Feb 14 20:36:02 nixos charon-systemd[7172]: dnscert plugin is disabled
+Feb 14 20:36:02 nixos charon-systemd[7172]: using forecast interface wlp1s0
+Feb 14 20:36:02 nixos charon-systemd[7172]: joining forecast multicast groups: 224.0.0.1,224.0.0.22,224.0.0.251,224.0.0.252,239.255.255.250
+Feb 14 20:36:02 nixos charon-systemd[7172]: loading ca certificates from '/etc/ipsec.d/cacerts'
+Feb 14 20:36:02 nixos charon-systemd[7172]: opening directory '/etc/ipsec.d/cacerts' failed: No such file or directory
+Feb 14 20:36:02 nixos charon-systemd[7172]:   reading directory failed
+Feb 14 20:36:02 nixos charon-systemd[7172]: loading aa certificates from '/etc/ipsec.d/aacerts'
+Feb 14 20:36:02 nixos charon-systemd[7172]: opening directory '/etc/ipsec.d/aacerts' failed: No such file or directory
+Feb 14 20:36:02 nixos charon-systemd[7172]:   reading directory failed
+Feb 14 20:36:02 nixos charon-systemd[7172]: loading ocsp signer certificates from '/etc/ipsec.d/ocspcerts'
+Feb 14 20:36:02 nixos charon-systemd[7172]: opening directory '/etc/ipsec.d/ocspcerts' failed: No such file or directory
+Feb 14 20:36:02 nixos charon-systemd[7172]:   reading directory failed
+Feb 14 20:36:02 nixos charon-systemd[7172]: loading attribute certificates from '/etc/ipsec.d/acerts'
+Feb 14 20:36:02 nixos charon-systemd[7172]: opening directory '/etc/ipsec.d/acerts' failed: No such file or directory
+Feb 14 20:36:02 nixos charon-systemd[7172]:   reading directory failed
+Feb 14 20:36:02 nixos charon-systemd[7172]: loading crls from '/etc/ipsec.d/crls'
+Feb 14 20:36:02 nixos charon-systemd[7172]: opening directory '/etc/ipsec.d/crls' failed: No such file or directory
+Feb 14 20:36:02 nixos charon-systemd[7172]:   reading directory failed
+Feb 14 20:36:02 nixos charon-systemd[7172]: loading secrets from '/etc/ipsec.secrets'
+Feb 14 20:36:02 nixos charon-systemd[7172]: expanding file expression '/etc/ipsec.d/ipsec.nm-l2tp.secrets' failed
+Feb 14 20:36:02 nixos charon-systemd[7172]: opening triplet file /etc/ipsec.d/triplets.dat failed: No such file or directory
+Feb 14 20:36:02 nixos charon-systemd[7172]: loaded 0 RADIUS server configurations
+Feb 14 20:36:02 nixos charon-systemd[7172]: no script for ext-auth script defined, disabled
+Feb 14 20:36:02 nixos charon-systemd[7172]: loaded plugins: charon-systemd unbound pkcs11 aesni mgf1 rdrand random nonce x509 revocation constraints acert pubkey pkcs1 pkcs7 pgp dnskey sshkey dnscert pem openssl pkcs8 af-alg fips-prf gmp chapoly xcbc cmac kdf ml drbg curl attr kernel-netlink resolve socket-default socket-dynamic connmark forecast farp stroke vici updown eap-identity eap-sim eap-sim-pcsc eap-aka eap-aka-3gpp eap-aka-3gpp2 eap-simaka-pseudonym eap-simaka-reauth eap-md5 eap-gtc eap-mschapv2 eap-radius eap-tls eap-peap xauth-generic xauth-eap xauth-pam xauth-noauth dhcp counters
+Feb 14 20:36:02 nixos charon-systemd[7172]: spawning 16 worker threads
+Feb 14 20:36:02 nixos charon-systemd[7172]: loaded certificate 'CN=BanquiseRootCA, O=LaBanquise, C=FR'
+Feb 14 20:36:02 nixos charon-systemd[7172]: loaded certificate 'CN=BanquiseUserSubCA, O=LaBanquise, C=FR'
+Feb 14 20:36:02 nixos charon-systemd[7172]: loaded certificate 'CN=BanquiseMachineIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:36:02 nixos charon-systemd[7172]: loaded certificate 'CN=BanquiseMachineSubCA, O=LaBanquise, C=FR'
+Feb 14 20:36:02 nixos charon-systemd[7172]: loaded certificate 'CN=BanquiseUserIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:36:02 nixos charon-systemd[7172]: loaded ANY private key
+Feb 14 20:36:02 nixos charon-systemd[7172]: OpenSSL X.509 parsing failed
+Feb 14 20:36:02 nixos charon-systemd[7172]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:36:02 nixos swanctl[7196]: loading connection 'banquise' failed: invalid value for: certs, config discarded
+Feb 14 20:36:02 nixos swanctl[7196]: loaded 0 of 1 connections, 1 failed to load, 0 unloaded
+Feb 14 20:36:02 nixos swanctl[7196]: loaded certificate from '/etc/swanctl/x509ca/BanquiseRootCA.cacert.pem'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserSubCA.cacert.pem'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineIssuingCA.cacert.pem'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineSubCA.cacert.pem'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserIssuingCA.cacert.pem'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded private key from '/etc/swanctl/private/thomas.le-magoariec.pem'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded authority 'banquise1'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded authority 'banquise2'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded authority 'banquise3'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded authority 'banquise4'
+Feb 14 20:36:02 nixos swanctl[7196]: loaded authority 'banquise5'
+Feb 14 20:36:02 nixos swanctl[7196]: successfully loaded 5 authorities, 0 unloaded
+Feb 14 20:36:02 nixos swanctl[7196]: no pools found, 0 unloaded
+Feb 14 20:36:02 nixos systemd[1]: strongswan-swanctl.service: Control process exited, code=exited, status=22/n/a
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStartPost= process belonging to unit strongswan-swanctl.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 22.
+Feb 14 20:36:02 nixos charon-systemd[7172]: SIGTERM received, shutting down
+Feb 14 20:36:02 nixos systemd[1]: strongswan-swanctl.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit strongswan-swanctl.service has entered the 'failed' state with result 'exit-code'.
+Feb 14 20:36:02 nixos systemd[1]: Failed to start strongSwan IPsec IKEv1/IKEv2 daemon using swanctl.
+░░ Subject: A start job for unit strongswan-swanctl.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has finished with a failure.
+░░ 
+░░ The job identifier is 4463 and the job result is failed.
+Feb 14 20:36:05 nixos systemd[1]: Starting strongSwan IPsec IKEv1/IKEv2 daemon using swanctl...
+░░ Subject: A start job for unit strongswan-swanctl.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has begun execution.
+░░ 
+░░ The job identifier is 4556.
+Feb 14 20:36:05 nixos charon-systemd[7224]: Starting charon-systemd IKE daemon (strongSwan 6.0.4, Linux 6.12.65, x86_64)
+Feb 14 20:36:06 nixos charon-systemd[7224]: providers loaded by OpenSSL: legacy default
+Feb 14 20:36:06 nixos charon-systemd[7224]: using '/nix/store/pjpbniw88gjczksa8majkrlv793yp8wi-openresolv-3.17.0/sbin/resolvconf' to install DNS servers
+Feb 14 20:36:06 nixos charon-systemd[7224]: dnscert plugin is disabled
+Feb 14 20:36:06 nixos charon-systemd[7224]: using forecast interface wlp1s0
+Feb 14 20:36:06 nixos charon-systemd[7224]: joining forecast multicast groups: 224.0.0.1,224.0.0.22,224.0.0.251,224.0.0.252,239.255.255.250
+Feb 14 20:36:06 nixos charon-systemd[7224]: loading ca certificates from '/etc/ipsec.d/cacerts'
+Feb 14 20:36:06 nixos charon-systemd[7224]: opening directory '/etc/ipsec.d/cacerts' failed: No such file or directory
+Feb 14 20:36:06 nixos charon-systemd[7224]:   reading directory failed
+Feb 14 20:36:06 nixos charon-systemd[7224]: loading aa certificates from '/etc/ipsec.d/aacerts'
+Feb 14 20:36:06 nixos charon-systemd[7224]: opening directory '/etc/ipsec.d/aacerts' failed: No such file or directory
+Feb 14 20:36:06 nixos charon-systemd[7224]:   reading directory failed
+Feb 14 20:36:06 nixos charon-systemd[7224]: loading ocsp signer certificates from '/etc/ipsec.d/ocspcerts'
+Feb 14 20:36:06 nixos charon-systemd[7224]: opening directory '/etc/ipsec.d/ocspcerts' failed: No such file or directory
+Feb 14 20:36:06 nixos charon-systemd[7224]:   reading directory failed
+Feb 14 20:36:06 nixos charon-systemd[7224]: loading attribute certificates from '/etc/ipsec.d/acerts'
+Feb 14 20:36:06 nixos charon-systemd[7224]: opening directory '/etc/ipsec.d/acerts' failed: No such file or directory
+Feb 14 20:36:06 nixos charon-systemd[7224]:   reading directory failed
+Feb 14 20:36:06 nixos charon-systemd[7224]: loading crls from '/etc/ipsec.d/crls'
+Feb 14 20:36:06 nixos charon-systemd[7224]: opening directory '/etc/ipsec.d/crls' failed: No such file or directory
+Feb 14 20:36:06 nixos charon-systemd[7224]:   reading directory failed
+Feb 14 20:36:06 nixos charon-systemd[7224]: loading secrets from '/etc/ipsec.secrets'
+Feb 14 20:36:06 nixos charon-systemd[7224]: expanding file expression '/etc/ipsec.d/ipsec.nm-l2tp.secrets' failed
+Feb 14 20:36:06 nixos charon-systemd[7224]: opening triplet file /etc/ipsec.d/triplets.dat failed: No such file or directory
+Feb 14 20:36:06 nixos charon-systemd[7224]: loaded 0 RADIUS server configurations
+Feb 14 20:36:06 nixos charon-systemd[7224]: no script for ext-auth script defined, disabled
+Feb 14 20:36:06 nixos charon-systemd[7224]: loaded plugins: charon-systemd unbound pkcs11 aesni mgf1 rdrand random nonce x509 revocation constraints acert pubkey pkcs1 pkcs7 pgp dnskey sshkey dnscert pem openssl pkcs8 af-alg fips-prf gmp chapoly xcbc cmac kdf ml drbg curl attr kernel-netlink resolve socket-default socket-dynamic connmark forecast farp stroke vici updown eap-identity eap-sim eap-sim-pcsc eap-aka eap-aka-3gpp eap-aka-3gpp2 eap-simaka-pseudonym eap-simaka-reauth eap-md5 eap-gtc eap-mschapv2 eap-radius eap-tls eap-peap xauth-generic xauth-eap xauth-pam xauth-noauth dhcp counters
+Feb 14 20:36:06 nixos charon-systemd[7224]: spawning 16 worker threads
+Feb 14 20:36:06 nixos charon-systemd[7224]: loaded certificate 'CN=BanquiseRootCA, O=LaBanquise, C=FR'
+Feb 14 20:36:06 nixos charon-systemd[7224]: loaded certificate 'CN=BanquiseUserSubCA, O=LaBanquise, C=FR'
+Feb 14 20:36:06 nixos charon-systemd[7224]: loaded certificate 'CN=BanquiseMachineIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:36:06 nixos charon-systemd[7224]: loaded certificate 'CN=BanquiseMachineSubCA, O=LaBanquise, C=FR'
+Feb 14 20:36:06 nixos charon-systemd[7224]: loaded certificate 'CN=BanquiseUserIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:36:06 nixos charon-systemd[7224]: loaded ANY private key
+Feb 14 20:36:06 nixos charon-systemd[7224]: OpenSSL X.509 parsing failed
+Feb 14 20:36:06 nixos charon-systemd[7224]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:36:06 nixos swanctl[7244]: loading connection 'banquise' failed: invalid value for: certs, config discarded
+Feb 14 20:36:06 nixos swanctl[7244]: loaded 0 of 1 connections, 1 failed to load, 0 unloaded
+Feb 14 20:36:06 nixos swanctl[7244]: loaded certificate from '/etc/swanctl/x509ca/BanquiseRootCA.cacert.pem'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserSubCA.cacert.pem'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineIssuingCA.cacert.pem'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineSubCA.cacert.pem'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserIssuingCA.cacert.pem'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded private key from '/etc/swanctl/private/thomas.le-magoariec.pem'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded authority 'banquise1'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded authority 'banquise2'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded authority 'banquise3'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded authority 'banquise4'
+Feb 14 20:36:06 nixos swanctl[7244]: loaded authority 'banquise5'
+Feb 14 20:36:06 nixos swanctl[7244]: successfully loaded 5 authorities, 0 unloaded
+Feb 14 20:36:06 nixos swanctl[7244]: no pools found, 0 unloaded
+Feb 14 20:36:06 nixos systemd[1]: strongswan-swanctl.service: Control process exited, code=exited, status=22/n/a
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStartPost= process belonging to unit strongswan-swanctl.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 22.
+Feb 14 20:36:06 nixos charon-systemd[7224]: SIGTERM received, shutting down
+Feb 14 20:36:06 nixos systemd[1]: strongswan-swanctl.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit strongswan-swanctl.service has entered the 'failed' state with result 'exit-code'.
+Feb 14 20:36:06 nixos systemd[1]: Failed to start strongSwan IPsec IKEv1/IKEv2 daemon using swanctl.
+░░ Subject: A start job for unit strongswan-swanctl.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has finished with a failure.
+░░ 
+░░ The job identifier is 4556 and the job result is failed.
+Feb 14 20:39:32 nixos systemd[1]: Starting strongSwan IPsec IKEv1/IKEv2 daemon using swanctl...
+░░ Subject: A start job for unit strongswan-swanctl.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has begun execution.
+░░ 
+░░ The job identifier is 6037.
+Feb 14 20:39:32 nixos charon-systemd[7942]: Starting charon-systemd IKE daemon (strongSwan 6.0.4, Linux 6.12.65, x86_64)
+Feb 14 20:39:32 nixos charon-systemd[7942]: providers loaded by OpenSSL: legacy default
+Feb 14 20:39:32 nixos charon-systemd[7942]: using '/nix/store/pjpbniw88gjczksa8majkrlv793yp8wi-openresolv-3.17.0/sbin/resolvconf' to install DNS servers
+Feb 14 20:39:32 nixos charon-systemd[7942]: dnscert plugin is disabled
+Feb 14 20:39:32 nixos charon-systemd[7942]: using forecast interface wlp1s0
+Feb 14 20:39:32 nixos charon-systemd[7942]: joining forecast multicast groups: 224.0.0.1,224.0.0.22,224.0.0.251,224.0.0.252,239.255.255.250
+Feb 14 20:39:32 nixos charon-systemd[7942]: loading ca certificates from '/etc/ipsec.d/cacerts'
+Feb 14 20:39:32 nixos charon-systemd[7942]: opening directory '/etc/ipsec.d/cacerts' failed: No such file or directory
+Feb 14 20:39:32 nixos charon-systemd[7942]:   reading directory failed
+Feb 14 20:39:32 nixos charon-systemd[7942]: loading aa certificates from '/etc/ipsec.d/aacerts'
+Feb 14 20:39:32 nixos charon-systemd[7942]: opening directory '/etc/ipsec.d/aacerts' failed: No such file or directory
+Feb 14 20:39:32 nixos charon-systemd[7942]:   reading directory failed
+Feb 14 20:39:32 nixos charon-systemd[7942]: loading ocsp signer certificates from '/etc/ipsec.d/ocspcerts'
+Feb 14 20:39:32 nixos charon-systemd[7942]: opening directory '/etc/ipsec.d/ocspcerts' failed: No such file or directory
+Feb 14 20:39:32 nixos charon-systemd[7942]:   reading directory failed
+Feb 14 20:39:32 nixos charon-systemd[7942]: loading attribute certificates from '/etc/ipsec.d/acerts'
+Feb 14 20:39:32 nixos charon-systemd[7942]: opening directory '/etc/ipsec.d/acerts' failed: No such file or directory
+Feb 14 20:39:32 nixos charon-systemd[7942]:   reading directory failed
+Feb 14 20:39:32 nixos charon-systemd[7942]: loading crls from '/etc/ipsec.d/crls'
+Feb 14 20:39:32 nixos charon-systemd[7942]: opening directory '/etc/ipsec.d/crls' failed: No such file or directory
+Feb 14 20:39:32 nixos charon-systemd[7942]:   reading directory failed
+Feb 14 20:39:32 nixos charon-systemd[7942]: loading secrets from '/etc/ipsec.secrets'
+Feb 14 20:39:32 nixos charon-systemd[7942]: expanding file expression '/etc/ipsec.d/ipsec.nm-l2tp.secrets' failed
+Feb 14 20:39:32 nixos charon-systemd[7942]: opening triplet file /etc/ipsec.d/triplets.dat failed: No such file or directory
+Feb 14 20:39:32 nixos charon-systemd[7942]: loaded 0 RADIUS server configurations
+Feb 14 20:39:32 nixos charon-systemd[7942]: no script for ext-auth script defined, disabled
+Feb 14 20:39:32 nixos charon-systemd[7942]: loaded plugins: charon-systemd unbound pkcs11 aesni mgf1 rdrand random nonce x509 revocation constraints acert pubkey pkcs1 pkcs7 pgp dnskey sshkey dnscert pem openssl pkcs8 af-alg fips-prf gmp chapoly xcbc cmac kdf ml drbg curl attr kernel-netlink resolve socket-default socket-dynamic connmark forecast farp stroke vici updown eap-identity eap-sim eap-sim-pcsc eap-aka eap-aka-3gpp eap-aka-3gpp2 eap-simaka-pseudonym eap-simaka-reauth eap-md5 eap-gtc eap-mschapv2 eap-radius eap-tls eap-peap xauth-generic xauth-eap xauth-pam xauth-noauth dhcp counters
+Feb 14 20:39:32 nixos charon-systemd[7942]: spawning 16 worker threads
+Feb 14 20:39:32 nixos charon-systemd[7942]: loaded certificate 'CN=BanquiseRootCA, O=LaBanquise, C=FR'
+Feb 14 20:39:32 nixos charon-systemd[7942]: loaded certificate 'CN=BanquiseUserSubCA, O=LaBanquise, C=FR'
+Feb 14 20:39:32 nixos charon-systemd[7942]: loaded certificate 'CN=BanquiseMachineIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:39:32 nixos charon-systemd[7942]: loaded certificate 'CN=BanquiseMachineSubCA, O=LaBanquise, C=FR'
+Feb 14 20:39:32 nixos charon-systemd[7942]: loaded certificate 'CN=BanquiseUserIssuingCA, O=LaBanquise, C=FR'
+Feb 14 20:39:32 nixos charon-systemd[7942]: loaded ANY private key
+Feb 14 20:39:32 nixos charon-systemd[7942]: OpenSSL X.509 parsing failed
+Feb 14 20:39:32 nixos charon-systemd[7942]: building CRED_CERTIFICATE - X509 failed, tried 5 builders
+Feb 14 20:39:32 nixos swanctl[7966]: loading connection 'banquise' failed: invalid value for: certs, config discarded
+Feb 14 20:39:32 nixos swanctl[7966]: loaded 0 of 1 connections, 1 failed to load, 0 unloaded
+Feb 14 20:39:32 nixos swanctl[7966]: loaded certificate from '/etc/swanctl/x509ca/BanquiseRootCA.cacert.pem'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserSubCA.cacert.pem'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineIssuingCA.cacert.pem'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded certificate from '/etc/swanctl/x509ca/BanquiseMachineSubCA.cacert.pem'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded certificate from '/etc/swanctl/x509ca/BanquiseUserIssuingCA.cacert.pem'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded private key from '/etc/swanctl/private/thomas.le-magoariec.pem'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded authority 'banquise1'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded authority 'banquise2'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded authority 'banquise3'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded authority 'banquise4'
+Feb 14 20:39:32 nixos swanctl[7966]: loaded authority 'banquise5'
+Feb 14 20:39:32 nixos swanctl[7966]: successfully loaded 5 authorities, 0 unloaded
+Feb 14 20:39:32 nixos swanctl[7966]: no pools found, 0 unloaded
+Feb 14 20:39:32 nixos systemd[1]: strongswan-swanctl.service: Control process exited, code=exited, status=22/n/a
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ An ExecStartPost= process belonging to unit strongswan-swanctl.service has exited.
+░░ 
+░░ The process' exit code is 'exited' and its exit status is 22.
+Feb 14 20:39:32 nixos charon-systemd[7942]: SIGTERM received, shutting down
+Feb 14 20:39:32 nixos systemd[1]: strongswan-swanctl.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ The unit strongswan-swanctl.service has entered the 'failed' state with result 'exit-code'.
+Feb 14 20:39:32 nixos systemd[1]: Failed to start strongSwan IPsec IKEv1/IKEv2 daemon using swanctl.
+░░ Subject: A start job for unit strongswan-swanctl.service has failed
+░░ Defined-By: systemd
+░░ Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+░░ 
+░░ A start job for unit strongswan-swanctl.service has finished with a failure.
+░░ 
+░░ The job identifier is 6037 and the job result is failed.

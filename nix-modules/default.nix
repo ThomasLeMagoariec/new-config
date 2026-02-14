@@ -8,7 +8,6 @@ in
         ./bluetooth.nix
         ./sops.nix
         ./yubi.nix
-        ./upower.nix
 	] ++ lib.optionals (prefs.openssh == true) [ ./openssh.nix ]
       ++ lib.optionals (prefs.laptop == true) [ ./upower.nix ];
     

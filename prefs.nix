@@ -2,6 +2,9 @@
 # global config
     username = "thomas";
     laptop = true;
+    office = true;
+    dev = true;
+    os = true;
 
 # ricing stuff
     shell = "zsh";   # zsh only one configured
@@ -11,5 +14,6 @@
 
 # services config
     openssh = true;
+    ssh = true;
     misc = true;
 }
