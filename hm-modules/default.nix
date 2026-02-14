@@ -6,7 +6,6 @@ in
 	imports = [
         ./dotfiles.nix
         ./mako.nix
-        ./dev.nix
         ./yazi.nix
         ./utils.nix
         ./sops.nix
@@ -19,6 +18,7 @@ in
       ++ lib.optionals (prefs.office) [ ./graphical.nix ]
       ++ lib.optionals (prefs.ssh) [ ./ssh.nix ]
       ++ lib.optionals (prefs.wm == "niri") [ ./niri.nix ]
+      ++ lib.optionals (prefs.dev) [ ./dev ]
       ++ lib.optionals (prefs.wm == "hyprland" &&
                         prefs.dms == false) [ ./hypr.nix ];
 

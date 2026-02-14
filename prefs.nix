@@ -3,6 +3,7 @@
     username = "thomas";
     laptop = true;
     office = true;
+    dev = true;
 
 # ricing stuff
     shell = "zsh";   # zsh only one configured
