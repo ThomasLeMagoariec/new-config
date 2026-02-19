@@ -4,5 +4,6 @@
     libreoffice
     prismlauncher
     obsidian
+    element-desktop
   ];
 }
