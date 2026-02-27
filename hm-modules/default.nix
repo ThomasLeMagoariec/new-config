@@ -19,6 +19,7 @@ in
       ++ lib.optionals (prefs.ssh) [ ./ssh.nix ]
       ++ lib.optionals (prefs.wm == "niri") [ ./niri.nix ]
       ++ lib.optionals (prefs.dev) [ ./dev ]
+      ++ lib.optionals (prefs.kde) [ ./kde.nix ]
       ++ lib.optionals (prefs.wm == "hyprland" &&
                         prefs.dms == false) [ ./hypr.nix ];
 
