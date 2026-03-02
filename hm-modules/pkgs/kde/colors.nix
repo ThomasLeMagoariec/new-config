@@ -1,13 +1,11 @@
 # colors.nix
 { pkgs, palette }:
 
-pkgs.substituteAll {
-  src = ./win10.colors.in;
-  inherit (palette)
-    bg
-    fg
-    accent
-    red
-    green
-    yellow;
+pkgs.replaceVars ./win10.colors.in {
+  bg     = palette.bg;
+  fg     = palette.fg;
+  accent = palette.accent;
+  #red    = palette.red;
+  #green  = palette.green;
+  #yellow = palette.yellow;
 }

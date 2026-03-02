@@ -1,0 +1,17 @@
+# MyTheme.colors.in
+[General]
+ColorScheme=MyTheme
+Name=MyTheme
+
+[Colors:Window]
+BackgroundNormal=@bg@
+ForegroundNormal=@fg@
+
+[Colors:Button]
+BackgroundNormal=@bg@
+ForegroundNormal=@fg@
+DecorationFocus=@accent@
+
+[Colors:View]
+BackgroundNormal=@bg@
+ForegroundNormal=@fg@

@@ -7,11 +7,9 @@ let
   colors = import ./colors.nix {
     inherit pkgs palette;
   };
-
-  panelSvg = pkgs.substituteAll {
-    src = ./panel.svg.in;
-    inherit (palette) bg;
-  };
+    panelSvg = pkgs.replaceVars ./panel.svg.in {
+        bg = palette.bg;
+    };
 in
 pkgs.stdenvNoCC.mkDerivation {
   pname = "kde-win10";
