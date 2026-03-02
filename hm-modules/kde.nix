@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-    theme = pkgs.callPackage ./pkgs/kde-theme.nix {};
+    theme = pkgs.callPackage ./pkgs/kde/kde-theme.nix {};
 in {
 
     home.file = {
