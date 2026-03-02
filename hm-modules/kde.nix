@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
     theme = pkgs.callPackage ./pkgs/kde-theme.nix {};
 in {
@@ -35,13 +35,7 @@ in {
 
     home.packages = [ theme ];
 
-    programs.plasma {
-        enable = true;
-
-        workspace = {
-            lookAndFeel = "kde-win10";
-            colorscheme = "mycolors";
-        };
-    };
-
+    home.activation.setKDETheme = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        ${pkgs.kdePackages.plasma-workspace}/bin/lookandfeeltool -a kde-win10
+    '';
 }
