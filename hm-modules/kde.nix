@@ -1,6 +1,7 @@
-{ ... }:
-
-{
+{ pkgs, ... }:
+let
+    theme = pkgs.callPackage ./pkgs/kde-theme.nix {};
+in {
 
     home.file = {
         ".config/gtk-3.0/bookmarks".source = ../dotfiles/kde/gtk-3.0/bookmarks;
@@ -30,6 +31,17 @@
         ".config/plasma-localerc".source = ../dotfiles/kde/plasma-localerc;
         ".config/plasmarc".source = ../dotfiles/kde/plasmarc;
         ".config/user-dirs.dirs".source = ../dotfiles/kde/user-dirs.dirs;
+    };
+
+    home.packages = [ theme ];
+
+    programs.plasma {
+        enable = true;
+
+        workspace = {
+            lookAndFeel = "kde-win10";
+            colorscheme = "mycolors";
+        };
     };
 
 }
