@@ -8,38 +8,6 @@ in
         web-devicons.enable = true;
         lualine.enable = true;
         luasnip.enable = true;
-        gitsigns = {
-            enable = true;
-            current_line_blame = false;
-            current_line_blame_opts = {
-                virt_text = true;
-                virt_text_pos = "eol";
-            };
-            signcolumn = true;
-            signs = {
-                add = {
-                    text = "│";
-                };
-                change = {
-                    text = "│";
-                };
-                changedelete = {
-                    text = "~";
-                };
-                delete = {
-                    text = "_";
-                };
-                topdelete = {
-                    text = "‾";
-                };
-                untracked = {
-                    text = "┆";
-                };
-            };
-            watch_gitdir = {
-                follow_files = true;
-            };
-        };
         cmp = {
             enable = true;
             autoEnableSources = true;
