@@ -11,6 +11,7 @@ in
         ./sops.nix
         ./ssh.nix
         ./nixmate.nix
+        ./tmux.nix # will move into an option eventually
 	] ++ lib.optionals (prefs.shell == "zsh") [ ./zsh.nix ]
       ++ lib.optionals (prefs.dms == true) [ ./dms.nix ./dsearch.nix ]
       ++ lib.optionals (prefs.misc == true) [ ./misc.nix ]
@@ -19,6 +20,7 @@ in
       ++ lib.optionals (prefs.ssh) [ ./ssh.nix ]
       ++ lib.optionals (prefs.wm == "niri") [ ./niri.nix ]
       ++ lib.optionals (prefs.dev) [ ./dev ]
+      ++ lib.optionals (prefs.kde) [ ./kde.nix ]
       ++ lib.optionals (prefs.wm == "hyprland" &&
                         prefs.dms == false) [ ./hypr.nix ];
 

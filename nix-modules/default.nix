@@ -9,6 +9,7 @@ in
         ./sops.nix
         ./yubi.nix
 	] ++ lib.optionals (prefs.openssh == true) [ ./openssh.nix ]
+      ++ lib.optionals (prefs.kde) [ ./kde.nix]
       ++ lib.optionals (prefs.laptop == true) [ ./upower.nix ];
     
 

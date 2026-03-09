@@ -69,6 +69,46 @@ in
                 key = "thomas.le-magoariec";
                 path = "/home/${prefs.username}/.secrets/strongswan/x509/thomas.le-magoariec.pem";
             };
+            "ipmi/pve2_user" = {
+                sopsFile = ../secrets/servers.yaml;
+                key = "pve2_user";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "ipmi/pve2_passwd" = {
+                sopsFile = ../secrets/servers.yaml;
+                key = "pve2_passwd";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "ipmi/pve3_user" = {
+                sopsFile = ../secrets/servers.yaml;
+                key = "pve3_user";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "ipmi/pve3_passwd" = {
+                sopsFile = ../secrets/servers.yaml;
+                key = "pve3_passwd";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "ipmi/pve4_user" = {
+                sopsFile = ../secrets/servers.yaml;
+                key = "pve4_user";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "ipmi/pve4_passwd" = {
+                sopsFile = ../secrets/servers.yaml;
+                key = "pve4_passwd";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "ipmi/pve5_user" = {
+                sopsFile = ../secrets/servers.yaml;
+                key = "pve5_user";
+                owner = config.users.users.${prefs.username}.name;
+            };
+            "ipmi/pve5_passwd" = {
+                sopsFile = ../secrets/servers.yaml;
+                key = "pve5_passwd";
+                owner = config.users.users.${prefs.username}.name;
+            };
         };
     };
 

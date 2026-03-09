@@ -31,4 +31,5 @@
         ".config/plasmarc".source = ../dotfiles/kde/plasmarc;
         ".config/user-dirs.dirs".source = ../dotfiles/kde/user-dirs.dirs;
     };
+
 }
