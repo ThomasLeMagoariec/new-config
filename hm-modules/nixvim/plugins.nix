@@ -8,6 +8,7 @@ in
         web-devicons.enable = true;
         lualine.enable = true;
         luasnip.enable = true;
+        gitsigns.enable = true;
         cmp = {
             enable = true;
             autoEnableSources = true;
