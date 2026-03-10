@@ -15,12 +15,20 @@
                 '';
             }
             pkgs.tmuxPlugins.resurrect
-            pkgs.tmuxPlugins.continuum
+            {
+                plugin = pkgs.tmuxPlugins.continuum;
+                extraConfig = ''
+                    set -g @continuum-restore 'on'
+                    set -g @continuum-save-interval '10'
+                '';
+            }
         ];
 
         extraConfig = ''
             set -g renumber-windows on
             set -g mouse on
+            set -g @resurrect-capture-pane-contents 'on'
+            set -g @resurrect-strategy-nvim 'session'
         '';
     };
 }
