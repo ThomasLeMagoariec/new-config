@@ -15,6 +15,7 @@
                 '';
             }
             pkgs.tmuxPlugins.resurrect
+            pkgs.tmuxPlugins.yank
             {
                 plugin = pkgs.tmuxPlugins.continuum;
                 extraConfig = ''
@@ -29,6 +30,10 @@
             set -g mouse on
             set -g @resurrect-capture-pane-contents 'on'
             set -g @resurrect-strategy-nvim 'session'
+
+            set -g mode-keys vi
+            bind-key -T copy-mode-vi v send -X begin-selection
+            bind-key -T copy-mode-vi y send -X copy-selection-and-cancel
         '';
     };
 }
