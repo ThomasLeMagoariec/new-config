@@ -26,14 +26,17 @@
         ];
 
         extraConfig = ''
+            set -g mode-keys vi
+
             set -g renumber-windows on
             set -g mouse on
-            set -g @resurrect-capture-pane-contents 'on'
-            set -g @resurrect-strategy-nvim 'session'
 
-            set -g mode-keys vi
+            bind y copy-mode
             bind-key -T copy-mode-vi v send -X begin-selection
             bind-key -T copy-mode-vi y send -X copy-selection-and-cancel
+
+            set -g @resurrect-capture-pane-contents 'on'
+            set -g @resurrect-strategy-nvim 'session'
         '';
     };
 }
