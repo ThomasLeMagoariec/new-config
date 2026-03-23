@@ -15,6 +15,7 @@
             man-pages
             just
             jetbrains.idea
+            gh
 
             librepods
     ];
