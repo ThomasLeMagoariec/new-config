@@ -11,10 +11,10 @@
             inherit pkgs;
             settings = {
                 spawn-at-startup = [
-                    { command = [ (lib.getExe pkgs.dms) ]; }
+                    "dms run --session"
                 ];
                 xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
-                input.keyboard.xkb.layout = "fr,fr"
+                input.keyboard.xkb.layout = "fr,fr";
 
                 binds = {
                     "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
@@ -23,5 +23,5 @@
                 };
             };
         };
-    }
+    };
 }

@@ -14,5 +14,9 @@
         wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     };
 
-    outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
+    outputs = {nixpkgs-unstable, ...}@inputs: 
+    let
+        pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+    in
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }
