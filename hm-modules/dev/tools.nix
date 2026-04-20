@@ -16,6 +16,7 @@
             just
             jetbrains.idea
             gh
+            iwd
 
             librepods
     ];
