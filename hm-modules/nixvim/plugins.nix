@@ -7,7 +7,10 @@ in
 
         web-devicons.enable = true;
         lualine.enable = true;
-        luasnip.enable = true;
+        luasnip = {
+            enable = true;
+            fromLua = [ { paths = ./snippets; } ];
+        };
         gitmessenger.enable = true;
         cmp = {
             enable = true;
