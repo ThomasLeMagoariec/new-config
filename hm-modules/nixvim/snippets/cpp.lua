@@ -1,12 +1,13 @@
 return {
-  s("guard", {
-    t("#ifndef "),
-    i(1, "HEADER_H"),
-    t({"", "#define "}),
-    rep(1),
-    t({"", "", ""}),
-    i(2, "// declarations"),
-    t({"", "", "#endif // "}),
-    rep(1),
+  require("luasnip").snippet("guard", {
+    require("luasnip").text_node("#ifndef "),
+    require("luasnip").insert_node(1, "HEADER_H"),
+    require("luasnip").text_node({"", "#define" }),
+    require("luasnip.extras").rep(1),
+    require("luasnip").text_node({"", "", ""}),
+    require("luasnip").insert_node(2, "// stuff"),
+    require("luasnip").text_node({"", "", "#endif /* "}),
+    require("luasnip.extras").rep(1),
+    require("luasnip").text_node("*/"),
   }),
 }
