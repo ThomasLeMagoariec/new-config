@@ -57,6 +57,7 @@ in
         git
         wget
         home-manager
+        wireguard-tools
         (pkgs.catppuccin-sddm.override {
             flavor = "mocha";
             accent = "mauve";
