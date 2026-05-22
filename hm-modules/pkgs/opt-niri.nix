@@ -341,9 +341,9 @@ in
     config = mkIf cfg.enable {
         home.packages = [ pkgs.niri ];
 
-        home.file."niriTEST.conf".text = ''
+        home.file.".config/niri/config.kdl".text = ''
 
-            ${if cfg.preferNoCSD then "prefer-no-csd" else ""}
+        ${if cfg.preferNoCSD then "prefer-no-csd" else ""}
 
         input {
             keyboard {
@@ -362,8 +362,8 @@ in
                 ${if cfg.input.touchpad.drag-lock then "drag-lock" else ""}
                 ${if cfg.input.touchpad.natural-scroll then "natural-scroll" else ""}
                 accel-speed ${toString cfg.input.touchpad.accel-speed}
-                accel-profile ${cfg.input.touchpad.accel-profile}
-                scroll-method ${cfg.input.touchpad.scroll-method}
+                accel-profile "${cfg.input.touchpad.accel-profile}"
+                scroll-method "${cfg.input.touchpad.scroll-method}"
                 ${if cfg.input.touchpad.disabled-on-external-mouse then "disabled-on-external-mouse" else ""}
             }
 
@@ -371,17 +371,17 @@ in
                 ${if cfg.input.mouse.off then "off" else ""}
                 ${if cfg.input.mouse.natural-scroll then "natural-scroll" else ""}
                 accel-speed ${toString cfg.input.mouse.accel-speed}
-                accel-profile ${toString cfg.input.mouse.accel-profile}
-                scroll-method ${toString cfg.input.mouse.scroll-method}
+                accel-profile "${toString cfg.input.mouse.accel-profile}"
+                scroll-method "${toString cfg.input.mouse.scroll-method}"
             }
 
             trackpoint {
                 ${if cfg.input.trackpoint.off then "off" else ""}
                 ${if cfg.input.trackpoint.natural-scroll then "natural-scroll" else ""}
                 accel-speed ${toString cfg.input.trackpoint.accel-speed}
-                accel-profile ${toString cfg.input.trackpoint.accel-profile}
-                scroll-method ${toString cfg.input.trackpoint.scroll-method}
-                scroll-button ${cfg.input.trackpoint.scroll-method}
+                accel-profile "${toString cfg.input.trackpoint.accel-profile}"
+                scroll-method "${toString cfg.input.trackpoint.scroll-method}"
+                scroll-button ${toString cfg.input.trackpoint.scroll-button}
                 ${if cfg.input.trackpoint.scroll-button-lock then "scroll-button-lock" else ""}
                 ${if cfg.input.trackpoint.middle-emulation then "middle-emulation" else ""}
 
@@ -390,26 +390,26 @@ in
 
         layout {
             gaps ${toString cfg.layout.gaps}
-            center-focused-column ${toString cfg.layout.center-focused-column}
+            center-focused-column "${toString cfg.layout.center-focused-column}"
 
             preset-column-widths {
-                ${lib.concatMapStrings (x: "proportion ${toString x}\n}") cfg.layout.preset-column-widths.proportions}
+                ${lib.concatMapStrings (x: "proportion ${toString x}\n") cfg.layout.preset-column-widths.proportions}
             }
 
-            default-column-width { proportion ${toString cfg.layout.default-column-width.proportion} }
+            default-column-width { proportion ${toString cfg.layout.default-column-width.proportion}; }
 
             focus-ring {
                 ${if cfg.layout.focus-ring.off then "off" else "// off"}
-                active-color ${cfg.layout.focus-ring.active-color}
-                inactive-color ${cfg.layout.focus-ring.inactive-color}
+                active-color "${cfg.layout.focus-ring.active-color}"
+                inactive-color "${cfg.layout.focus-ring.inactive-color}"
             }
 
             border {
                 ${if cfg.layout.border.off then "off" else "// off"}
                 width ${toString cfg.layout.border.width}
-                active-color ${cfg.layout.border.active-color}
-                inactive-color ${cfg.layout.border.inactive-color}
-                urgent-color ${cfg.layout.border.urgent-color}
+                active-color "${cfg.layout.border.active-color}"
+                inactive-color "${cfg.layout.border.inactive-color}"
+                urgent-color "${cfg.layout.border.urgent-color}"
             }
 
             shadow {
@@ -417,7 +417,7 @@ in
                 softness ${toString cfg.layout.shadow.softness}
                 spread ${toString cfg.layout.shadow.spread}
                 offset ${toString cfg.layout.shadow.offset}
-                color ${cfg.layout.shadow.color}
+                color "${cfg.layout.shadow.color}"
             }
         }
 
@@ -429,7 +429,7 @@ in
             ${if cfg.hotkey-overlay.skip-at-startup then "skip-at-startup" else "// skip-at-startup"}
         }
 
-        screenshot-path ${cfg.screenshot-path}
+        screenshot-path "${cfg.screenshot-path}"
 
         binds {
             ${builtins.concatStringsSep "" (
