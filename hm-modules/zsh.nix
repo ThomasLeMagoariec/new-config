@@ -1,8 +1,28 @@
-{ ... }:
+{ pkgs, ... }:
 let
     prefs = import ../prefs.nix;
 in
 {
+    home.packages = [
+        (pkgs.writeShellScriptBin "randomfetch" ''
+            logos=(
+                android
+                Apple
+                Freebsd
+                Linux
+                LinuxFromScratch
+                opensuse
+                RedOS
+                TempleOS
+                Windows
+            )
+
+            logo=''${logos[$RANDOM % ''${#logos[@]}]}
+
+            exec fastfetch --logo-type builtin --logo "$logo"
+        '')
+    ];
+
     programs.zsh = {
         enable = true;
         enableCompletion = true;
@@ -27,6 +47,8 @@ in
             sudo swanctl -i --child banquise
             '';
 
+
+            fastfetch = "randomfetch";
             ls = "ls --color=auto";
             e = "exit";
         };

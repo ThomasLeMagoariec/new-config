@@ -21,7 +21,6 @@
             sunshine
             bun
             hugo
-            fastfetch
 
             librepods
     ];
