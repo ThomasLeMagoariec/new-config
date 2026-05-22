@@ -19,7 +19,6 @@ in
 	pkgs.cbonsai
     pkgs.firefox
     pkgs.meslo-lgs-nf
-    pkgs.wofi
     pkgs.chromium
     pkgs.brave
     pkgs.discord

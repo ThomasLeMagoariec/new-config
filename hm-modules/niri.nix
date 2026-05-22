@@ -170,6 +170,8 @@
 
             "Mod+Shift+P { power-off-monitors; }"
 
+            "Mod+T {spawn-sh \"~/.config/wofi/scripts/sound.sh\"; }"
+
         ];
     };
 
