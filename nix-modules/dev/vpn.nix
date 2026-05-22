@@ -29,6 +29,7 @@ in
     local = {
       banquise.auth = "pubkey";
       banquise.certs = [ "/home/thomas/.secrets/strongswan/x509/thomas.le-magoariec.pem" ];
+      banquise.id = "CN=thomas.le-magoariec, O=LaBanquise, C=FR";
     };
     remote = {
       banquise.auth = "pubkey";

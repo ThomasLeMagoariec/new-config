@@ -7,16 +7,28 @@ in
 
         web-devicons.enable = true;
         lualine.enable = true;
-        luasnip.enable = true;
+        luasnip = {
+            enable = true;
+
+            luaConfig.pre = ''
+                require("luasnip.loaders.from_lua").load({
+                    paths = "/home/thomas/code/nix/new-config/hm-modules/nixvim/snippets"
+                })
+            '';
+        };
         gitmessenger.enable = true;
         cmp = {
             enable = true;
             autoEnableSources = true;
-            settings.sources = [
-                { name = "nvim_lsp"; }
-                { name = "path"; }
-                { name = "buffer"; }
-            ];
+            settings = {
+                sources = [
+                    { name = "nvim_lsp"; }
+                    { name = "path"; }
+                    { name = "buffer"; }
+                    { name = "luasnip"; }
+                ];
+                snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+            };
 
             luaConfig.post = ''
 local luasnip = require("luasnip")

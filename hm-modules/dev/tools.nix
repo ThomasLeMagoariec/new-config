@@ -16,6 +16,11 @@
             just
             jetbrains.idea
             gh
+            iwd
+            minikube
+            sunshine
+            bun
+            hugo
 
             librepods
     ];

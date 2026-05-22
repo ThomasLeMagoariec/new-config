@@ -12,7 +12,6 @@
         nodejs                  # useful for anything and everything
         pyright                 # python LSP
         nix-ld
-        fastfetch
         steam
         steam-run
     ];

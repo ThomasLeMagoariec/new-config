@@ -69,6 +69,10 @@ in
                 key = "thomas.le-magoariec";
                 path = "/home/${prefs.username}/.secrets/strongswan/x509/thomas.le-magoariec.pem";
             };
+            "ansible/private_keys/ssh" = {
+                sopsFile = ../secrets/secrets.yaml;
+                owner = config.users.users.${prefs.username}.name;
+            };
             "ipmi/pve2_user" = {
                 sopsFile = ../secrets/servers.yaml;
                 key = "pve2_user";

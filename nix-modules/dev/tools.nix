@@ -9,6 +9,7 @@
             gnumake
             pnpm
             SDL2
+            wine
         ])
         ++ (with pkgs-unstable; [
             playerctl
