@@ -49,6 +49,7 @@ in
 
 
             fastfetch = "randomfetch";
+            ff = "randomfetch";
             ls = "ls --color=auto";
             e = "exit";
         };
