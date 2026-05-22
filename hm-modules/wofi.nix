@@ -4,6 +4,16 @@
         ".config/wofi/sounds/hava_nagila.mp3".source = ../dotfiles/sounds/hava_nagila.mp3;
         ".config/wofi/sounds/apple_pay.mp3".source = ../dotfiles/sounds/apple_pay.mp3;
         ".config/wofi/sounds/fah.mp3".source = ../dotfiles/sounds/fah.mp3;
+        ".config/wofi/sounds/vine_boom.mp3".source = ../dotfiles/sounds/vine_boom.mp3;
+        ".config/wofi/sounds/windows_xp.mp3".source = ../dotfiles/sounds/windows_xp.mp3;
+        ".config/wofi/sounds/metal_pipe.mp3".source = ../dotfiles/sounds/metal_pipe.mp3;
+        ".config/wofi/sounds/rizz.mp3".source = ../dotfiles/sounds/rizz.mp3;
+        ".config/wofi/sounds/hub.mp3".source = ../dotfiles/sounds/hub.mp3;
+        ".config/wofi/sounds/applause.mp3".source = ../dotfiles/sounds/applause.mp3;
+        ".config/wofi/sounds/for_sure.mp3".source = ../dotfiles/sounds/for_sure.mp3;
+        ".config/wofi/sounds/frank_leboeuf.mp3".source = ../dotfiles/sounds/frank_leboeuf.mp3;
+        ".config/wofi/sounds/sncf.mp3".source = ../dotfiles/sounds/sncf.mp3;
+        ".config/wofi/sounds/max_verstappen.mp3".source = ../dotfiles/sounds/max_verstappen.mp3;
         ".config/wofi/scripts/sound.sh" = {
             executable = true;
             text = ''
@@ -12,7 +22,16 @@
 options="hava nagila
 apple pay
 fah
- Shutdown"
+vine boom
+windows xp
+metal pipe
+rizz
+hub
+applause
+for sure
+frank leboeuf
+sncf
+max verstappen"
 
 chosen=$(echo "$options" | wofi --dmenu --prompt "Sound")
 
@@ -26,8 +45,35 @@ case "$chosen" in
     "fah")
         pw-play ~/.config/wofi/sounds/fah.mp3
         ;;
-    " Shutdown")
-        systemctl poweroff
+    "vine boom")
+        pw-play ~/.config/wofi/sounds/vine_boom.mp3
+        ;;
+    "windows xp")
+        pw-play ~/.config/wofi/sounds/windows_xp.mp3
+        ;;
+    "metal pipe")
+        pw-play ~/.config/wofi/sounds/metal_pipe.mp3
+        ;;
+    "rizz")
+        pw-play ~/.config/wofi/sounds/rizz.mp3
+        ;;
+    "hub")
+        pw-play ~/.config/wofi/sounds/hub.mp3
+        ;;
+    "applause")
+        pw-play ~/.config/wofi/sounds/applause.mp3
+        ;;
+    "for sure")
+        pw-play ~/.config/wofi/sounds/for_sure.mp3
+        ;;
+    "frank leboeuf")
+        pw-play ~/.config/wofi/sounds/frank_leboeuf.mp3
+        ;;
+    "sncf")
+        pw-play ~/.config/wofi/sounds/sncf.mp3
+        ;;
+    "max verstappen")
+        pw-play ~/.config/wofi/sounds/max_verstappen.mp3
         ;;
     esac
                     '';
