@@ -2,7 +2,7 @@
 let
     sounds = builtins.fetchurl {
         url = "sounds.lemagoariec.app/script.sh";
-        sha256 = "0axqf1ikwxnks4rrbyi0wavk6m1sjhrbj1gjv71qzhmg0rgsipxn";
+        sha256 = "1shwvsp613sg2j9ly4inyn1np0fdz9w6fzjv26xi96g0klfqnhgn";
     };
 in
 {
