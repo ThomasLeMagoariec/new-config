@@ -1,17 +1,5 @@
 { pkgs, ... }:
-let
-    sounds = builtins.fetchurl {
-        url = "sounds.lemagoariec.app/script.sh";
-        sha256 = "1shwvsp613sg2j9ly4inyn1np0fdz9w6fzjv26xi96g0klfqnhgn";
-    };
-in
 {
-    home.file = {
-        ".config/wofi/scripts/sound.sh" = {
-            executable = true;
-            text = builtins.readFile sounds;
-        };
-    };
 
     home.packages = [(
         pkgs.writeShellScriptBin "soundboard" ''
@@ -19,6 +7,7 @@ in
         set -euo pipefail
 
         BASE_URL="http://sounds.lemagoariec.app"
+        curl -fSL "$BASE_URL/script.sh" -o ~/.config/wofi/scripts/sound.sh
 
         echo $BASE_URL
         curl -fsSL "$BASE_URL/files" | while IFS= read -r file; do
@@ -28,6 +17,8 @@ in
         touch ~/.config/wofi/sounds/$file.mp3
         curl -fSL "$BASE_URL/$file.mp3" -o ~/.config/wofi/sounds/$file.mp3
         done
+
+        chmod +x ~/.config/wofi/scripts/sound.sh
 
         ''
     )];
