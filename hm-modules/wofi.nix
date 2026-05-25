@@ -1,84 +1,36 @@
-{ ... }:
+{ pkgs, ... }:
+let
+    sounds = builtins.fetchurl {
+        url = "sounds.lemagoariec.app/script.sh";
+        sha256 = "0axqf1ikwxnks4rrbyi0wavk6m1sjhrbj1gjv71qzhmg0rgsipxn";
+    };
+in
 {
     home.file = {
-        ".config/wofi/sounds/hava_nagila.mp3".source = ../dotfiles/sounds/hava_nagila.mp3;
-        ".config/wofi/sounds/apple_pay.mp3".source = ../dotfiles/sounds/apple_pay.mp3;
-        ".config/wofi/sounds/fah.mp3".source = ../dotfiles/sounds/fah.mp3;
-        ".config/wofi/sounds/vine_boom.mp3".source = ../dotfiles/sounds/vine_boom.mp3;
-        ".config/wofi/sounds/windows_xp.mp3".source = ../dotfiles/sounds/windows_xp.mp3;
-        ".config/wofi/sounds/metal_pipe.mp3".source = ../dotfiles/sounds/metal_pipe.mp3;
-        ".config/wofi/sounds/rizz.mp3".source = ../dotfiles/sounds/rizz.mp3;
-        ".config/wofi/sounds/hub.mp3".source = ../dotfiles/sounds/hub.mp3;
-        ".config/wofi/sounds/applause.mp3".source = ../dotfiles/sounds/applause.mp3;
-        ".config/wofi/sounds/for_sure.mp3".source = ../dotfiles/sounds/for_sure.mp3;
-        ".config/wofi/sounds/frank_leboeuf.mp3".source = ../dotfiles/sounds/frank_leboeuf.mp3;
-        ".config/wofi/sounds/sncf.mp3".source = ../dotfiles/sounds/sncf.mp3;
-        ".config/wofi/sounds/max_verstappen.mp3".source = ../dotfiles/sounds/max_verstappen.mp3;
         ".config/wofi/scripts/sound.sh" = {
             executable = true;
-            text = ''
-#!/usr/bin/env bash
-
-options="hava nagila
-apple pay
-fah
-vine boom
-windows xp
-metal pipe
-rizz
-hub
-applause
-for sure
-frank leboeuf
-sncf
-max verstappen"
-
-chosen=$(echo "$options" | wofi --dmenu --prompt "Sound")
-
-case "$chosen" in
-    "hava nagila")
-        pw-play ~/.config/wofi/sounds/hava_nagila.mp3
-        ;;
-    "apple pay")
-        pw-play ~/.config/wofi/sounds/apple_pay.mp3
-        ;;
-    "fah")
-        pw-play ~/.config/wofi/sounds/fah.mp3
-        ;;
-    "vine boom")
-        pw-play ~/.config/wofi/sounds/vine_boom.mp3
-        ;;
-    "windows xp")
-        pw-play ~/.config/wofi/sounds/windows_xp.mp3
-        ;;
-    "metal pipe")
-        pw-play ~/.config/wofi/sounds/metal_pipe.mp3
-        ;;
-    "rizz")
-        pw-play ~/.config/wofi/sounds/rizz.mp3
-        ;;
-    "hub")
-        pw-play ~/.config/wofi/sounds/hub.mp3
-        ;;
-    "applause")
-        pw-play ~/.config/wofi/sounds/applause.mp3
-        ;;
-    "for sure")
-        pw-play ~/.config/wofi/sounds/for_sure.mp3
-        ;;
-    "frank leboeuf")
-        pw-play ~/.config/wofi/sounds/frank_leboeuf.mp3
-        ;;
-    "sncf")
-        pw-play ~/.config/wofi/sounds/sncf.mp3
-        ;;
-    "max verstappen")
-        pw-play ~/.config/wofi/sounds/max_verstappen.mp3
-        ;;
-    esac
-                    '';
+            text = builtins.readFile sounds;
         };
     };
+
+    home.packages = [(
+        pkgs.writeShellScriptBin "soundboard" ''
+#!/usr/bin/env bash
+        set -euo pipefail
+
+        BASE_URL="http://sounds.lemagoariec.app"
+
+        echo $BASE_URL
+        curl -fsSL "$BASE_URL/files" | while IFS= read -r file; do
+        [[ -z "$file" ]] && continue
+
+        echo "Downloading: $file"
+        touch ~/.config/wofi/sounds/$file.mp3
+        curl -fSL "$BASE_URL/$file.mp3" -o ~/.config/wofi/sounds/$file.mp3
+        done
+
+        ''
+    )];
 
     programs.wofi = {
         enable = true;
