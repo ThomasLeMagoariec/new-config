@@ -5,12 +5,11 @@ in
 {
 	imports = [
         ./kb.nix
-        ./bluetooth.nix
         ./sops.nix
         ./yubi.nix
         ./boot.nix
         ./networking.nix
-	] ++ lib.optionals (prefs.openssh == true) [ ./openssh.nix ]
+     ]
       ++ lib.optionals (prefs.kde) [ ./kde.nix]
       ++ lib.optionals (prefs.laptop == true) [ ./upower.nix ];
     

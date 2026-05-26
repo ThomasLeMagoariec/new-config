@@ -4,6 +4,14 @@ let
     areAllString = lst:
          (builtins.all (item: builtins.isString item) lst);
 
+    featureModules = {
+        openssh = ../nix-modules/openssh.nix;
+    };
+
+    selectedModules = features:
+        map (name: featureModules.${name})
+      spec.features;
+
     validateSshKeys = keys:
         if (areAllString keys)
             then keys
@@ -25,6 +33,11 @@ let
         else
             throw "'${spec.profile}' is not a valid profile";
         
+    validateTrustedUsers = users:
+        if (areAllString users)
+            then users
+        else
+            builtins.warn "trustedUsers is not a list of strings defaulting to just root" ["root"];
 
 
 in {
@@ -32,14 +45,15 @@ in {
         (validateHardwareConfig spec.profile)
         ../nix-modules/dev
         ../nix-modules
-    ];
+    ] ++ pkgs.lib.optionals (spec.bluetooth.enable) ../nix-modules/bluetooth.nix;
+
     
     sops.secrets."${spec.username}/user/password".neededForUsers = spec.sops or true;
 
     users.mutableUsers = !(spec.sops or true);
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    nix.settings.trusted-users = spec.trustedUsers or [ "root" "${spec.username}" ];
+    nix.settings.trusted-users = validateTrustedUsers spec.trustedUsers or [{body = "not valid";}];
 
     time.timeZone = (validateTimeZone (spec.timeZone or "invalid timeZone"));
 
@@ -69,8 +83,6 @@ in {
         vim
         git
         wget
-        home-manager
-        wireguard-tools
         (pkgs.catppuccin-sddm.override {
             flavor = "mocha";
             accent = "mauve";
