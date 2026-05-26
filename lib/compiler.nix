@@ -32,7 +32,6 @@ in {
         (validateHardwareConfig spec.profile)
         ../nix-modules/dev
         ../nix-modules
-        ../nix-modules/networking.nix
     ];
     
     sops.secrets."${spec.username}/user/password".neededForUsers = spec.sops or true;
