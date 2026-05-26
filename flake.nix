@@ -35,14 +35,18 @@
 	let
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+        spec = import ./hosts/laptop/laptop.nix;
+        compile = import ./lib/compiler.nix;
+        pkgs = nixpkgs;
 	in {
 		nixosConfigurations = {
 			laptop = lib.nixosSystem {
 				system = "x86_64-linux";
-				modules = [ ./hosts/laptop/configuration.nix ];
+				modules = [ (compile spec) ];
                 specialArgs = {
                     inherit pkgs-unstable;
                     inherit inputs;
+                    inherit spec;
                 };
 			};
 			chanek = lib.nixosSystem {
