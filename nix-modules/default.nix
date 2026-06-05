@@ -9,6 +9,7 @@ in
         ./yubi.nix
         ./boot.nix
         ./networking.nix
+        ./bluetooth.nix
      ]
       ++ lib.optionals (prefs.kde) [ ./kde.nix]
       ++ lib.optionals (prefs.laptop == true) [ ./upower.nix ];

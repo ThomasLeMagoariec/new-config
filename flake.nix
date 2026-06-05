@@ -42,7 +42,7 @@
 		nixosConfigurations = {
 			laptop = lib.nixosSystem {
 				system = "x86_64-linux";
-				modules = [ (compile spec) ];
+				modules = [ ./hosts/laptop/configuration.nix ];
                 specialArgs = {
                     inherit pkgs-unstable;
                     inherit inputs;

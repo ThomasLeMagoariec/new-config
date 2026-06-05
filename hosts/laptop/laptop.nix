@@ -9,10 +9,10 @@
         "openssh"
     ];
 
-    bluetooth = {
-        enable = true;
-        emulateMac = true;
-    };
+    #bluetooth = {
+    #    enable = true;
+    #    emulateMac = true;
+    #};
     
 
     sshKeys = [

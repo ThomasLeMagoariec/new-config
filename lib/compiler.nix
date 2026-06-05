@@ -45,7 +45,7 @@ in {
         (validateHardwareConfig spec.profile)
         ../nix-modules/dev
         ../nix-modules
-    ] ++ pkgs.lib.optionals (spec.bluetooth.enable) ../nix-modules/bluetooth.nix;
+    ];
 
     
     sops.secrets."${spec.username}/user/password".neededForUsers = spec.sops or true;
