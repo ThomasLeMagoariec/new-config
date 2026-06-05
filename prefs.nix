@@ -10,7 +10,7 @@
     shell = "zsh";   # zsh only one configured
     wm = "niri";     # niri or hyprland
     kde = true;
-    dms = true;      # dms or hyprpaper, hyprlock, ...
+    dms = false;      # dms or hyprpaper, hyprlock, ...
     editor = "nvim"; # only nvim configured
 
 # services config

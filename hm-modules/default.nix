@@ -17,6 +17,7 @@ in
         ./tmux.nix # will move into an option eventually
 	] ++ lib.optionals (prefs.shell == "zsh") [ ./zsh.nix ]
       ++ lib.optionals (prefs.dms == true) [ ./dms.nix ./dsearch.nix ]
+      ++ lib.optionals (prefs.dms == false) [ ./noctalia.nix ]
       ++ lib.optionals (prefs.misc == true) [ ./misc.nix ]
       ++ lib.optionals (prefs.editor == "nvim") [ ./nixvim ]
       ++ lib.optionals (prefs.office) [ ./graphical.nix ]

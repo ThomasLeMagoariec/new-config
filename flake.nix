@@ -25,6 +25,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        noctalia = {
+            url = "github:noctalia-dev/noctalia-shell";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         nixmate.url = "github:daskladas/nixmate";
         sops-nix.url = "github:Mic92/sops-nix";
         nixvim.url = "github:nix-community/nixvim/nixos-25.11";
