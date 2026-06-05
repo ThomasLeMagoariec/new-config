@@ -15,6 +15,12 @@ in
             description = "Services to be spawned when niri starts";
         };
 
+        spawnShAtStart = mkOption {
+            type = types.listOf types.str;
+            default = [];
+            description = "Services to be spawned when niri starts";
+        };
+
         preferNoCSD = mkOption {
             type = types.bool;
             default = true;
@@ -344,6 +350,13 @@ in
         home.file.".config/niri/config.kdl".text = ''
 
         ${if cfg.preferNoCSD then "prefer-no-csd" else ""}
+
+        ${builtins.concatStringsSep "" (
+            map (x: "spawn-at-startup \"${x}\"\n") cfg.spawnAtStart
+        )}
+        ${builtins.concatStringsSep "" (
+            map (x: "spawn-sh-at-startup \"${x}\"\n") cfg.spawnShAtStart
+        )}
 
         input {
             keyboard {

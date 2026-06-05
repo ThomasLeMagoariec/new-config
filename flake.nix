@@ -36,7 +36,7 @@
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, dms, danksearch, home-manager, my-pkgs, nixvim, nixmate, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, dms, danksearch, home-manager, my-pkgs, nixvim, nixmate, noctalia, ... }@inputs:
 	let
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
@@ -69,6 +69,7 @@
                 extraSpecialArgs = {
                     inherit inputs;
                     inherit dms;
+                    inherit noctalia;
                     inherit my-pkgs;
                     inherit pkgs-unstable;
                 };

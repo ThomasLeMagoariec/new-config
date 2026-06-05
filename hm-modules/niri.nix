@@ -6,8 +6,9 @@
 
     programs.niri = {
         enable = true;
-        spawnAtStart = [ "testList1" "testList2" ];
         preferNoCSD = true;
+
+        spawnAtStart = ["noctalia-shell"];
 
         input = {
             keyboard = {
@@ -24,8 +25,8 @@
             "Mod+Shift+Slash { show-hotkey-overlay; }"
             
             "Mod+Return hotkey-overlay-title=\"Open a Terminal: kitty\" { spawn \"kitty\"; }"
-            "Mod+D hotkey-overlay-title=\"Run an Application: fuzzel\" { spawn \"dms\" \"ipc\" \"call\" \"spotlight\" \"toggle\"; }"
-            "Super+L hotkey-overlay-title=\"Lock the Screen: hyprlock\" { spawn \"dms\" \"ipc\" \"call\" \"lock\" \"lock\"; }"
+            "Mod+D hotkey-overlay-title=\"Run an Application: fuzzel\" { spawn \"noctalia-shell\" \"ipc\" \"call\" \"launcher\" \"toggle\"; }"
+            "Super+L hotkey-overlay-title=\"Lock the Screen: hyprlock\" { spawn \"noctalia-shell\" \"ipc\" \"call\" \"lockScreen\" \"lock\"; }"
 
             "Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh \"pkill orca || exec orca\"; }"
 
