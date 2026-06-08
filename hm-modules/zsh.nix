@@ -41,6 +41,7 @@ in
             gd = "git diff";
 
             code = "cd ~/code";
+            cat = "bat";
             vpn-banquise = ''
             sudo systemctl restart strongswan-swanctl.service
             sudo swanctl -q

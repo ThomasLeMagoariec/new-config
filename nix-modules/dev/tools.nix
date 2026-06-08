@@ -3,7 +3,6 @@
     environment.systemPackages =
         (with pkgs; [
             quarkus
-            docker
             maven
             jdk21
             gnumake
@@ -14,12 +13,14 @@
         ++ (with pkgs-unstable; [
             playerctl
             gnumake
+            docker
         ]);
 
   programs.nix-ld.enable = true;
 
   virtualisation.docker = {
       enable = true;
+      package = pkgs.docker_29;
   };
 
   users.users.thomas.extraGroups = [ "docker" ];
