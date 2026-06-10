@@ -73,6 +73,12 @@
         ],
         "right": [
           {
+            "displayMode": "onhover",
+            "iconColor": "none",
+            "id": "VPN",
+            "textColor": "none"
+          },
+          {
             "blacklist": [],
             "chevronColor": "none",
             "colorizeIcons": false,
@@ -622,7 +628,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/nix/store/ddq2bqg4826xw6vfz1pgjsar20wig8y7-noctalia-shell-2026-06-02_3aab45a/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
+      "eDP-1": "/home/thomas/code/nix/new-config/dotfiles/static/wallpaper-2.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
