@@ -3,7 +3,6 @@
 
     home.packages = [(
         pkgs.writeShellScriptBin "soundboard" ''
-#!/usr/bin/env bash
         set -euo pipefail
 
         BASE_URL="http://sounds.lemagoariec.app"
