@@ -95,6 +95,7 @@ cmp.setup({
                 "kotlin_language_server"
                 "just"
                 "jdtls"
+                "gopls"
             ];
         };
         
