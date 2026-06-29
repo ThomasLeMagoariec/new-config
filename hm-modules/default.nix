@@ -16,6 +16,7 @@ in
         ./ipmi.nix
         ./bat.nix
         ./tmux.nix # will move into an option eventually
+        ./apple.nix
 	] ++ lib.optionals (prefs.shell == "zsh") [ ./zsh.nix ]
       ++ lib.optionals (prefs.dms == true) [ ./dms.nix ./dsearch.nix ]
       ++ lib.optionals (prefs.dms == false) [ ./noctalia.nix ]
