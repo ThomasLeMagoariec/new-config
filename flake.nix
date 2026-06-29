@@ -30,13 +30,18 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        nix-snapd = {
+            url = "github:nix-community/nix-snapd";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         nixmate.url = "github:daskladas/nixmate";
         sops-nix.url = "github:Mic92/sops-nix";
         nixvim.url = "github:nix-community/nixvim/nixos-25.11";
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, dms, danksearch, home-manager, my-pkgs, nixvim, nixmate, noctalia, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, dms, danksearch, home-manager, my-pkgs, nixvim, nixmate, noctalia,  nix-snapd, ... }@inputs:
 	let
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;

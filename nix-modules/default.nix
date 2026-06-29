@@ -10,6 +10,7 @@ in
         ./boot.nix
         ./networking.nix
         ./bluetooth.nix
+        ./snap.nix
      ]
       ++ lib.optionals (prefs.kde) [ ./kde.nix]
       ++ lib.optionals (prefs.laptop == true) [ ./upower.nix ];
