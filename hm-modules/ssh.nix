@@ -37,6 +37,14 @@ in
                     "/home/${prefs.username}/.ssh/id_key"
                 ];
             };
+            "42" = {
+                host = "vogsphere.42lyon.fr";
+                user = "git";
+                identityFile = [
+                    "/home/${prefs.username}/.ssh/id_jean"
+                    "/home/${prefs.username}/.ssh/id_key"
+                ];
+            };
         };
     };
 }
