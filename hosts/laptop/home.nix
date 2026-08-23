@@ -17,7 +17,6 @@ in
 
   home.packages = [
     pkgs.firefox
-    pkgs.wofi
     pkgs.chromium
     pkgs.brave
     pkgs.discord
