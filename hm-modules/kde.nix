@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-    theme = pkgs.callPackage ./pkgs/kde/kde-theme.nix {};
+    #theme = pkgs.callPackage ./pkgs/kde/kde-theme.nix {};
 in {
 
     #home.file = {
@@ -33,9 +33,9 @@ in {
     #    ".config/user-dirs.dirs".source = ../dotfiles/kde/user-dirs.dirs;
     #};
 
-    home.packages = [ theme ];
+    # home.packages = [ theme ];
 
-    home.activation.setKDETheme = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        ${pkgs.kdePackages.plasma-workspace}/bin/lookandfeeltool -a kde-win10
-    '';
+    #home.activation.setKDETheme = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    #    ${pkgs.kdePackages.plasma-workspace}/bin/lookandfeeltool -a kde-win10
+    #'';
 }

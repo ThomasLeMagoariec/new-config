@@ -11,7 +11,7 @@
     wm = "niri";     # niri or hyprland
     kde = true;
     dms = false;      # dms or hyprpaper, hyprlock, ...
-    editor = "nvim"; # only nvim configured
+    editor = "lazyvim"; # only nvim configured
 
 # services config
     openssh = true;

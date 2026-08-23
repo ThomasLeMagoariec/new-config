@@ -9,6 +9,7 @@
             pnpm
             SDL2
             wine
+            norminette
         ])
         ++ (with pkgs-unstable; [
             playerctl
@@ -20,7 +21,7 @@
 
   virtualisation.docker = {
       enable = true;
-      package = pkgs.docker_29;
+      package = pkgs.docker_25;
   };
 
   users.users.thomas.extraGroups = [ "docker" ];

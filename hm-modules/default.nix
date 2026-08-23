@@ -22,6 +22,7 @@ in
       ++ lib.optionals (prefs.dms == false) [ ./noctalia.nix ]
       ++ lib.optionals (prefs.misc == true) [ ./misc.nix ]
       ++ lib.optionals (prefs.editor == "nvim") [ ./nixvim ]
+      ++ lib.optionals (prefs.editor == "lazyvim") [ ./lazyvim.nix ]
       ++ lib.optionals (prefs.office) [ ./graphical.nix ]
       ++ lib.optionals (prefs.ssh) [ ./ssh.nix ]
       ++ lib.optionals (prefs.wm == "niri") [ ./niri.nix ]

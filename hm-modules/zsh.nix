@@ -40,6 +40,7 @@ in
             gs = "git status";
             gd = "git diff";
 
+            nm = "norminette -R CheckForbiddenSourceHeader";
             code = "cd ~/code";
             cat = "bat";
             vpn-banquise = ''

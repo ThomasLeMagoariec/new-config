@@ -38,10 +38,11 @@
         nixmate.url = "github:daskladas/nixmate";
         sops-nix.url = "github:Mic92/sops-nix";
         nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+        lazyvim.url = "github:pfassina/lazyvim-nix";
 	};
 
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, dms, danksearch, home-manager, my-pkgs, nixvim, nixmate, noctalia,  nix-snapd, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-unstable, dms, lazyvim, danksearch, home-manager, my-pkgs, nixvim, nixmate, noctalia,  nix-snapd, ... }@inputs:
 	let
 		lib = nixpkgs.lib;
         pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
@@ -77,6 +78,7 @@
                     inherit noctalia;
                     inherit my-pkgs;
                     inherit pkgs-unstable;
+                    inherit lazyvim;
                 };
             };
 
