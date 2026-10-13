@@ -2,11 +2,67 @@
 {
 	flake.nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
 		modules = [
+			self.nixosModules.latopHardware
 			self.nixosModules.laptop
 		];
 	};
 
 	flake.nixosModules.laptop = {
-		boot.loader.grub.enable = true;
+		sops.secrets."${prefs.username}/user/password".neededForUsers = true;
+		users.mutableUsers = false;
+
+		boot.loader.systemd-boot.enable = true;
+		boot.loader.efi.canTouchEfiVariables = true;
+
+		nix.settings.experimental-features = [ "nix-command" "flakes" ];
+		nix.settings.trusted-users = [ "root" "${prefs.username}" ];
+
+		#nixpkgs.config.allowUnfree = true;
+
+		networking.hostName = "nixos";
+		networking.networkmanager.enable = true;
+
+		time.timeZone = "Europe/Paris";
+
+		services.displayManager.sessionPackages = [
+			pkgs.niri
+		];
+
+		services.xserver.enable = true;
+
+		#services.desktopManager.gnome.enable = true;
+
+		services.displayManager.sddm = {
+			enable = true;
+			wayland.enable = true;
+			theme = "catppuccin-mocha-mauve";
+		};
+
+		users.users.${prefs.username} = {
+			ignoreShellProgramCheck = true;
+			shell = pkgs.zsh;
+			isNormalUser = true;
+			extraGroups = [ "wheel" "sudo" "docker" ];
+			hashedPasswordFile = config.sops.secrets."${prefs.username}/user/password".path;
+
+			openssh.authorizedKeys.keys = [
+				(builtins.readFile ../../keys/id_jean.pub)
+				(builtins.readFile ../../keys/id_key.pub)
+			];
+		};
+
+		environment.systemPackages = with pkgs; [
+			vim
+			git
+			wget
+			home-manager
+			wireguard-tools
+			(pkgs.catppuccin-sddm.override {
+				flavor = "mocha";
+				accent = "mauve";
+			})
+		];
+
+		system.stateVersion = "26.05";
 	};
 }
