@@ -6,6 +6,7 @@
 			bootloader
 			networking
 			user
+			bluetooth
 		];
 	in {
 		imports = modules;
