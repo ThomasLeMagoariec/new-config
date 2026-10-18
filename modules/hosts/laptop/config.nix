@@ -1,6 +1,6 @@
 { ... }:
 {
-	flake.nixosModules.system = { pkgs, ... }:
+	flake.nixosModules.laptopConfig = { pkgs, ... }:
 	{
 		imports = [
 			/home/thomas/downloads_tmp/hardware.nix

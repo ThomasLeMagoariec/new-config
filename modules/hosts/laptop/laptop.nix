@@ -2,7 +2,7 @@
 {
 	flake.nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
 		modules = with self.nixosModules; [
-			system
+			laptopConfig	
 			user
 			bootloader
 			networking
