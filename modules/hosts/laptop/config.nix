@@ -3,7 +3,7 @@
 	flake.nixosModules.laptopConfig = { pkgs, ... }:
 	{
 		imports = [
-			/home/thomas/downloads_tmp/hardware.nix
+			./hardware.nix
 		];
 
 		environment.systemPackages = with pkgs; [
