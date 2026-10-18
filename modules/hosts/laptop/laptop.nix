@@ -3,9 +3,7 @@
 	flake.nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
 		modules = with self.nixosModules; [
 			laptopConfig	
-			user
-			bootloader
-			networking
+			system
 		];
 	};
 }
