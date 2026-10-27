@@ -9,6 +9,7 @@
 		environment.systemPackages = with pkgs; [
 			git
 			vim
+			font-awesome
 		];
 		
 		services.xserver.enable = true;

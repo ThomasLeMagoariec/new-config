@@ -8,6 +8,7 @@
 			niri
 			noctalia
 			hyprlock
+			fuzzel
 		];
 	};
 }
