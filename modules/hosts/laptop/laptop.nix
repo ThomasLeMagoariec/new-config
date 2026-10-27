@@ -5,6 +5,7 @@
 			laptopConfig
 			system
 			zsh
+			niri
 		];
 	};
 }
