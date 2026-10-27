@@ -1,15 +1,15 @@
 { inputs, moduleWithSystem, ... }:
 {
-	flake.nixosModules.zsh = moduleWithSystem ({ pkgs, self', ... }: {
+	flake.nixosModules.fuzzel = moduleWithSystem ({ pkgs, self', ... }: {
 		environment.systemPackages = with self'.packages; [
-			hyprlock
+			fuzzel
 		];
 	});
 	perSystem = { pkgs, lib, ... }: {
 		packages.fuzzel = inputs.wrappers.wrappers.fuzzel.wrap {
 			inherit pkgs;
-			settings = {
-				include = ./. + "/config.ini";
+			flags = {
+				"--config" = lib.mkForce ./config.ini;
 			};
 		};
 	};
