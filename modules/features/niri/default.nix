@@ -28,8 +28,8 @@
 
 				binds = {
 					"Mod+Return".spawn = lib.getExe pkgs.kitty;
-					"Mod+D".spawn = [ "${lib.getExe self'.packages.hyprlock}"];
-					"Mod+L".spawn = [ "${lib.getExe self'.packages.noctalia}" "msg" "session" "lock" ];
+					"Mod+L".spawn = [ "${lib.getExe self'.packages.hyprlock}"];
+					"Mod+D".spawn = [ "${lib.getExe self'.packages.fuzzel}"];
 				};
 			};
 			extraSettings = [
