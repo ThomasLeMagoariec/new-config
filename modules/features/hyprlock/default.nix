@@ -3,10 +3,11 @@ inputs,
 moduleWithSystem,
 ...
 }: {
-	flake.nixosModules.hyprlock = moduleWithSystem ({self', ...}: {
+	flake.nixosModules.hyprlock = moduleWithSystem ({self', pkgs, ...}: {
 		environment.systemPackages = with self'.packages; [
 			hyprlock
 		];
+		fonts.packages = [ pkgs.nerd-fonts.fira-mono ];
 	});
 	perSystem = {pkgs, ...}: {
 		packages.hyprlock = inputs.wrappers.wrappers.hyprlock.wrap {
