@@ -6,6 +6,8 @@
 			system
 			zsh
 			niri
+			noctalia
+			hyprlock
 		];
 	};
 }

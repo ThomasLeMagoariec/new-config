@@ -5,6 +5,9 @@
 			enable = true;
 			package = self'.packages.niri;
 		};
+		environment.systemPackages = with pkgs; [
+			awww
+		];
 	});
 	perSystem = { pkgs, self', lib, ... }: {
 		packages.niri = inputs.wrappers.wrappers.niri.wrap {
@@ -15,13 +18,17 @@
 				xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
 				spawn-at-startup = [
-					"${lib.getExe self'.packages.noctalia}"
 					"${lib.getExe pkgs.kitty}"
+					"${pkgs.awww}/bin/awww-daemon"
+				];
+				
+				spawn-sh-at-startup = [
+					"awww img ${./. + "/wallpapers/wall-001.jpg"}"
 				];
 
 				binds = {
 					"Mod+Return".spawn = lib.getExe pkgs.kitty;
-					"Mod+D".spawn = [ "${lib.getExe self'.packages.noctalia}" "msg" "panel-toggle" "launcher" ];
+					"Mod+D".spawn = [ "${lib.getExe self'.packages.hyprlock}"];
 					"Mod+L".spawn = [ "${lib.getExe self'.packages.noctalia}" "msg" "session" "lock" ];
 				};
 			};
