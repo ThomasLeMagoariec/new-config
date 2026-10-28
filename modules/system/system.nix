@@ -10,5 +10,7 @@
 		];
 	in {
 		imports = modules;
+    	time.timeZone = "Europe/Paris";
+		nix.settings.experimental-features = [ "nix-command" "flakes" ];
 	};
 }
