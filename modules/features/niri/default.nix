@@ -48,6 +48,10 @@
 						];
 						opacity = 0.8;
 					}
+					{
+						matches = [ {app-id = "^vesktop$"; } ];
+						opacity = 0.95;
+					}
 				];
 			};
 			extraSettings = [
