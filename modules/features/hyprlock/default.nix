@@ -1,11 +1,18 @@
 {
 inputs,
 moduleWithSystem,
+lib,
 ...
 }: {
 	flake.nixosModules.hyprlock = moduleWithSystem ({self', pkgs, ...}: {
 		environment.systemPackages = with self'.packages; [
-			hyprlock
+			self'.packages.hyprlock
+			(pkgs.makeDesktopItem {
+				name = "hyprlock";
+				icon = "system-lock-screen";
+				desktopName = "Hyprlock";
+				exec = lib.getExe self'.packages.hyprlock;
+			})
 		];
 		fonts.packages = [ pkgs.nerd-fonts.fira-mono ];
 	});

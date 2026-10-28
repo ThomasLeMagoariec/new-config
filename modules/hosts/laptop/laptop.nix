@@ -9,6 +9,7 @@
 			noctalia
 			hyprlock
 			fuzzel
+			kitty
 		];
 	};
 }

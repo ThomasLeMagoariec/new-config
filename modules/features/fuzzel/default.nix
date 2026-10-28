@@ -1,8 +1,15 @@
-{ inputs, moduleWithSystem, ... }:
+{ inputs, moduleWithSystem, lib, ... }:
 {
 	flake.nixosModules.fuzzel = moduleWithSystem ({ pkgs, self', ... }: {
-		environment.systemPackages = with self'.packages; [
-			fuzzel
+		environment.systemPackages = [
+			self'.packages.fuzzel
+			pkgs.papirus-icon-theme
+			(pkgs.makeDesktopItem {
+				name = "fuzzel";
+				icon = "fuzzel";
+				desktopName = "Fuzzel";
+				exec = lib.getExe self'.packages.fuzzel;
+			})
 		];
 	});
 	perSystem = { pkgs, lib, ... }: {

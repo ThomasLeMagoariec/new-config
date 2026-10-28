@@ -18,7 +18,6 @@
 				xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
 				spawn-at-startup = [
-					"${lib.getExe pkgs.kitty}"
 					"${pkgs.awww}/bin/awww-daemon"
 				];
 				
@@ -27,10 +26,17 @@
 				];
 
 				binds = {
-					"Mod+Return".spawn = lib.getExe pkgs.kitty;
+					"Mod+Return".spawn = lib.getExe self'.packages.kitty;
 					"Mod+L".spawn = [ "${lib.getExe self'.packages.hyprlock}"];
 					"Mod+D".spawn = [ "${lib.getExe self'.packages.fuzzel}"];
 				};
+				
+				window-rules = [
+					{
+						matches = [ { title = "kitty"; } ];
+						opacity = 0.8;
+					}
+				];
 			};
 			extraSettings = [
 				{ include = ./kb.kdl; }
