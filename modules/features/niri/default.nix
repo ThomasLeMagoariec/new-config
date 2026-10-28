@@ -19,6 +19,7 @@
 
 				spawn-at-startup = [
 					"${pkgs.awww}/bin/awww-daemon"
+					"${lib.getExe pkgs.firefox}"
 				];
 				
 				spawn-sh-at-startup = [
@@ -32,8 +33,19 @@
 				};
 				
 				window-rules = [
+					{ opacity = 0.8; }
+					{ draw-border-with-background = false; }
 					{
-						matches = [ { title = "kitty"; } ];
+						matches = [
+							{ title = "kitty"; }
+						];
+						opacity = 0.8;
+					}
+					{
+						matches = [
+							{ title = "Mozilla Firefox"; }
+							{ app-id = "firefox"; }
+						];
 						opacity = 0.8;
 					}
 				];
