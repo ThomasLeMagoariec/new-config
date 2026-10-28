@@ -1,10 +1,10 @@
 { inputs, moduleWithSystem, lib, ... }:
 {
-	flake.nixosModules.discord = { pkgs, ... }: {
+	flake.nixosModules.discord = moduleWithSystem ({ pkgs, self', ... }: {
 		environment.systemPackages = [
-			pkgs.vesktop
+			self'.packages.vesktop
 		];
-	};
+	});
 
 	perSystem = { pkgs, ... }: 
 	let
