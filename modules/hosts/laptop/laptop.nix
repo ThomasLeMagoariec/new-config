@@ -11,6 +11,7 @@
 			fuzzel
 			kitty
 			firefox
+			tmux
 		];
 	};
 }
