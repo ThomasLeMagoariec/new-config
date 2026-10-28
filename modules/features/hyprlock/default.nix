@@ -43,7 +43,7 @@ lib,
 		# LAYOUT
 		label {
 		  monitor =
-		  text = Layout: $LAYOUT
+		  text = cmd[update:60000] h=$(date +%H); if [ $h -lt 12 ]; then echo "Good morning, $USER"; elif [ $h -lt 18 ]; then echo "Good afternoon, $USER"; else echo "Good evening, $USER"; fi
 		  color = $text
 		  font_size = 25
 		  font_family = $font
