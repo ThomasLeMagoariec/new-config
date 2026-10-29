@@ -1,6 +1,15 @@
 { ... }:
 {
 	flake.nixosModules.laptopConfig = { pkgs, ... }:
+	let
+		vmSettings = { lib, ... }: {
+		virtualisation = {
+			memorySize = 4096;
+			cores = 2;
+			qemu.options = [ "-device virtio-vga-gl" "-display gtk,gl=on" ];
+		};
+	};
+	in
 	{
 		imports = [
 			./_hardware.nix
@@ -20,14 +29,8 @@
 		};
 
 		# only applies to `nixos-rebuild build-vm`, not the real laptop
-		virtualisation.vmVariant.virtualisation = {
-			memorySize = 4096;
-			cores = 2;
-			qemu.options = [
-				"-device virtio-vga-gl"
-				"-display gtk,gl=on"
-			];
-		};
+		virtualisation.vmVariant = vmSettings;
+		virtualisation.vmVariantWithBootLoader = vmSettings;
 
 		system.stateVersion = "26.05";
 	};
