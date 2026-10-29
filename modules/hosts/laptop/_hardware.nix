@@ -18,10 +18,11 @@
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
-    { device = "systemd-1";
-      fsType = "autofs";
-    };
+	fileSystems."/boot" =
+		{ device = "/dev/disk/by-uuid/B06D-4F2B";
+			fsType = "vfat";
+			options = [ "fmask=0077" "dmask=0077" ];
+		};
 
   swapDevices = [ ];
 

@@ -8,6 +8,7 @@
 			niri
 			noctalia
 			hyprlock
+			swayidle
 			fuzzel
 			kitty
 			firefox

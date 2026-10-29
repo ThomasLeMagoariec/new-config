@@ -19,7 +19,8 @@
 
 				spawn-at-startup = [
 					"${pkgs.awww}/bin/awww-daemon"
-					"${lib.getExe pkgs.firefox}"
+					"${lib.getExe self'.packages.mako}"
+					"${lib.getExe self'.packages.swayidle}"
 				];
 				
 				spawn-sh-at-startup = [

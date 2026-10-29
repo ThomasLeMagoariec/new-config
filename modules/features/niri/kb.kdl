@@ -5,6 +5,12 @@ input {
 		}
 		numlock
 	}
+	mouse {
+		natural-scroll
+	}
+	touchpad {
+		natural-scroll
+	}
 }
 
 layout {

@@ -8,6 +8,7 @@
 			user
 			bluetooth
 			sops
+			mako
 		];
 	in {
 		imports = modules;
