@@ -2,7 +2,7 @@
 {
 	flake.nixosModules.waybar = moduleWithSystem ({ pkgs, self', ... }: {
 		environment.systemPackages = [
-			pkgs.waybar
+			self'.packages.waybar
 		];
 	});
 	perSystem = { pkgs, lib, ... }: {

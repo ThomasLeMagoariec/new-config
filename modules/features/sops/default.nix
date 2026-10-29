@@ -23,5 +23,4 @@
 			sops.age.keyFile = lib.mkForce "${vmKeyDir}/keys.txt";
 			environment.variables.SOPS_AGE_KEY_FILE = "${vmKeyDir}/keys.txt";
 		};
-	};
 }
