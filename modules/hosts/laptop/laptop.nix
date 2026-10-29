@@ -12,6 +12,10 @@
 			kitty
 			firefox
 			tmux
+			neovim
+			discord
+			sddm
+			waybar
 		];
 	};
 }

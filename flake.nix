@@ -6,6 +6,10 @@
 		flake-parts.url = "github:hercules-ci/flake-parts";
 		import-tree.url = "github:vic/import-tree";
 		wrappers.url = "github:nix-community/nix-wrapper-modules";
+		sops-nix = {
+			url = "github:Mic92/sops-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = inputs:

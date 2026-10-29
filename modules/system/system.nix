@@ -7,6 +7,7 @@
 			networking
 			user
 			bluetooth
+			sops
 		];
 	in {
 		imports = modules;

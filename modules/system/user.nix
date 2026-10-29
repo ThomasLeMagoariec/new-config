@@ -1,10 +1,12 @@
 { inputs, moduleWithSystem, ... }:
 {
-	flake.nixosModules.user = moduleWithSystem ({ self', pkgs, ... }:
+	flake.nixosModules.user = moduleWithSystem ({ self', ... }: { config, ... }:
 	{
+		users.mutableUsers = false;
+
 		users.users.thomas = {
 			isNormalUser = true;
-			initialPassword = "test";
+			hashedPasswordFile = config.sops.secrets."user/thomas/password".path;
 			shell = self'.packages.zsh;
 			extraGroups = [
 				"root"
