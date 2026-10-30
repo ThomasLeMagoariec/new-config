@@ -24,9 +24,14 @@
 				DisableFirefoxStudies = true;
 				EnableTrackingProtection = {
 					Value = true;
-					Locked = true;
+					Locked = false;
 					Cryptomining = true;
 					Fingerprinting = true;
+				};
+				DNSOverHTTPS = {
+					Enabled = true;
+					ProviderURL = "https://cloudflare-dns.com/dns-query";
+					Locked = false;
 				};
 				DisablePocket = true;
 				DisableFirefoxAccounts = true;
@@ -90,10 +95,6 @@
 						installation_mode = "force_installed";
 					};
 
-					"jid1-BoFifL9Vbdl2zQ@jetpack" = {
-						install_url = "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi/";
-						installation_mode = "force_installed";
-					};
 					"addon@darkreader.org" = {
 						install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi/";
 						installation_mode = "force_installed";
@@ -126,8 +127,8 @@
 				# Check about:config for options.
 				Preferences = {
 					"browser.contentblocking.category" = {
-						Value = "strict";
-						Status = "locked";
+						Value = "standard";
+						Status = "default";
 					};
 					"extensions.pocket.enabled" = lock-false;
 					"extensions.screenshots.disabled" = lock-true;

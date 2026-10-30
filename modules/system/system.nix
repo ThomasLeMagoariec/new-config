@@ -9,6 +9,7 @@
 			bluetooth
 			sops
 			mako
+			vpn
 		];
 	in {
 		imports = modules;
