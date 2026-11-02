@@ -47,3 +47,8 @@ layout {
         color "#0007"
     }
 }
+
+cursor {
+    xcursor-theme "catppuccin-mocha-mauve-cursors"
+    xcursor-size 24
+}
