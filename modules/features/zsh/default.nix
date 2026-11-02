@@ -25,7 +25,7 @@
 				gd = "git diff";
 
 				code = "cd ~/code";
-				cat = "${pkgs.bat}";
+				cat = "${lib.getExe pkgs.bat}";
 				vpn-banquise = ''
 					sudo systemctl restart strongswan-swanctl.service
 					sudo swanctl -q
