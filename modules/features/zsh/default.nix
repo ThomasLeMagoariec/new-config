@@ -14,7 +14,6 @@
 		packages.zsh = inputs.wrappers.wrappers.zsh.wrap {
 			inherit pkgs;
 			zshAliases = {
-				ff = lib.getExe pkgs.fastfetch;
 				ga = "git add -A";
 				gc = "git commit -m";
 				gac = "git add -A && git commit -m";
@@ -25,7 +24,6 @@
 				gs = "git status";
 				gd = "git diff";
 
-				nm = "norminette -R CheckForbiddenSourceHeader";
 				code = "cd ~/code";
 				cat = "${pkgs.bat}";
 				vpn-banquise = ''
