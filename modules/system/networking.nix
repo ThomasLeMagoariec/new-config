@@ -45,5 +45,34 @@
 				method=auto
 			'';
 		};
+
+		sops.templates."home.nmconnection" = {
+			path = "/etc/NetworkManager/system-connections/home.nmconnection";
+			owner = "root";
+			mode = "0600";
+			content = ''
+				[connection]
+				id=Livebox-8140
+				uuid=a2fc393e-be99-4a94-9663-bb83f8cc9a7f
+				type=wifi
+				interface-name=wlp1s0
+
+				[wifi]
+				mode=infrastructure
+				ssid=Livebox-8140
+
+				[wifi-security]
+				auth-alg=open
+				key-mgmt=wpa-psk
+				psk=${config.sops.placeholder."home/password"}
+
+				[ipv4]
+				method=auto
+
+				[ipv6]
+				addr-gen-mode=default
+				method=auto
+			'';
+		};
 	};
 }

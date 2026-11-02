@@ -10,9 +10,10 @@
 		sops = {
 			defaultSopsFile = ../../../secrets/secrets.yaml;
 			age.keyFile = "${hostKeyDir}/keys.txt";
-			secrets."user/thomas/password".neededForUsers = true;
-			secrets."school/password" = {
-				sopsFile = ../../../secrets/wifi.yaml;
+			secrets = {
+				"user/thomas/password".neededForUsers = true;
+				"school/password" = { sopsFile = ../../../secrets/wifi.yaml; };
+				"home/password" = { sopsFile = ../../../secrets/wifi.yaml; };
 			};
 		};
 
