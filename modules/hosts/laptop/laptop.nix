@@ -17,6 +17,7 @@
 			discord
 			sddm
 			waybar
+			scripts
 		];
 	};
 }

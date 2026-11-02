@@ -3,7 +3,7 @@
 	flake.nixosModules.scripts = { ... }:
 	let
 		modules = with self.nixosModules; [
-			ipmi
+			ipmi-tg
 		];
 	in {
 		imports = modules;
