@@ -11,6 +11,8 @@
 			defaultSopsFile = ../../../secrets/secrets.yaml;
 			age.keyFile = "${hostKeyDir}/keys.txt";
 			secrets."user/thomas/password".neededForUsers = true;
+			secrets."wifi/school/password" = {
+			};
 		};
 
 		environment.systemPackages = with pkgs; [ sops age ];
