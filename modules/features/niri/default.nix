@@ -53,6 +53,10 @@
 						matches = [ {app-id = "^vesktop$"; } ];
 						opacity = 0.95;
 					}
+					{
+						matches = [ {app-id = "^libreoffice-writer$"; } ];
+						opacity = 0.95;
+					}
 				];
 			};
 			extraSettings = [
