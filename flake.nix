@@ -1,97 +1,16 @@
 {
-
-	description = "Flake Config";
-
 	inputs = {
-		nixpkgs.url =  "nixpkgs/nixos-25.11";
-		nixpkgs-unstable.url =  "nixpkgs/nixos-unstable";
-		home-manager = {
-			url = "github:nix-community/home-manager/release-25.11";
+		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+		flake-parts.url = "github:hercules-ci/flake-parts";
+		import-tree.url = "github:vic/import-tree";
+		wrappers.url = "github:nix-community/nix-wrapper-modules";
+		sops-nix = {
+			url = "github:Mic92/sops-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-
-        my-pkgs = {
-            url = "github:ThomasLeMagoariec/my-pkgs";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        dms = {
-            url = "github:AvengeMedia/DankMaterialShell";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        danksearch = {
-            url = "github:AvengeMedia/danksearch";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        noctalia = {
-            url = "github:noctalia-dev/noctalia-shell";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        nix-snapd = {
-            url = "github:nix-community/nix-snapd";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        nixmate.url = "github:daskladas/nixmate";
-        sops-nix.url = "github:Mic92/sops-nix";
-        nixvim.url = "github:nix-community/nixvim/nixos-25.11";
-        lazyvim.url = "github:pfassina/lazyvim-nix";
 	};
 
-
-	outputs = { self, nixpkgs, nixpkgs-unstable, dms, lazyvim, danksearch, home-manager, my-pkgs, nixvim, nixmate, noctalia,  nix-snapd, ... }@inputs:
-	let
-		lib = nixpkgs.lib;
-        pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
-	in {
-		nixosConfigurations = {
-			laptop = lib.nixosSystem {
-				system = "x86_64-linux";
-				modules = [ ./hosts/laptop/configuration.nix ];
-                specialArgs = {
-                    inherit pkgs-unstable;
-                    inherit inputs;
-                };
-			};
-			chanek = lib.nixosSystem {
-				system = "x86_64-linux";
-				modules = [ ./hosts/chanek/configuration.nix ];
-                specialArgs = {
-                    inherit pkgs-unstable;
-                    inherit inputs;
-                };
-			};
-		};
-		homeConfigurations = {
-            thomas = home-manager.lib.homeManagerConfiguration {
-                pkgs = nixpkgs.legacyPackages.x86_64-linux;
-                modules = [
-                    nixvim.homeModules.nixvim
-                    ./hosts/laptop/home.nix
-                ];
-                extraSpecialArgs = {
-                    inherit inputs;
-                    inherit dms;
-                    inherit noctalia;
-                    inherit my-pkgs;
-                    inherit pkgs-unstable;
-                    inherit lazyvim;
-                };
-            };
-
-            chanek = home-manager.lib.homeManagerConfiguration {
-                pkgs = nixpkgs.legacyPackages.x86_64-linux;
-                modules = [
-                    nixvim.homeModules.nixvim
-                        ./hosts/chanek/home.nix
-                ];
-                extraSpecialArgs = {
-                    inherit inputs;
-                };
-            };
-		};
-	};
+	outputs = inputs:
+		inputs.flake-parts.lib.mkFlake { inherit inputs; }
+			(inputs.import-tree ./modules);
 }
