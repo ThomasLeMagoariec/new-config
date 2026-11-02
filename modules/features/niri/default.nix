@@ -8,6 +8,7 @@
 		environment.systemPackages = with pkgs; [
 			awww
 			catppuccin-cursors.mochaMauve
+			wofi
 		];
 	});
 	perSystem = { pkgs, self', lib, ... }: {
@@ -32,6 +33,7 @@
 					"Mod+Return".spawn = lib.getExe self'.packages.kitty;
 					"Mod+L".spawn = [ "${lib.getExe self'.packages.hyprlock}"];
 					"Mod+D".spawn = [ "${lib.getExe self'.packages.fuzzel}"];
+					"Mod+T".spawn-sh = "~/.config/wofi/scripts/sound.sh";
 					"XF86AudioRaiseVolume" = _: {
 						props.allow-when-locked = true;
 						content.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
