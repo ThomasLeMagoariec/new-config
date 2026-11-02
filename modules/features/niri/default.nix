@@ -31,7 +31,32 @@
 					"Mod+Return".spawn = lib.getExe self'.packages.kitty;
 					"Mod+L".spawn = [ "${lib.getExe self'.packages.hyprlock}"];
 					"Mod+D".spawn = [ "${lib.getExe self'.packages.fuzzel}"];
+					"XF86AudioRaiseVolume" = _: {
+						props.allow-when-locked = true;
+						content.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
+					};
+					"XF86AudioLowerVolume" = _: {
+						props.allow-when-locked = true;
+						content.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
+					};
+					"XF86AudioMute" = _: {
+						props.allow-when-locked = true;
+						content.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+					};
+					"XF86AudioMicMute" = _: {
+						props.allow-when-locked = true;
+						content.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+					};
+					"XF86MonBrightnessUp" = _: {
+						props.allow-when-locked = true;
+						content.spawn = [ "${lib.getExe pkgs.brightnessctl}" "--class=backlight" "set" "+10%" ];
+					};
+					"XF86MonBrightnessDown" = _: {
+						props.allow-when-locked = true;
+						content.spawn = [ "${lib.getExe pkgs.brightnessctl}" "--class=backlight" "set" "10%-" ];
+					};
 				};
+
 				
 				window-rules = [
 					{ opacity = 0.8; }
@@ -58,7 +83,9 @@
 						opacity = 0.95;
 					}
 				];
+
 			};
+
 			extraSettings = [
 				{ include = ./kb.kdl; }
 				{ include = ./binds.kdl; }
