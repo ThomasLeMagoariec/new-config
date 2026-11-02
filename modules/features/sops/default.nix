@@ -11,7 +11,8 @@
 			defaultSopsFile = ../../../secrets/secrets.yaml;
 			age.keyFile = "${hostKeyDir}/keys.txt";
 			secrets."user/thomas/password".neededForUsers = true;
-			secrets."wifi/school/password" = {
+			secrets."school/password" = {
+				sopsFile = ../../../secrets/wifi.yaml;
 			};
 		};
 

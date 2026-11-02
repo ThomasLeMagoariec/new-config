@@ -34,7 +34,7 @@
 				[802-1x]
 				eap=peap;
 				identity=thomas.lemagoariec
-				password=${config.sops.placeholder."wifi/school/password"}
+				password=${config.sops.placeholder."school/password"}
 				phase2-auth=mschapv2
 
 				[ipv4]
