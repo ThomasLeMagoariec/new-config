@@ -1,24 +1,43 @@
 import Quickshell
-import Quickshell.Wayland
 import QtQuick
+import QtQuick.Layouts
 
-PanelWindow {
-    anchors.top: true
-    anchors.left: true
-    anchors.right: true
-    implicitHeight: 30
-    color: "#1a1b26"
-
-	RowLayout {
-		anchors.fill: parent
-		anchors.margins: 8
-
-		Text {
-			anchors.centerIn: parent
-			text: "My First Bar"
-			color: "#a9b1d6"
-			font.pixelSize: 14
+Scope {
+	PanelWindow {
+		anchors {
+			top: true
+			left: true
+			right: true
 		}
-	}
 
+		implicitHeight: 42
+		color: "transparent"
+
+		ClockWidget {
+			implicitHeight: 36
+			implicitWidth: 72
+		}
+
+		Rectangle {
+			anchors.top: parent.top
+			anchors.right: parent.right
+			anchors.verticalCenter: parent.verticalCenter
+
+			anchors.topMargin: 8
+			anchors.rightMargin: battery.implicitWidth / 2
+
+			implicitHeight: battery.implicitHeight + 24
+			implicitWidth: battery.implicitWidth + 24
+
+			radius: 15
+
+			color: "#2d2d2d"
+
+			BatteryWidget {
+				id: battery
+				anchors.centerIn: parent
+			}
+		}
+
+	}
 }

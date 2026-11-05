@@ -3,6 +3,7 @@
 	flake.nixosModules.quickshell = moduleWithSystem ({ pkgs, self', ... }: {
 		environment.systemPackages = [
 			self'.packages.quickshell
+			pkgs.upower
 		];
 	});
 	perSystem = { pkgs, lib, ... }: {
