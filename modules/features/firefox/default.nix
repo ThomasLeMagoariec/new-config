@@ -28,11 +28,6 @@
 					Cryptomining = true;
 					Fingerprinting = true;
 				};
-				DNSOverHTTPS = {
-					Enabled = true;
-					ProviderURL = "https://cloudflare-dns.com/dns-query";
-					Locked = false;
-				};
 				DisablePocket = true;
 				DisableFirefoxAccounts = true;
 				DisableAccounts = true;
