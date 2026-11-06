@@ -18,6 +18,7 @@
 			sddm
 			waybar
 			scripts
+			yubi
 		];
 	};
 }
