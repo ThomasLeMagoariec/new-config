@@ -7,6 +7,12 @@
 			pkgs.strongswan
 			pkgs.openssl
 		];
+
+		networking.wg-quick.interfaces.home-vpn = {
+			configFile = "/etc/wireguard/home-vpn.conf";
+			autostart = false;
+		};
+
 		services.strongswan-swanctl.enable = true;
 
 		services.strongswan-swanctl.swanctl = {
