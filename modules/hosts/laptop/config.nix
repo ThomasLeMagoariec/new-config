@@ -19,7 +19,10 @@
 			git
 			vim
 			font-awesome
+			upower
 		];
+
+		services.upower.enable = true;
 		
 		services.xserver.enable = true;
 		services.displayManager.sddm = {
