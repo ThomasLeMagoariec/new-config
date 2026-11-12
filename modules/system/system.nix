@@ -10,6 +10,7 @@
 			sops
 			mako
 			vpn
+			docker
 		];
 	in {
 		imports = modules;
