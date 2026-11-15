@@ -19,6 +19,7 @@
 			waybar
 			scripts
 			yubi
+			keyboard
 		];
 	};
 }
