@@ -66,6 +66,7 @@
 				SAVEHIST=50000
 				setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 
+				eval "$(${lib.getExe pkgs.zoxide} init zsh)"
 				# ---- syntax highlighting (must be sourced last) ----
 				source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 			'';
