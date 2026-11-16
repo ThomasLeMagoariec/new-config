@@ -11,6 +11,7 @@
 			mako
 			vpn
 			docker
+			steam
 		];
 	in {
 		imports = modules;
