@@ -32,7 +32,7 @@
 					sudo swanctl -i --child banquise
 				'';
 
-				ls = "ls --color=auto";
+				ls = "${lib.getExe pkgs.lsd} --tree --depth 1";
             	e = "exit";
 
 				some = "nvim";
