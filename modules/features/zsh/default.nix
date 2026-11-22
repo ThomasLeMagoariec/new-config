@@ -5,12 +5,16 @@
 			enable = true;
 			package = self'.packages.zsh;
 			enableCompletion = true;
+			enableBashCompletion = true;
+			autosuggestions.enable = true;
+			syntaxHighlighting.enable = true;
+			histSize = 10000;
 		};
 		environment.systemPackages = [
 			pkgs.zsh-completions
 		];
 	});
-	perSystem = { pkgs, lib, ... }: {
+	perSystem = { pkgs, lib, self', ... }: {
 		packages.zsh = inputs.wrappers.wrappers.zsh.wrap {
 			inherit pkgs;
 			zshAliases = {
@@ -39,20 +43,14 @@
 				ff = lib.getExe pkgs.fastfetch;
 			};
 			zshrc.content = ''
-				source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-				[[ -f ${./p10k.zsh} ]] && source ${./p10k.zsh}
+				autoload -U compinit && compinit
+				export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+				zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+				source <(${lib.getExe pkgs.carapace} _carapace)
+				zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-				# ---- completion ----
-				zstyle ':completion:*' menu select                         # arrow-key menu on Tab
-				zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*' # case-insensitive, partial words
-				zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"   # colour file completions like ls
-				zstyle ':completion:*' group-name '''                      # group results by type
-				zstyle ':completion:*:descriptions' format '%F{magenta}-- %d --%f'
-				zstyle ':completion:*' use-cache on
-				zstyle ':completion:*' cache-path "''${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
-				zmodload zsh/complist
-				bindkey -M menuselect '^[[Z' reverse-menu-complete         # Shift+Tab goes back
-				setopt AUTO_MENU COMPLETE_IN_WORD ALWAYS_TO_END
+				autoload -U select-word-style
+				select-word-style bash
 
 				# ---- suggestions from history as you type (→ or End to accept) ----
 				source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -66,10 +64,15 @@
 				SAVEHIST=50000
 				setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 
+				eval "$(${lib.getExe self'.packages.ohMyPosh} init zsh)"
 				eval "$(${lib.getExe pkgs.zoxide} init zsh)"
 				# ---- syntax highlighting (must be sourced last) ----
 				source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 			'';
+		};
+		packages.ohMyPosh = inputs.wrappers.wrappers.oh-my-posh.wrap {
+			inherit pkgs;
+			configFile = ./config.toml;
 		};
 	};
 }
