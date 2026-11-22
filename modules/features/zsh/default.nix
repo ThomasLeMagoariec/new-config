@@ -50,7 +50,8 @@
 				autoload -U compinit && compinit
 				export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 				zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-				source <(${lib.getExe pkgs.carapace} _carapace)
+				export PATH="${lib.makeBinPath [ pkgs.carapace ]}:$PATH"
+				source <(${lib.getExe pkgs.carapace} _carapace zsh)
 				zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 				autoload -U select-word-style
