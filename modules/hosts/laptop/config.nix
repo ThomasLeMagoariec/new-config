@@ -20,6 +20,7 @@
 			vim
 			font-awesome
 			upower
+			gcc
 		];
 
 		services.upower.enable = true;
