@@ -24,10 +24,6 @@
 					"${lib.getExe self'.packages.mako}"
 					"${lib.getExe self'.packages.swayidle}"
 				];
-				
-				spawn-sh-at-startup = [
-					"awww img ${./. + "/wallpapers/wall-001.jpg"}"
-				];
 
 				binds = {
 					"Mod+Return".spawn = lib.getExe self'.packages.kitty;
