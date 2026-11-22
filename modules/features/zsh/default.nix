@@ -40,6 +40,7 @@
             	e = "exit";
 
 				some = "nvim";
+				nvim = "nvim -c 'colorscheme catppuccin'";
 				ff = lib.getExe pkgs.fastfetch;
 			};
 			zshrc.content = ''
