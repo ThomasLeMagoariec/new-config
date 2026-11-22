@@ -43,6 +43,10 @@
 				ff = lib.getExe pkgs.fastfetch;
 			};
 			zshrc.content = ''
+				function sshp {
+					TERM=xterm-256color command ssh -t "$@" \
+					'exec env PS1="\[\e[32m\]󰒋 \h\[\e[0m\] | \[\e[34m\]\w\[\e[0m\]\n\[\e[35m\]❯\[\e[0m\] " bash --norc -i'
+				}
 				autoload -U compinit && compinit
 				export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 				zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
