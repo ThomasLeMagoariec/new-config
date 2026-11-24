@@ -1,7 +1,8 @@
-{ ... }:
+{ inputs, ... }:
 {
 	flake.nixosModules.laptopConfig = { pkgs, ... }:
 	let
+		pkgs26 = inputs.nixpkgs26.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 		vmSettings = { lib, ... }: {
 		virtualisation = {
 			memorySize = 4096;
@@ -21,7 +22,9 @@
 			font-awesome
 			upower
 			gcc
+			pkgs26.seadrive-gui
 		];
+
 
 		xdg.portal.config.niri."org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
 		services.upower.enable = true;
