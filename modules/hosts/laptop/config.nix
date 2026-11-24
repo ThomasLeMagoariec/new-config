@@ -21,8 +21,10 @@
 			font-awesome
 			upower
 			gcc
+			seadrive-gui
 		];
 
+		xdg.portal.config.niri."org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
 		services.upower.enable = true;
 		
 		services.xserver.enable = true;
